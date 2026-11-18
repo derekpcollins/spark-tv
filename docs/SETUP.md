@@ -10,6 +10,16 @@ The product and architecture reference (module contract, data schemas, Home layo
 
 Newest first. One line each: what was chosen, and why.
 
+### Milestone 1 build choices (2026-11-18)
+
+- 2026-11-18: Modules self-register, and `src/modules/index.ts` loads them all with `import.meta.glob`. Why: adding a module or variant is just a new file, with no edits to the core or an index (decision 10).
+- 2026-11-18: Cards use a lighter, display-only contract (`el`, `width`, `load()`, `activate()`, `destroy()`). The row owns focus and the fixed cursor. Cards still register by type in the `cards` registry. Why: cards never route keys, so the full module contract would only add ceremony.
+- 2026-11-18: Virtualization keeps live every section that intersects the viewport ± `layout.window-buffer`, plus the focused section ±1. Why: with real row heights, focused ±1 alone leaves blank rows on screen below the anchor. This keeps the intent: sections far off screen are destroyed.
+- 2026-11-18: Heights are measured once when a page is built: everything is mounted, read in one batch with `offsetHeight`, cached, and then off-screen sections are unmounted. Images load only on demand, so the first mount stays cheap.
+- 2026-11-18: In M1, hero B's slides come from TMDB `trending/all/week`, because Spark Free has no catalog yet. In M2 the hero source switches to Spark Free in `data/layout.json` (config only).
+- 2026-11-18: Images are hotlinked from TMDB's image CDN (`image.tmdb.org`); `catalog.json` stores the URLs. Why: TMDB permits it, and it keeps the repo small. Spark Free media will live on R2.
+- 2026-11-18: In M1 the locale is fixed per load (`?lang=es` for Spanish). The moderator panel switches it live in M2.
+
 ### Brand (2026-11-18)
 
 - 2026-11-18: The Glint design system is `design/tokens.json` plus `src/brand/`, enforced by a Vitest check (`src/core/tokens-usage.test.ts`) that fails on hard-coded colours, font families, easings and durations in `src/`. No Figma library for now. Why: one source of truth in code costs nothing to keep in sync, and a full Figma library is a second system to maintain for a prototype. Revisit pushing tokens to Figma variables when Derek starts the Display Page designs.
@@ -20,6 +30,7 @@ Newest first. One line each: what was chosen, and why.
 
 ### Setup choices (2026-11-18)
 
+- 2026-11-18: No always-on launcher in `~/agents` or Login Items. Why: Derek's call; it's a prototype worked on in ad-hoc sessions.
 - 2026-11-18: `main` is protected: PR required (0 approvals), enforced for admins, no force-push or deletion, required check `check` (CI). Merged branches auto-delete. Why: `main` is production, and enforcing for admins makes the rules apply to Claude pushing as Derek.
 - 2026-11-18: Bootstrap gotcha: the push-guard hook fails closed, so in a session that loaded it, checking out a branch without `.claude/hooks/guard-push.py` (e.g. `main` before this PR merges) blocks every Bash call, including `!` commands. Once this PR is on `main`, every branch has the hook.
 - 2026-11-18: Vercel Authentication protects previews only (`ssoProtection: preview`); production `spark-tv.vercel.app` is public. Why: it's a public portfolio piece, and previews stay behind a Vercel login. Set with the Vercel CLI (the MCP connector returned 403 for project updates).
@@ -61,7 +72,7 @@ Newest first. One line each: what was chosen, and why.
 - Hosting: Vercel project `spark-tv`, Git-connected, previews on every branch (no `vercel.json` limits), production at `spark-tv.vercel.app`. Vercel Authentication on previews only; production is public.
 - Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Later: R2 upload credentials for the video pipeline (names TBD in M2). Vercel needs none.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
-- App: Vite + TS scaffold with the 1920×1080 scaled canvas, Glint tokens, mark and wordmark (stacked lockup as a placeholder screen until Home lands).
+- App (branch `feat/m1-core`): canvas, keymap, focus engine + overlay stack, registries, i18n, page view (vertical motion, dim, virtualization), header, hero B, row with app/landscape/poster cards, generic Display Page. 37 tests. `data/catalog.json` waits on the TMDB token.
 
 ## Open items
 

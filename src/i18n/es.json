@@ -1,0 +1,16 @@
+{
+  "nav.home": "Inicio",
+  "nav.movies": "Películas",
+  "nav.shows": "Series",
+  "nav.sparkfree": "Spark Free",
+  "nav.profile": "Perfil",
+  "row.apps": "Apps",
+  "row.trending": "Tendencias",
+  "row.popularOn": "Popular en {provider}",
+  "hero.moreInfo": "Más información",
+  "display.watchOn": "Ver en {provider}",
+  "display.notStreaming": "No disponible en streaming",
+  "display.placeholder": "Aquí va el diseño de la página de detalle",
+  "app.sparkfree": "Spark Free",
+  "app.free": "FREE"
+}

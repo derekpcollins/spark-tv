@@ -1,0 +1,42 @@
+{
+  "pages": {
+    "home": {
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero",
+          "variant": "B",
+          "source": { "tmdb": "trending/all/week" },
+          "limit": 5
+        },
+        {
+          "id": "apps",
+          "type": "row",
+          "card": "app",
+          "title": "row.apps",
+          "source": { "apps": ["sparkfree", 8, 9, 337, 1899, 15, 350, 386, 531] }
+        },
+        {
+          "id": "trending",
+          "type": "row",
+          "card": "landscape",
+          "title": "row.trending",
+          "source": { "tmdb": "trending/all/week" },
+          "limit": 20
+        },
+        {
+          "id": "popular-prime",
+          "type": "row",
+          "card": "poster",
+          "title": "row.popularOn",
+          "titleParams": { "provider": "provider:9" },
+          "source": {
+            "tmdb": "discover/movie",
+            "params": { "with_watch_providers": "9", "watch_region": "US", "sort_by": "popularity.desc" }
+          },
+          "limit": 20
+        }
+      ]
+    }
+  }
+}

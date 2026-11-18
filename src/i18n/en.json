@@ -1,0 +1,16 @@
+{
+  "nav.home": "Home",
+  "nav.movies": "Movies",
+  "nav.shows": "Shows",
+  "nav.sparkfree": "Spark Free",
+  "nav.profile": "Profile",
+  "row.apps": "Apps",
+  "row.trending": "Trending Now",
+  "row.popularOn": "Popular on {provider}",
+  "hero.moreInfo": "More info",
+  "display.watchOn": "Watch on {provider}",
+  "display.notStreaming": "Not currently streaming",
+  "display.placeholder": "Display Page design goes here",
+  "app.sparkfree": "Spark Free",
+  "app.free": "FREE"
+}
