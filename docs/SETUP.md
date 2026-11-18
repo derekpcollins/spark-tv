@@ -1,0 +1,66 @@
+# Setup
+
+The project's decision log: how it's set up, why, and what's next. Read it before setup, infra or planning work, and update it in the same commit as the work. Never put secret values here; name secrets only.
+
+The product and architecture reference (module contract, data schemas, Home layout, module catalog, moderator panel, key map) is in [SPEC.md](SPEC.md).
+
+**What it is:** a browser-based TV home screen prototype (in the style of webOS or Google TV) on a fixed 1920×1080 canvas, driven only by arrows, OK and Back, so it runs on a real TV with a FLIRC remote. It's a portfolio piece, a user-research prototype with a hidden moderator panel, and source material for a blog post.
+
+## Decisions
+
+Newest first. One line each: what was chosen, and why.
+
+### Setup choices (2026-11-18)
+
+- 2026-11-18: Movies, Shows and Spark Free nav items take focus but don't switch pages until Milestone 3; only Home is built in M1–M2. Why: the milestones already put the remaining pages in M3, and this keeps M1 focused. Whether they ship in v1 is still open.
+- 2026-11-18: GitHub Actions job `check` runs typecheck, lint, test and build on every PR, and it's the required check on `main`. Why: the same gate as the pre-commit checks, enforced on GitHub.
+- 2026-11-18: Design tokens live in `design/tokens.json` and are applied at runtime as CSS custom properties (`--color-text-default`, etc.). Why: no build step, and the brand swap stays a one-file change (decision 14).
+- 2026-11-18: Tooling is Vitest + jsdom for tests, ESLint (flat config + typescript-eslint) for lint, and Prettier for format checks. Why: standard for Vite + TS, and every tool works without secrets.
+- 2026-11-18: The sync and pipeline scripts are TypeScript run directly by Node 24 (built-in type stripping), with no tsx. Why: tsx pulls in an esbuild install script, so this is one less dependency. Pinned in `.node-version` to Node 24, matching fnm on Guardian.
+- 2026-11-18: TypeScript 6.0, not 7. Why: typescript-eslint (8.73) supports TypeScript below 6.1 only; TS 7's native compiler breaks type-aware linting. Revisit when typescript-eslint supports 7.
+- 2026-11-18: Known dev-only `npm audit` finding: a picomatch ReDoS reached through typescript-eslint and vitest, with no non-breaking fix. Why it's accepted: build-time tooling only, never shipped to the browser. Re-check on dependency bumps.
+
+### Product decisions (from the planning chat)
+
+1. **Clean rebuild in a new repo.** Why: the earlier version was built for use at Netflix. Rebuild from the spec only and import no code, assets or history from `spark-tv-legacy`, so the new project carries no Netflix material.
+2. **Netflix rule.** Netflix titles and the Netflix logo coming from TMDB/JustWatch data are fine and are handled exactly like every other provider. No Netflix-specific screens, card treatments or flows, and nothing that isn't public Netflix behavior.
+3. **Stack: Vite + TypeScript, no UI framework, direct DOM.** Why: navigation and motion need fine-grained DOM control, and types make the module contracts enforceable. Node comes from the host's fnm setup.
+4. **Canvas: fixed 1920×1080 px**, with the root scaled to fit the window by a single CSS transform (letterboxed if the aspect ratio differs). No vw/vh in components. Measure with `offsetWidth`/`offsetHeight`, not `getBoundingClientRect`. Why: the transform scale distorts `getBoundingClientRect`.
+5. **Data: TMDB as a build-time snapshot.** `npm run sync` reads the token from `.env.local` and resolves the curated layout into `data/catalog.json`, which is committed. Why: the browser never sees the key and Vercel needs no env vars. The snapshot has `en-US` and `es-ES` metadata and uses region US for watch providers. Images are requested with `include_image_language=en,null` so title logos and textless backdrops come back.
+6. **Real streaming services appear as app tiles,** using provider logos from TMDB watch-provider data (powered by JustWatch). Tiles take focus but don't launch anything.
+7. **Video: no YouTube.** All video comes from Blender Studio open movies (CC BY, © Blender Foundation), hosted in a new Cloudflare R2 bucket. Blender's film logos are excluded from the CC license, so those titles are always set in type, never shown with their logos.
+8. **"Spark Free" is Spark's built-in free channel** (like LG Channels or Samsung TV Plus). Its catalog is the Blender open movies. It gets the first tile in the Apps row and its own Home row.
+9. **Selection model: every title opens a Display Page.** Spark Free titles get video: a full-bleed billboard trailer (overlays allowed), a background video on the Display Page, and a Play button that plays the full film in a simple player. All other titles are static (backdrop image), with "Watch on <provider>" buttons that take focus but don't launch. Why: it matches how aggregator home screens behave and makes Spark Free the place where video lives.
+10. **Modularity via registries.** Every hero, section, card, Display Page template and overlay is a module registered by type that declares its variants and options. Pages are ordered lists of sections in layout config. Adding a variant means one new file plus one registration, with no edits to navigation or the app core.
+11. **The moderator panel is generated from the registries.** v1 includes scenario presets. Interaction logging (CSV export) and control from a second device are v2. There is no in-world Settings screen for participants in v1.
+12. **Input mapping layer from day one.** Every key goes through one keymap, so remote/FLIRC codes can be added without touching navigation. Back accepts both Escape and Backspace.
+13. **Attribution.** A Credits screen reachable from Home carries the TMDB logo and notice, JustWatch attribution, a CC BY credit for each Blender film, and a trademark disclaimer (exact wording in SPEC.md).
+14. **Branding.** The name stays Spark TV. A full rebrand (mark, wordmark, launch animation, color system) is being designed in chat. Until it lands, the app uses a plain text wordmark and a neutral token set. Every brand value is a design token, so the swap is one change.
+15. **Launch sequence.** A "Press OK to start" screen, then the launch animation: a finger-snap sound, the spark mark bursting in on the snap, and the "Spark TV" wordmark sliding out from behind the mark (masked), all in about 2.5 s. Why the start screen: browsers block audio until the user interacts, the OK press unlocks it, and it doubles as the reset point between research participants. Built as a module with a placeholder mark and a sound slot. The real mark, timing and recorded snap arrive with the brand.
+16. **Deployment: Vercel,** with previews on every branch; `main` is production. The legacy project (now `spark-tv-legacy`) has released `spark-tv.vercel.app` (confirmed 2026-11-18: it holds only `spark-tv-legacy.vercel.app`), so the new project takes that name.
+17. **Performance: hold 60fps.** Animate transform and opacity only, virtualize rows, lazy-load images ahead of focus, keep video inert until visible, and release it fully on exit.
+
+## Current state
+
+- Repo: `derekpcollins/spark-tv` (public), default branch `main`. Branch protection not set yet.
+- Hosting: no Vercel project yet. `spark-tv.vercel.app` is free for it.
+- Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Later: R2 upload credentials for the video pipeline (names TBD in M2). Vercel needs none.
+- Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
+- App: Vite + TS scaffold with the 1920×1080 scaled canvas, tokens and a text wordmark.
+
+## Open items
+
+- **Repo visibility:** the GitHub repo was created public. Waiting on Derek: keep it public (recommended) or make it private until the portfolio launch.
+- Exact remote button for the moderator sequence (decide during FLIRC setup).
+- Which Blender films make the cut, and which have usable 1080p sources.
+- R2 bucket name, and whether it uses the public r2.dev URL or a custom domain.
+- Whether the Movies, Shows and Spark Free pages ship in v1 or only Home.
+- Display Page designs (Derek's, coming).
+- Final brand, launch animation and recorded snap sound (in progress in chat).
+
+## Next steps
+
+1. Setup checklist: first commit on `main` (Derek pushes it), CLAUDE.md and deny rules on a PR, branch protection, Vercel project with previews.
+2. **Milestone 1:** canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
+3. **Milestone 2:** Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
+4. **Milestone 3:** remaining card types and pages, polish and performance pass, README with the FLIRC key map, brand swap.
