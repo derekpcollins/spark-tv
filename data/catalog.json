@@ -1,7 +1,362 @@
 {
- "generatedAt": "2026-11-18T15:58:07.882Z",
+ "generatedAt": "2026-11-18T17:18:48.488Z",
  "region": "US",
  "titles": {
+  "sparkfree:spring": {
+   "id": "sparkfree:spring",
+   "source": "sparkfree",
+   "contentType": "movie",
+   "year": 2019,
+   "rating": "PG",
+   "runtime": 8,
+   "images": {
+    "poster": null,
+    "backdrop": "https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev/sparkfree/spring/backdrop.jpg",
+    "logo": null
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Spring",
+     "overview": "The story of a shepherd girl and her dog who face ancient spirits in order to continue the cycle of life.",
+     "genres": [
+      "Fantasy",
+      "Animation",
+      "Adventure"
+     ],
+     "metadataLine": [
+      "2019",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "8m",
+      "Fantasy",
+      "Animation"
+     ]
+    },
+    "es": {
+     "title": "Spring",
+     "overview": "The story of a shepherd girl and her dog who face ancient spirits in order to continue the cycle of life.",
+     "genres": [
+      "Fantasía",
+      "Animación",
+      "Aventura"
+     ],
+     "metadataLine": [
+      "2019",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "8 min",
+      "Fantasía",
+      "Animación"
+     ]
+    }
+   },
+   "video": {
+    "trailer": "sparkfree/spring/trailer.mp4",
+    "full": "sparkfree/spring/film.mp4"
+   },
+   "credit": {
+    "line": "© Blender Foundation | cloud.blender.org/spring",
+    "license": "CC BY 4.0"
+   }
+  },
+  "sparkfree:sprite-fright": {
+   "id": "sparkfree:sprite-fright",
+   "source": "sparkfree",
+   "contentType": "movie",
+   "year": 2021,
+   "rating": "PG",
+   "runtime": 11,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/rGWI4KpzfdzhCbRtxSWH3Pdkkj6.jpg",
+    "backdrop": "https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev/sparkfree/sprite-fright/backdrop.jpg",
+    "logo": null
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Sprite Fright",
+     "overview": "Set in 80’s-Britain, when a group of rowdy teenagers trek into an isolated forest, they discover peaceful mushroom creatures that turn out to be an unexpected force of nature.",
+     "genres": [
+      "Animation",
+      "Horror",
+      "Comedy",
+      "Fantasy"
+     ],
+     "metadataLine": [
+      "2021",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "11m",
+      "Animation",
+      "Horror"
+     ]
+    },
+    "es": {
+     "title": "Susto de Duendes",
+     "overview": "Set in 80’s-Britain, when a group of rowdy teenagers trek into an isolated forest, they discover peaceful mushroom creatures that turn out to be an unexpected force of nature.",
+     "genres": [
+      "Animación",
+      "Terror",
+      "Comedia",
+      "Fantasía"
+     ],
+     "metadataLine": [
+      "2021",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "11 min",
+      "Animación",
+      "Terror"
+     ]
+    }
+   },
+   "video": {
+    "trailer": "sparkfree/sprite-fright/trailer.mp4",
+    "full": "sparkfree/sprite-fright/film.mp4"
+   },
+   "credit": {
+    "line": "(CC) Blender Foundation | studio.blender.org",
+    "license": "CC BY 4.0"
+   }
+  },
+  "sparkfree:wing-it": {
+   "id": "sparkfree:wing-it",
+   "source": "sparkfree",
+   "contentType": "movie",
+   "year": 2023,
+   "rating": null,
+   "runtime": 4,
+   "images": {
+    "poster": null,
+    "backdrop": "https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev/sparkfree/wing-it/backdrop.jpg",
+    "logo": null
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Wing It!",
+     "overview": "Blender Studio’s 15th Open Movie: An uptight engineer gets an unwelcome visit from a enthusiastic wannabe-pilot, causing both of them to be launched into the air inside an out-of-control space shuttle.",
+     "genres": [
+      "Comedy",
+      "Animation"
+     ],
+     "metadataLine": [
+      "2023",
+      "4m",
+      "Comedy",
+      "Animation"
+     ]
+    },
+    "es": {
+     "title": "Wing It!",
+     "overview": "Blender Studio’s 15th Open Movie: An uptight engineer gets an unwelcome visit from a enthusiastic wannabe-pilot, causing both of them to be launched into the air inside an out-of-control space shuttle.",
+     "genres": [
+      "Comedia",
+      "Animación"
+     ],
+     "metadataLine": [
+      "2023",
+      "4 min",
+      "Comedia",
+      "Animación"
+     ]
+    }
+   },
+   "video": {
+    "trailer": "sparkfree/wing-it/trailer.mp4",
+    "full": "sparkfree/wing-it/film.mp4"
+   },
+   "credit": {
+    "line": "(CC) Blender Foundation | studio.blender.org",
+    "license": "CC BY 4.0"
+   }
+  },
+  "sparkfree:sintel": {
+   "id": "sparkfree:sintel",
+   "source": "sparkfree",
+   "contentType": "movie",
+   "year": 2010,
+   "rating": "PG",
+   "runtime": 14,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/9dYOLWLwwuQ2i5TF1tIa6IfldRz.jpg",
+    "backdrop": "https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev/sparkfree/sintel/backdrop.jpg",
+    "logo": null
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Sintel",
+     "overview": "A wandering warrior finds an unlikely friend in the form of a young dragon. The two develop a close bond, until one day the dragon is snatched away. She then sets out on a relentless quest to reclaim her friend, finding in the end that her quest exacts a far greater price than she had ever imagined.",
+     "genres": [
+      "Animation",
+      "Fantasy",
+      "Adventure"
+     ],
+     "metadataLine": [
+      "2010",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "14m",
+      "Animation",
+      "Fantasy"
+     ]
+    },
+    "es": {
+     "title": "Sintel",
+     "overview": "\"Sintel\" es el tercer gran proyecto animado de la Blender Fundation, tras \"Elephants Dream\" (2006) y \"Big Buck Bunny\" (2008) y narra la historia de una chica y su dragón que es secuestrado por otro dragón, lo que hace que la chica comience una larga aventura para encontrar a su compañero. Como los demás trabajos del la fundación, \"Sintel\" es de libre distribución y puede descargarse gratuitamente desde su propia web oficial o visionarse en el mismo lugar en versión original o con subtítulos en varios idiomas, entre ellos en español.",
+     "genres": [
+      "Animación",
+      "Fantasía",
+      "Aventura"
+     ],
+     "metadataLine": [
+      "2010",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "14 min",
+      "Animación",
+      "Fantasía"
+     ]
+    }
+   },
+   "video": {
+    "trailer": "sparkfree/sintel/trailer.mp4",
+    "full": "sparkfree/sintel/film.mp4"
+   },
+   "credit": {
+    "line": "© copyright Blender Foundation | durian.blender.org",
+    "license": "CC BY 3.0"
+   }
+  },
+  "sparkfree:tears-of-steel": {
+   "id": "sparkfree:tears-of-steel",
+   "source": "sparkfree",
+   "contentType": "movie",
+   "year": 2012,
+   "rating": null,
+   "runtime": 12,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/w8npi7pKuQby5C4KdODIZh3kElq.jpg",
+    "backdrop": "https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev/sparkfree/tears-of-steel/backdrop.jpg",
+    "logo": null
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Tears of Steel",
+     "overview": "The film’s premise is about a group of warriors and scientists, who gathered at the “Oude Kerk” in Amsterdam to stage a crucial event from the past, in a desperate attempt to rescue the world from destructive robots.",
+     "genres": [
+      "Science Fiction",
+      "Animation"
+     ],
+     "metadataLine": [
+      "2012",
+      "12m",
+      "Science Fiction",
+      "Animation"
+     ]
+    },
+    "es": {
+     "title": "Tears of Steel",
+     "overview": "Cuarto proyecto de la Blender Foundation, tras los exitosos cortometrajes \"Elephants Dream\" (2006), \"Big Buck Bunny\" (2008) y Sintel (2010). Se desarrollará en el contexto de una Amsterdam post-apocalíptica.",
+     "genres": [
+      "Ciencia ficción",
+      "Animación"
+     ],
+     "metadataLine": [
+      "2012",
+      "12 min",
+      "Ciencia ficción",
+      "Animación"
+     ]
+    }
+   },
+   "video": {
+    "trailer": "sparkfree/tears-of-steel/trailer.mp4",
+    "full": "sparkfree/tears-of-steel/film.mp4"
+   },
+   "credit": {
+    "line": "(CC) Blender Foundation | mango.blender.org",
+    "license": "CC BY 3.0",
+    "extra": "Music © Joram Letwory, CC BY-ND 3.0"
+   }
+  },
+  "sparkfree:big-buck-bunny": {
+   "id": "sparkfree:big-buck-bunny",
+   "source": "sparkfree",
+   "contentType": "movie",
+   "year": 2008,
+   "rating": "G",
+   "runtime": 8,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/kXWqzIn6t4ZsMAt1FinlD8VvXNK.jpg",
+    "backdrop": "https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev/sparkfree/big-buck-bunny/backdrop.jpg",
+    "logo": null
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Big Buck Bunny",
+     "overview": "Follow a day of the life of Big Buck Bunny when he meets three bullying rodents: Frank, Rinky, and Gamera. The rodents amuse themselves by harassing helpless creatures by throwing fruits, nuts and rocks at them. After the deaths of two of Bunny's favorite butterflies, and an offensive attack on Bunny himself, Bunny sets aside his gentle nature and orchestrates a complex plan for revenge.",
+     "genres": [
+      "Animation",
+      "Comedy",
+      "Family"
+     ],
+     "metadataLine": [
+      "2008",
+      {
+       "kind": "badge",
+       "text": "G"
+      },
+      "8m",
+      "Animation",
+      "Comedy"
+     ]
+    },
+    "es": {
+     "title": "Big Buck Bunny",
+     "overview": "\"Big Buck Bunny\" es un corto animado en el que un enorme conejo bonachón se encuentra con tres vecinos del bosque, Frank, Rnky y Gamera, que se divierten maltratando pobres criaturas, tirándoles frutas, nueces y rocas. Tras aplastar a dos de sus mariposas preferidas y cargar contra el propio Bunny, éste responde con una ofensiva en la que olvida su carácter amable y orquesta su venganza. El corto (de nombre en clave \"Proyecto Peach\") está producido por el Instituto Blender, parte de la Fundación Blender, y al igual que la anterior película de la fundación (\"Elephants Dream\") está realizado enteramente con software libre.",
+     "genres": [
+      "Animación",
+      "Comedia",
+      "Familia"
+     ],
+     "metadataLine": [
+      "2008",
+      {
+       "kind": "badge",
+       "text": "G"
+      },
+      "8 min",
+      "Animación",
+      "Comedia"
+     ]
+    }
+   },
+   "video": {
+    "trailer": "sparkfree/big-buck-bunny/trailer.mp4",
+    "full": "sparkfree/big-buck-bunny/film.mp4"
+   },
+   "credit": {
+    "line": "© copyright 2008, Blender Foundation | www.bigbuckbunny.org",
+    "license": "CC BY 3.0"
+   }
+  },
   "movie:1368337": {
    "id": "movie:1368337",
    "source": "tmdb",
@@ -218,6 +573,102 @@
     }
    }
   },
+  "movie:1131943": {
+   "id": "movie:1131943",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": "R",
+   "runtime": 110,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/dj2ZTXlYdhZSnLp7PR7tOwoiDnM.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/iNKyRudHcd2oXV5eaWE0LbixkX3.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/jNbyhCjMpaTuofzIGiUvsjJs2eI.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Madden",
+     "overview": "Chronicles John Madden's incredible journey alongside best friend and true original Al Davis—from a Super Bowl-winning partnership with the Raiders, to becoming football’s most recognizable voice, to building the worldwide Madden NFL video game.",
+     "genres": [
+      "Drama",
+      "History"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "1h 50m",
+      "Drama",
+      "History"
+     ]
+    },
+    "es": {
+     "title": "Madden",
+     "overview": "Narra la increíble trayectoria de John Madden junto a su mejor amigo y figura verdaderamente singular, Al Davis: desde su colaboración con los Raiders —con quienes ganaron un Super Bowl— hasta convertirse en la voz más reconocible del fútbol americano y crear la serie de videojuegos Madden NFL, conocida a nivel mundial.",
+     "genres": [
+      "Drama",
+      "Historia"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "1 h 50 min",
+      "Drama",
+      "Historia"
+     ]
+    }
+   }
+  },
+  "movie:1551025": {
+   "id": "movie:1551025",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": null,
+   "runtime": 109,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/wWNizZ4IcSld3xXH1WEXziJiNJN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qHvap0vpfTBIbv7cnR0OyBRqQHG.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/5yB5ISzk2PaRGgE0JL2Hpt7ZgA3.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Guarding Stars",
+     "overview": "When a no-nonsense bodyguard is assigned to protect a charming action star over the holidays, sparks fly, secrets unravel, and Christmas gets a whole lot more complicated.",
+     "genres": [
+      "Comedy",
+      "Romance"
+     ],
+     "metadataLine": [
+      "2026",
+      "1h 49m",
+      "Comedy",
+      "Romance"
+     ]
+    },
+    "es": {
+     "title": "Guardaespaldas por navidad",
+     "overview": "Una estricta guardaespaldas viaja a un rancho de Montana con el famoso actor al que protege. Pero al fingir ser pareja por Navidad surge un amor real.",
+     "genres": [
+      "Comedia",
+      "Romance"
+     ],
+     "metadataLine": [
+      "2026",
+      "1 h 49 min",
+      "Comedia",
+      "Romance"
+     ]
+    }
+   }
+  },
   "tv:213375": {
    "id": "tv:213375",
    "source": "tmdb",
@@ -268,6 +719,58 @@
       "1 temporada",
       "Sci-Fi & Fantasy",
       "Drama"
+     ]
+    }
+   }
+  },
+  "movie:1185344": {
+   "id": "movie:1185344",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": "R",
+   "runtime": 99,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/AjUrBWG5c526TSTRDUxsY6zVS4i.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/r5RYEmZzm1Z6imS7XfiKPnMlyc7.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/8cnahr30h0364ghPi5WooumtpTe.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "The Beast",
+     "overview": "When a militia of unidentified hostiles coordinates a coup against the United States, the president must fight back by utilizing the highly classified offensive capabilities of his armored limousine, nicknamed The Beast.",
+     "genres": [
+      "Action",
+      "Thriller"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "1h 39m",
+      "Action",
+      "Thriller"
+     ]
+    },
+    "es": {
+     "title": "The Beast",
+     "overview": "Cuando una milicia de hostiles no identificados coordina un golpe contra Estados Unidos, el presidente descubre el alcance de las capacidades ofensivas altamente clasificadas de La Bestia para salvar su vida y la de Estados Unidos.",
+     "genres": [
+      "Acción",
+      "Suspense"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "1 h 39 min",
+      "Acción",
+      "Suspense"
      ]
     }
    }
@@ -326,58 +829,6 @@
     }
    }
   },
-  "movie:1131943": {
-   "id": "movie:1131943",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "R",
-   "runtime": 110,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/dj2ZTXlYdhZSnLp7PR7tOwoiDnM.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/iNKyRudHcd2oXV5eaWE0LbixkX3.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/jNbyhCjMpaTuofzIGiUvsjJs2eI.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "Madden",
-     "overview": "Chronicles John Madden's incredible journey alongside best friend and true original Al Davis—from a Super Bowl-winning partnership with the Raiders, to becoming football’s most recognizable voice, to building the worldwide Madden NFL video game.",
-     "genres": [
-      "Drama",
-      "History"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "1h 50m",
-      "Drama",
-      "History"
-     ]
-    },
-    "es": {
-     "title": "Madden",
-     "overview": "Narra la increíble trayectoria de John Madden junto a su mejor amigo y figura verdaderamente singular, Al Davis: desde su colaboración con los Raiders —con quienes ganaron un Super Bowl— hasta convertirse en la voz más reconocible del fútbol americano y crear la serie de videojuegos Madden NFL, conocida a nivel mundial.",
-     "genres": [
-      "Drama",
-      "Historia"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "1 h 50 min",
-      "Drama",
-      "Historia"
-     ]
-    }
-   }
-  },
   "movie:1400837": {
    "id": "movie:1400837",
    "source": "tmdb",
@@ -422,102 +873,6 @@
       },
       "1 h 33 min",
       "Terror"
-     ]
-    }
-   }
-  },
-  "movie:1185344": {
-   "id": "movie:1185344",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "R",
-   "runtime": 99,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/AjUrBWG5c526TSTRDUxsY6zVS4i.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/r5RYEmZzm1Z6imS7XfiKPnMlyc7.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/8cnahr30h0364ghPi5WooumtpTe.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "The Beast",
-     "overview": "When a militia of unidentified hostiles coordinates a coup against the United States, the president must fight back by utilizing the highly classified offensive capabilities of his armored limousine, nicknamed The Beast.",
-     "genres": [
-      "Action",
-      "Thriller"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "1h 39m",
-      "Action",
-      "Thriller"
-     ]
-    },
-    "es": {
-     "title": "The Beast",
-     "overview": "Cuando una milicia de hostiles no identificados coordina un golpe contra Estados Unidos, el presidente descubre el alcance de las capacidades ofensivas altamente clasificadas de La Bestia para salvar su vida y la de Estados Unidos.",
-     "genres": [
-      "Acción",
-      "Suspense"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "1 h 39 min",
-      "Acción",
-      "Suspense"
-     ]
-    }
-   }
-  },
-  "movie:1551025": {
-   "id": "movie:1551025",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": null,
-   "runtime": 109,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/wWNizZ4IcSld3xXH1WEXziJiNJN.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/qHvap0vpfTBIbv7cnR0OyBRqQHG.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/5yB5ISzk2PaRGgE0JL2Hpt7ZgA3.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "Guarding Stars",
-     "overview": "When a no-nonsense bodyguard is assigned to protect a charming action star over the holidays, sparks fly, secrets unravel, and Christmas gets a whole lot more complicated.",
-     "genres": [
-      "Comedy",
-      "Romance"
-     ],
-     "metadataLine": [
-      "2026",
-      "1h 49m",
-      "Comedy",
-      "Romance"
-     ]
-    },
-    "es": {
-     "title": "Guardaespaldas por navidad",
-     "overview": "Una estricta guardaespaldas viaja a un rancho de Montana con el famoso actor al que protege. Pero al fingir ser pareja por Navidad surge un amor real.",
-     "genres": [
-      "Comedia",
-      "Romance"
-     ],
-     "metadataLine": [
-      "2026",
-      "1 h 49 min",
-      "Comedia",
-      "Romance"
      ]
     }
    }
@@ -576,27 +931,27 @@
     }
    }
   },
-  "movie:1567605": {
-   "id": "movie:1567605",
+  "movie:969681": {
+   "id": "movie:969681",
    "source": "tmdb",
    "contentType": "movie",
    "year": 2026,
    "rating": "PG-13",
-   "runtime": 115,
+   "runtime": 145,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/6H2N59jJW1hZEzn2ZdrMvJw5vNI.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/fdOVxyNNL95SuI8BGaN6vudEuYX.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/aHgQzaMPhqSzXgwft1PQNEnZSPY.svg"
+    "poster": "https://image.tmdb.org/t/p/w500/37PERiF0BA36UfQLLoLQ8Ui9ME7.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/subj7knTn4DeS6KS7qI66EQKe9i.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/dGMb0iSnNp7UMAHkKX63Kh6AJvy.png"
    },
    "providers": [],
    "text": {
     "en": {
-     "title": "Ebenezer",
-     "overview": "An elderly miser embarks on a supernatural journey after visits from the ghost of his former business partner and the Spirits of Christmas Past, Present, and Yet to Come force him to confront his past and fight for a second chance at happiness.",
+     "title": "Spider-Man: Brand New Day",
+     "overview": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
      "genres": [
-      "Fantasy",
-      "Comedy",
-      "Horror"
+      "Science Fiction",
+      "Action",
+      "Adventure"
      ],
      "metadataLine": [
       "2026",
@@ -604,17 +959,18 @@
        "kind": "badge",
        "text": "PG-13"
       },
-      "1h 55m",
-      "Fantasy",
-      "Comedy"
+      "2h 25m",
+      "Science Fiction",
+      "Action"
      ]
     },
     "es": {
-     "title": "Scrooge y los fantasmas de la Navidad",
-     "overview": "Reimaginación del clásico literario, una historia de fantasmas ambientada en el Londres de Dickens que sigue el viaje sobrenatural de un hombre para enfrentarse a su pasado, presente y futuro y luchar por una segunda oportunidad.",
+     "title": "Spider-Man: Brand New Day",
+     "overview": "Han pasado cuatro años desde los acontecimientos de No Way Home, y Peter Parker ahora es un adulto que vive completamente solo, ha desaparecido voluntariamente de las vidas y recuerdos de quienes ama. Combatiendo el crimen en una Nueva York que ya no conoce su nombre, se ha dedicado por completo a proteger su ciudad—un Spider-Man a tiempo completo—, pero a medida que aumentan las exigencias sobre él, la presión desencadena una evolución física que amenaza su existencia, al mismo tiempo que un extraño nuevo patrón de crímenes da lugar a una de las amenazas más poderosas a las que se ha enfrentado.",
      "genres": [
-      "Fantasía",
-      "Comedia"
+      "Ciencia ficción",
+      "Acción",
+      "Aventura"
      ],
      "metadataLine": [
       "2026",
@@ -622,65 +978,9 @@
        "kind": "badge",
        "text": "PG-13"
       },
-      "1 h 55 min",
-      "Fantasía",
-      "Comedia"
-     ]
-    }
-   }
-  },
-  "tv:254630": {
-   "id": "tv:254630",
-   "source": "tmdb",
-   "contentType": "tv",
-   "year": 2026,
-   "rating": "TV-MA",
-   "seasons": 1,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/8q6BvFQuKM1Rud4E9NQDaMGy9EL.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/tjy25xpiFeo2gahl7N0hoxbRtG7.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/pczEboTXvQhnOo0VCAFJrd2Y8E2.png"
-   },
-   "providers": [
-    350
-   ],
-   "text": {
-    "en": {
-     "title": "12 12 12",
-     "overview": "A heist takes 12 months to plan, 12 hours to execute—and a thief not caught within 12 days won't be caught at all. Across three pulse-pounding timelines, an FBI agent and a career criminal face off in a deadly game of cat and mouse through Europe.",
-     "genres": [
-      "Action & Adventure",
-      "Crime",
-      "Drama"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "TV-MA"
-      },
-      "1 Season",
-      "Action & Adventure",
-      "Crime"
-     ]
-    },
-    "es": {
-     "title": "12 12 12",
-     "overview": "Un robo lleva 12 meses de planificación y 12 horas de ejecución. Y, si no se atrapa al ladrón al cabo de 12 días, ya no se lo atrapa. A través de tres frenéticas líneas temporales, un agente del FBI y un delincuente habitual juegan al gato y el ratón por toda Europa con resultados fatales.",
-     "genres": [
-      "Action & Adventure",
-      "Crimen",
-      "Drama"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "TV-MA"
-      },
-      "1 temporada",
-      "Action & Adventure",
-      "Crimen"
+      "2 h 25 min",
+      "Ciencia ficción",
+      "Acción"
      ]
     }
    }
@@ -739,27 +1039,26 @@
     }
    }
   },
-  "movie:969681": {
-   "id": "movie:969681",
+  "movie:1567605": {
+   "id": "movie:1567605",
    "source": "tmdb",
    "contentType": "movie",
    "year": 2026,
    "rating": "PG-13",
-   "runtime": 145,
+   "runtime": 115,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/37PERiF0BA36UfQLLoLQ8Ui9ME7.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/subj7knTn4DeS6KS7qI66EQKe9i.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/dGMb0iSnNp7UMAHkKX63Kh6AJvy.png"
+    "poster": "https://image.tmdb.org/t/p/w500/6H2N59jJW1hZEzn2ZdrMvJw5vNI.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/fdOVxyNNL95SuI8BGaN6vudEuYX.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/aHgQzaMPhqSzXgwft1PQNEnZSPY.svg"
    },
    "providers": [],
    "text": {
     "en": {
-     "title": "Spider-Man: Brand New Day",
-     "overview": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
+     "title": "Ebenezer",
+     "overview": "An elderly miser embarks on a supernatural journey after visits from the ghost of his former business partner and the Spirits of Christmas Past, Present, and Yet to Come force him to confront his past and fight for a second chance at happiness.",
      "genres": [
-      "Science Fiction",
-      "Action",
-      "Adventure"
+      "Fantasy",
+      "Comedy"
      ],
      "metadataLine": [
       "2026",
@@ -767,18 +1066,17 @@
        "kind": "badge",
        "text": "PG-13"
       },
-      "2h 25m",
-      "Science Fiction",
-      "Action"
+      "1h 55m",
+      "Fantasy",
+      "Comedy"
      ]
     },
     "es": {
-     "title": "Spider-Man: Brand New Day",
-     "overview": "Han pasado cuatro años desde los acontecimientos de No Way Home, y Peter Parker ahora es un adulto que vive completamente solo, ha desaparecido voluntariamente de las vidas y recuerdos de quienes ama. Combatiendo el crimen en una Nueva York que ya no conoce su nombre, se ha dedicado por completo a proteger su ciudad—un Spider-Man a tiempo completo—, pero a medida que aumentan las exigencias sobre él, la presión desencadena una evolución física que amenaza su existencia, al mismo tiempo que un extraño nuevo patrón de crímenes da lugar a una de las amenazas más poderosas a las que se ha enfrentado.",
+     "title": "Scrooge y los fantasmas de la Navidad",
+     "overview": "Reimaginación del clásico literario, una historia de fantasmas ambientada en el Londres de Dickens que sigue el viaje sobrenatural de un hombre para enfrentarse a su pasado, presente y futuro y luchar por una segunda oportunidad.",
      "genres": [
-      "Ciencia ficción",
-      "Acción",
-      "Aventura"
+      "Fantasía",
+      "Comedia"
      ],
      "metadataLine": [
       "2026",
@@ -786,9 +1084,9 @@
        "kind": "badge",
        "text": "PG-13"
       },
-      "2 h 25 min",
-      "Ciencia ficción",
-      "Acción"
+      "1 h 55 min",
+      "Fantasía",
+      "Comedia"
      ]
     }
    }
@@ -841,6 +1139,62 @@
       "1 h 41 min",
       "Aventura",
       "Suspense"
+     ]
+    }
+   }
+  },
+  "tv:254630": {
+   "id": "tv:254630",
+   "source": "tmdb",
+   "contentType": "tv",
+   "year": 2026,
+   "rating": "TV-MA",
+   "seasons": 1,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/8q6BvFQuKM1Rud4E9NQDaMGy9EL.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/tjy25xpiFeo2gahl7N0hoxbRtG7.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/pczEboTXvQhnOo0VCAFJrd2Y8E2.png"
+   },
+   "providers": [
+    350
+   ],
+   "text": {
+    "en": {
+     "title": "12 12 12",
+     "overview": "A heist takes 12 months to plan, 12 hours to execute—and a thief not caught within 12 days won't be caught at all. Across three pulse-pounding timelines, an FBI agent and a career criminal face off in a deadly game of cat and mouse through Europe.",
+     "genres": [
+      "Action & Adventure",
+      "Crime",
+      "Drama"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "TV-MA"
+      },
+      "1 Season",
+      "Action & Adventure",
+      "Crime"
+     ]
+    },
+    "es": {
+     "title": "12 12 12",
+     "overview": "Un robo lleva 12 meses de planificación y 12 horas de ejecución. Y, si no se atrapa al ladrón al cabo de 12 días, ya no se lo atrapa. A través de tres frenéticas líneas temporales, un agente del FBI y un delincuente habitual juegan al gato y el ratón por toda Europa con resultados fatales.",
+     "genres": [
+      "Action & Adventure",
+      "Crimen",
+      "Drama"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "TV-MA"
+      },
+      "1 temporada",
+      "Action & Adventure",
+      "Crimen"
      ]
     }
    }
@@ -2193,11 +2547,12 @@
  },
  "sections": {
   "hero": [
-   "movie:1368337",
-   "tv:84773",
-   "movie:1300968",
-   "movie:1003596",
-   "tv:213375"
+   "sparkfree:spring",
+   "sparkfree:sprite-fright",
+   "sparkfree:wing-it",
+   "sparkfree:sintel",
+   "sparkfree:tears-of-steel",
+   "sparkfree:big-buck-bunny"
   ],
   "apps": [
    "app:sparkfree",
@@ -2210,23 +2565,31 @@
    "provider:386",
    "provider:2303"
   ],
+  "sparkfree": [
+   "sparkfree:spring",
+   "sparkfree:sprite-fright",
+   "sparkfree:wing-it",
+   "sparkfree:sintel",
+   "sparkfree:tears-of-steel",
+   "sparkfree:big-buck-bunny"
+  ],
   "trending": [
    "movie:1368337",
    "tv:84773",
    "movie:1300968",
    "movie:1003596",
-   "tv:213375",
-   "tv:291507",
    "movie:1131943",
-   "movie:1400837",
-   "movie:1185344",
    "movie:1551025",
+   "tv:213375",
+   "movie:1185344",
+   "tv:291507",
+   "movie:1400837",
    "movie:1423191",
-   "movie:1567605",
-   "tv:254630",
-   "movie:1381071",
    "movie:969681",
+   "movie:1381071",
+   "movie:1567605",
    "movie:1263337",
+   "tv:254630",
    "tv:279246",
    "movie:1616687",
    "movie:1170608",
@@ -2253,6 +2616,7 @@
    "movie:1381078",
    "movie:1516698",
    "movie:454639"
-  ]
+  ],
+  "credits": []
  }
 }

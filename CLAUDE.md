@@ -11,7 +11,7 @@ A browser-based prototype of a TV platform home screen (in the style of webOS or
 
 - Vite 8, TypeScript 6.0 (not 7: typescript-eslint doesn't support it yet), Node 24 (`.node-version`)
 - Vitest + jsdom, ESLint (typescript-eslint), Prettier
-- Data: TMDB snapshot built by `npm run sync` into `data/catalog.json` (committed). Video: Blender open movies on Cloudflare R2 (Milestone 2).
+- Data: TMDB snapshot built by `npm run sync` into `data/catalog.json` (committed). Video: Blender open movies (`data/sparkfree.json`) encoded by `npm run media:encode` and served from the R2 bucket `spark-tv-media` (`ASSET_BASE_URL` in `src/config.ts`).
 
 ## Structure
 
@@ -32,6 +32,8 @@ A browser-based prototype of a TV platform home screen (in the style of webOS or
 - `npm run build`: production build
 - `npm run check`: all four checks, in order
 - `npm run sync`: refresh `data/catalog.json` from TMDB. Needs `TMDB_READ_TOKEN` in `.env.local`. It calls a third-party API, so run it only when the catalog or layout needs refreshing.
+- `npm run media:encode [-- --only <slug>]`: cut each Spark Free film's backdrop still and trailer and encode the full film with ffmpeg (Homebrew, not an npm dependency). Reads the masters from `SPARKFREE_SOURCE_DIR` (default `~/Downloads/spark-tv-films`) and writes outside the repo to its `encoded/` folder. Skips existing files; delete one to re-cut it.
+- `npm run media:upload [-- --only <slug>]`: upload encoded media to R2, skipping objects already there at the same size. Needs the `R2_*` names in `.env.local`. It writes to a public bucket, so run it only after an encode you've checked.
 
 ## Pre-commit checks
 
