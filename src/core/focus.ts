@@ -124,6 +124,36 @@ export class OverlayStack {
     return true;
   }
 
+  /** Swap the top overlay for another without restoring focus underneath in between. */
+  replaceTop(overlay: ModuleInstance): void {
+    const old = this.stack.pop();
+    if (old) {
+      old.blur();
+      old.destroy();
+      old.el.remove();
+    }
+    this.stack.push(overlay);
+    this.host?.append(overlay.el);
+    overlay.focus({ from: 'initial' });
+  }
+
+  /** Remove a specific overlay (e.g. one that finished on its own), restoring focus if it was on top. */
+  remove(overlay: ModuleInstance): void {
+    const i = this.stack.indexOf(overlay);
+    if (i < 0) return;
+    if (i === this.stack.length - 1) {
+      this.pop();
+      return;
+    }
+    this.stack.splice(i, 1);
+    overlay.destroy();
+    overlay.el.remove();
+  }
+
+  has(predicate: (o: ModuleInstance) => boolean): boolean {
+    return this.stack.some(predicate);
+  }
+
   clear(): void {
     while (this.stack.length) {
       const overlay = this.stack.pop()!;

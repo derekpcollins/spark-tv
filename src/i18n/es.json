@@ -12,5 +12,18 @@
   "display.notStreaming": "No disponible en streaming",
   "display.placeholder": "Aquí va el diseño de la página de detalle",
   "app.sparkfree": "Spark Free",
-  "app.free": "FREE"
+  "app.free": "FREE",
+  "start.prompt": "Pulsa OK para empezar",
+  "banner.credits": "Créditos",
+  "banner.creditsSub": "Atribuciones de datos, películas y tipografía",
+  "credits.title": "Créditos",
+  "credits.data": "Datos",
+  "credits.tmdb": "Este producto utiliza la API de TMDB, pero no está avalado ni certificado por TMDB.",
+  "credits.justwatch": "Datos de disponibilidad en streaming proporcionados por JustWatch.",
+  "credits.films": "Películas de Spark Free",
+  "credits.type": "Tipografía",
+  "credits.unbounded": "Unbounded, con licencia SIL Open Font License.",
+  "credits.trademarks": "Marcas",
+  "credits.disclaimer": "Los logotipos y marcas pertenecen a sus respectivos propietarios. Spark TV es un prototipo y no está afiliado a ellos.",
+  "credits.back": "Pulsa Atrás para volver"
 }

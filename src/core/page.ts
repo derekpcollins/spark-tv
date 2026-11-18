@@ -33,6 +33,7 @@ export function createPage(
   configs: SectionConfig[],
   ctx: ModuleContext,
   variantFor: (c: SectionConfig) => string | undefined,
+  initialIndex?: number,
 ): Page {
   const el = document.createElement('div');
   el.className = 'page';
@@ -79,7 +80,13 @@ export function createPage(
   });
   slots.forEach((s) => (s.el.style.transform = `translateY(${s.top}px)`));
 
-  const scrollFor = (i: number): number => Math.max(0, (slots[i]?.top ?? 0) - anchor);
+  // Never scroll past the point where the last section sits at the bottom safe area.
+  const last = slots[slots.length - 1];
+  const maxScroll = Math.max(
+    0,
+    (last ? last.top + last.height : 0) + px('layout', 'bottom-safe') - CANVAS_HEIGHT,
+  );
+  const scrollFor = (i: number): number => Math.min(maxScroll, Math.max(0, (slots[i]?.top ?? 0) - anchor));
 
   function layout(focusIndex: number): void {
     const scroll = scrollFor(focusIndex);
@@ -101,7 +108,7 @@ export function createPage(
     item: (i) => mount(slots[i]!),
     count: () => slots.length,
     onMove: (_from, to) => layout(to),
-    initial: configs.findIndex((c) => c.type !== 'header'),
+    initial: initialIndex ?? configs.findIndex((c) => c.type !== 'header'),
   });
   layout(focusEngine.index);
 

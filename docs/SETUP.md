@@ -10,6 +10,23 @@ The product and architecture reference (module contract, data schemas, Home layo
 
 Newest first. One line each: what was chosen, and why.
 
+### Spark Free media (2026-11-18)
+
+- 2026-11-18: Video is hosted in the R2 bucket `spark-tv-media`, served from its public r2.dev URL `https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev` (public by design). The legacy bucket `spark-tv-assets` is left untouched and unused, because R2 buckets can't be renamed and nothing comes from the legacy app. Why r2.dev: free and enough for a prototype; it's rate-limited, so switch to a custom domain if testing ever hits the limit.
+- 2026-11-18: The Spark Free lineup is Big Buck Bunny (TMDB 10378), Sintel (45745), Tears of Steel (133701), Spring (593048), Wing It! (1177628) and Sprite Fright (891761), with Coffee Run (717986) as the alternate. All are CC BY. Excluded: Cosmos Laundromat (rated 13+ by the studio, suicide themes), Agent 327 (CC BY-ND, no public file) and Charge (fight and stab scenes). Facts were checked against Blender's licence pages.
+- 2026-11-18: Derek is buying one month of Blender Studio (about €11.50), because the original files for Spring, Wing It! and Sprite Fright are subscriber-only. CC BY lets us host them once downloaded. BBB, Sintel and ToS are free downloads from download.blender.org.
+- 2026-11-18: Attribution rules. Show each film's credits scroll when the full film plays. Clips and trailers carry the film's credit line (e.g. "(CC) Blender Foundation | studio.blender.org"; per-film lines go in `data/sparkfree.json`). Tears of Steel's soundtrack is CC BY-ND ("(C) Joram Letwory"), so its audio is never edited, only cut along with the picture.
+
+### Milestone 2 shell choices (2026-11-18)
+
+- 2026-11-18: Start → launch → Home flow. "Skip launch screen" also skips the start screen at boot; Reset session always returns to the start screen, and OK then plays the launch unless skip is on. Why: the start screen exists to unlock audio and to reset between participants; with skip on, a facilitator wants Home immediately.
+- 2026-11-18: The launch timeline is the SPEC's 2700 ms timeline scaled to "Launch duration" (1.8 / 2.7 / 4.0 s), built with the Web Animations API (transform/opacity only). The snap sound is a slot in `src/config.ts` (`SNAP_SOUND.src` null = silence), timed so its peak lands at 300 ms (scaled).
+- 2026-11-18: Moderator state persists to localStorage and mirrors to URL params (`lang`, `v.<slot>`, `o.<type.option>`, `sound`, `skip`, `dur`, `preset`). Any moderator param in the URL replaces stored state, so a bookmarked condition always reproduces exactly. Any manual change clears the active preset.
+- 2026-11-18: Moderator panel strings are English-only (they fall back to `en`). Why: the panel is for the facilitator, outside the fiction; participant-facing strings are translated.
+- 2026-11-18: Moderator changes rebuild Home in place, keeping the focused row and each row's focus memory. The panel opens on M ×3 within 1.5 s (`MODERATOR_SEQUENCE` in `src/config.ts`, so a FLIRC-mapped remote key can replace M) or `?moderator=1`; Back or the sequence again closes it.
+- 2026-11-18: The Credits screen uses TMDB's official "blue short" logo (`public/attribution/tmdb-short.svg`, from themoviedb.org/about/logos-attribution), shown smaller than the Spark lockup.
+- 2026-11-18: Home scroll is clamped so the last section rests at the bottom safe area instead of scrolling to the top anchor and leaving empty space.
+
 ### Milestone 1 build choices (2026-11-18)
 
 - 2026-11-18: Apps row services (TMDB US provider IDs): Netflix 8, Prime Video 9, Disney+ 337, HBO Max 1899, Hulu 15, Apple TV 350, Peacock 386, Paramount+ 2303 (TMDB's old ID 531 is gone). A title's "Watch on" buttons only list these services, with ad tiers folded in (1796→8, 2100→9, 2616→2303). Why: TMDB lists many add-on channel variants per title, which would clutter the Display Page.
@@ -72,7 +89,7 @@ Newest first. One line each: what was chosen, and why.
 
 - Repo: `derekpcollins/spark-tv` (public, MIT), default branch `main` (first commit pushed 2026-11-18). Protected (PR required, 0 approvals, enforced for admins, no force-push/deletion, required check `check`); merged branches auto-delete.
 - Hosting: Vercel project `spark-tv`, Git-connected, previews on every branch (no `vercel.json` limits), production at `spark-tv.vercel.app`. Vercel Authentication on previews only; production is public.
-- Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Later: R2 upload credentials for the video pipeline (names TBD in M2). Vercel needs none.
+- Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Next: R2 upload credentials for the video pipeline (an R2 API token scoped to `spark-tv-media`; names go in `.env.example` when the upload script lands). Vercel needs none.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
 - App: Milestone 1 on PR `feat/m1-core`: canvas, keymap, focus engine + overlay stack, registries, i18n, page view (vertical motion, dim, virtualization), header, hero B, Apps row, Trending (landscape) and Popular on Prime Video (poster), generic Display Page. 37 tests. Catalog snapshot 2026-11-18: 40 titles, 8 providers.
 
@@ -82,7 +99,6 @@ Newest first. One line each: what was chosen, and why.
 - Re-run `npm run sync` before demos: trending rows go stale. `catalog.json` is a snapshot by design.
 - Exact remote button for the moderator sequence (decide during FLIRC setup).
 - Which Blender films make the cut, and which have usable 1080p sources.
-- R2 bucket name, and whether it uses the public r2.dev URL or a custom domain.
 - Whether the Movies, Shows and Spark Free pages ship in v1 or only Home.
 - Display Page designs (Derek's, coming).
 - Recorded snap sound (Derek). Brand and launch timing are settled (Glint).
@@ -91,5 +107,5 @@ Newest first. One line each: what was chosen, and why.
 
 1. Derek reviews and merges the Milestone 1 PR (setup checklist complete: PRs #1 and #2 merged, `main` protected, Vercel previews on).
 2. ~~Milestone 1~~ (in review): canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
-3. **Milestone 2:** Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
+3. **Milestone 2** (shell on PR `feat/m2-shell`: start screen, launch, moderator panel with presets, live es, Credits; Spark Free next, waiting on R2 setup and the film shortlist): Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
 4. **Milestone 3:** remaining card types and pages, polish and performance pass, README with the FLIRC key map, brand swap.

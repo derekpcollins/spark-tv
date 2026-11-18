@@ -8,6 +8,7 @@ export function titleCard(
   ctx: ModuleContext,
   shape: 'poster' | 'landscape',
   width: number,
+  showTitle = true,
 ): CardInstance {
   const title = ctx.catalog.titles[itemId];
   const el = document.createElement('div');
@@ -23,7 +24,7 @@ export function titleCard(
   frame.append(img);
 
   // Landscape cards set the title in type over the backdrop.
-  if (shape === 'landscape' && title) {
+  if (shape === 'landscape' && title && showTitle) {
     const label = document.createElement('div');
     label.className = 'card__label';
     label.textContent = localized(title, ctx.locale()).title;

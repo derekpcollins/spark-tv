@@ -6,5 +6,13 @@ cards.register({
   type: 'landscape',
   variant: 'default',
   label: 'Landscape (16:9)',
-  create: (id, ctx) => titleCard(id, ctx, 'landscape', px('card', 'landscape-width')),
+  options: [{ id: 'titles', label: 'opt.cardTitles', kind: 'toggle', default: true }],
+  create: (id, ctx) =>
+    titleCard(
+      id,
+      ctx,
+      'landscape',
+      px('card', 'landscape-width'),
+      ctx.option('landscape', 'titles') !== false,
+    ),
 });

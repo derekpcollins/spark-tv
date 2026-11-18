@@ -465,3 +465,215 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
+
+/* ---------- Banner (Credits) ---------- */
+
+.banner {
+  padding: 0 var(--space-safe-x);
+}
+
+.banner__frame {
+  width: 100%;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-surface-border);
+}
+
+.banner__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.banner__sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Start screen and launch ---------- */
+
+.start,
+.launch {
+  display: grid;
+  place-items: center;
+  background: var(--color-surface-app);
+  animation: none;
+}
+
+.start__prompt {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.launch__mark,
+.launch__mark-inner {
+  position: relative;
+}
+
+.launch__mark {
+  opacity: 0;
+}
+
+.launch__core {
+  position: absolute;
+  inset: 0;
+}
+
+.launch__core svg {
+  display: block;
+}
+
+.launch__mask {
+  overflow: hidden;
+}
+
+.launch__mask .brand__text {
+  transform: translateX(-105%);
+}
+
+/* ---------- Credits ---------- */
+
+.credits {
+  background: var(--color-surface-app);
+  padding: var(--space-xl) var(--space-safe-x);
+}
+
+.credits__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  max-width: 1200px;
+}
+
+.credits__title {
+  margin: var(--space-md) 0 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+}
+
+.credits__section h2 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.credits__section p,
+.credits__section li {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-sm);
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+}
+
+.credits__section ul {
+  margin: 0;
+  padding-left: var(--space-md);
+}
+
+/* Less prominent than Spark's own brand, per TMDB's attribution rules. */
+.credits__tmdb {
+  height: 22px;
+  margin-bottom: var(--space-xs);
+}
+
+.credits__hint {
+  position: absolute;
+  right: var(--space-safe-x);
+  bottom: var(--space-safe-y);
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Moderator panel: outside the fiction ---------- */
+
+.moderator {
+  background: var(--color-overlay-backdrop);
+  font-family: var(--font-family-base);
+  animation: none;
+}
+
+.moderator__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 760px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  background: var(--color-moderator-bg);
+  color: var(--color-moderator-text);
+}
+
+.moderator__title {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.moderator__hint {
+  margin: var(--space-md) 0 0;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-moderator-muted);
+}
+
+.settings {
+  flex: 1;
+  overflow: hidden;
+}
+
+.settings__list {
+  transition: transform var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.settings__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  background: var(--color-moderator-panel);
+  border-bottom: 1px solid var(--color-moderator-line);
+}
+
+.settings__row--heading {
+  margin-top: var(--space-md);
+  background: none;
+  border: none;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-moderator-muted);
+}
+
+.settings__row--info .settings__value {
+  font-family: var(--font-family-mono);
+  color: var(--color-moderator-muted);
+}
+
+.settings__row.is-focused {
+  background: var(--color-moderator-accent);
+  color: var(--color-moderator-accent-text);
+}
+
+.settings__row.is-focused .settings__value {
+  color: var(--color-moderator-accent-text);
+}
+
+.settings__value {
+  font-family: var(--font-family-mono);
+  white-space: nowrap;
+}

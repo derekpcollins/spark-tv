@@ -12,6 +12,7 @@ sections.register({
   type: 'hero',
   variant: 'B',
   label: 'Static carousel',
+  options: [{ id: 'dots', label: 'opt.heroDots', kind: 'toggle', default: true }],
   create(config, ctx) {
     const slides: Title[] = (ctx.catalog.sections[config.id] ?? [])
       .map((id) => ctx.catalog.titles[id])
@@ -42,7 +43,8 @@ sections.register({
       dots.append(d);
       return d;
     });
-    el.append(backdrops, scrim, content, dots);
+    el.append(backdrops, scrim, content);
+    if (ctx.option('hero', 'dots') !== false) el.append(dots);
 
     let index = Math.min(ctx.memory.get<number>(memoryKey) ?? 0, Math.max(slides.length - 1, 0));
     let focused = false;
