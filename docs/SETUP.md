@@ -12,6 +12,9 @@ Newest first. One line each: what was chosen, and why.
 
 ### Setup choices (2026-11-18)
 
+- 2026-11-18: Vercel project `spark-tv` (Derek's Projects, `prj_vtfTnqGQAK9fLJQYztazrzHmw6fU`), framework Vite, connected to `derekpcollins/spark-tv`, holds `spark-tv.vercel.app`. Created with the Vercel CLI because the MCP connector returned 403 for project creation. Why: one project per repo, and the legacy project had released the domain.
+- 2026-11-18: `engines.node` is pinned to `24.x`. Why: Vercel defaults to Node 26; this makes builds match local and CI.
+- 2026-11-18: The repo stays public, with the code under the MIT license. The README says the license excludes TMDB data, provider logos/trademarks and Blender films. Why: it's a portfolio and blog piece meant to be read and reused, and that third-party material isn't Derek's to license.
 - 2026-11-18: Guardrails: `.claude/settings.json` denies pushes to `main`, CLI production deploys (`vercel --prod`, `vercel promote`) and reading `.env.local`. The push-guard hook (`.claude/hooks/guard-push.py`, 149/149 tests passing) blocks any `git push` that would update `main`. Why: `main` is production, and the repo is public.
 - 2026-11-18: Movies, Shows and Spark Free nav items take focus but don't switch pages until Milestone 3; only Home is built in M1–M2. Why: the milestones already put the remaining pages in M3, and this keeps M1 focused. Whether they ship in v1 is still open.
 - 2026-11-18: GitHub Actions job `check` runs typecheck, lint, test and build on every PR, and it's the required check on `main`. Why: the same gate as the pre-commit checks, enforced on GitHub.
@@ -43,15 +46,15 @@ Newest first. One line each: what was chosen, and why.
 
 ## Current state
 
-- Repo: `derekpcollins/spark-tv` (public), default branch `main`. Branch protection not set yet.
-- Hosting: no Vercel project yet. `spark-tv.vercel.app` is free for it.
+- Repo: `derekpcollins/spark-tv` (public, MIT), default branch `main`. Branch protection not set yet.
+- Hosting: Vercel project `spark-tv`, Git-connected, previews on every branch (no `vercel.json` limits), production at `spark-tv.vercel.app`. Vercel Authentication is on for all deployments except custom domains, which currently includes production `*.vercel.app`.
 - Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Later: R2 upload credentials for the video pipeline (names TBD in M2). Vercel needs none.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
 - App: Vite + TS scaffold with the 1920×1080 scaled canvas, tokens and a text wordmark.
 
 ## Open items
 
-- **Repo visibility:** the GitHub repo was created public. Waiting on Derek: keep it public (recommended) or make it private until the portfolio launch.
+- **Vercel Authentication:** the project defaults to protecting everything except custom domains, which puts production `spark-tv.vercel.app` behind a Vercel login. Waiting on Derek: switch to previews-only (recommended, so production is public).
 - Exact remote button for the moderator sequence (decide during FLIRC setup).
 - Which Blender films make the cut, and which have usable 1080p sources.
 - R2 bucket name, and whether it uses the public r2.dev URL or a custom domain.
