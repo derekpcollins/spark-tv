@@ -160,7 +160,9 @@
   top: calc(-1 * var(--layout-header-height));
   left: 0;
   right: 0;
-  bottom: 0;
+  /* Overhang the backdrop by a few px, solid at the bottom: on a scaled canvas the backdrop's
+     last row lands on a fractional pixel and would otherwise show through as a light line. */
+  bottom: calc(-1 * var(--space-xs));
   background:
     linear-gradient(
       90deg,
@@ -168,7 +170,12 @@
       var(--color-scrim-mid) 40%,
       var(--color-scrim-end) 70%
     ),
-    linear-gradient(0deg, var(--color-surface-app) 0%, var(--color-scrim-end) 35%);
+    linear-gradient(
+      0deg,
+      var(--color-surface-app) 0%,
+      var(--color-surface-app) calc(2 * var(--space-xs)),
+      var(--color-scrim-end) 35%
+    );
 }
 
 .hero__content {
