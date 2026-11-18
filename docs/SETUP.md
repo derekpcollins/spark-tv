@@ -12,6 +12,13 @@ Newest first. One line each: what was chosen, and why.
 
 ### Spark Free media (2026-11-18)
 
+- 2026-11-18: Video pipeline: `npm run media:encode` (ffmpeg) and `npm run media:upload` (R2), no new npm dependencies. ffmpeg comes from Homebrew on Guardian (a machine tool, like Node). The uploader signs S3 requests itself (`scripts/r2.ts`, about 100 lines, unit-tested) instead of adding the AWS SDK. Masters and encodes live outside the repo (`~/Downloads/spark-tv-films`, several GB). Why: the repo is public and small, and the scripts only need HEAD and PUT.
+- 2026-11-18: Encodes: H.264 High, 2 s keyframes, AAC 160k stereo, faststart. The full film keeps its aspect at up to 1920 wide (CRF 21; the player letterboxes). The trailer is a 40–45 s excerpt cropped to fill 16:9 at 1080p (CRF 22) with 0.5/0.8 s fades. Free films use Blender's 1080p sources, not 4K (the canvas is 1080p). About 2.3 GB on R2 in total.
+- 2026-11-18: Backdrops for Spark Free titles are frames cut from the films (`still` in `data/sparkfree.json`), served from R2, never TMDB's. Why: TMDB's "textless" backdrop for Spring was the "Blender Animation Studio presents" card. Posters are TMDB's textless (language-null) posters only; Spring and Wing It! have none, so poster cards set their title in type. Trailer start points skip every title card and studio credit (Spring starts at 23 s for that reason).
+- 2026-11-18: Hero A (video billboard) is the default hero, fed by Spark Free. Its trailer starts after the focus rests 1.2 s on a slide, plays muted unless the moderator turns on "Hero: trailer sound", and advances to the next slide when it ends. Hero B (static) stays registered. Trailers play only while their hero or Display Page has focus, which also guarantees nothing plays under an overlay (pushing an overlay blurs what's below).
+- 2026-11-18: The Spark Free Display Page loops the trailer behind the content, shows the film's CC credit line, and has Play, which opens the player: full film with sound, OK or Play/Pause toggles, Left/Right seek 10 s, Back exits. The catalog stores Spark Free backdrops as full R2 URLs built from `ASSET_BASE_URL` at sync time; video keys stay relative.
+- 2026-11-18: TMDB data fixes in `data/sparkfree.json`: Sprite Fright's year is 2021 (TMDB says 2024). Spring has no Spanish synopsis on TMDB, so it shows English in `es`.
+
 - 2026-11-18: Video is hosted in the R2 bucket `spark-tv-media`, served from its public r2.dev URL `https://pub-010076d3a9de4c5c985e85d1a1dd26fa.r2.dev` (public by design). The legacy bucket `spark-tv-assets` is left untouched and unused, because R2 buckets can't be renamed and nothing comes from the legacy app. Why r2.dev: free and enough for a prototype; it's rate-limited, so switch to a custom domain if testing ever hits the limit.
 - 2026-11-18: The Spark Free lineup is Big Buck Bunny (TMDB 10378), Sintel (45745), Tears of Steel (133701), Spring (593048), Wing It! (1177628) and Sprite Fright (891761), with Coffee Run (717986) as the alternate. All are CC BY. Excluded: Cosmos Laundromat (rated 13+ by the studio, suicide themes), Agent 327 (CC BY-ND, no public file) and Charge (fight and stab scenes). Facts were checked against Blender's licence pages.
 - 2026-11-18: Derek is buying one month of Blender Studio (about €11.50), because the original files for Spring, Wing It! and Sprite Fright are subscriber-only. CC BY lets us host them once downloaded. BBB, Sintel and ToS are free downloads from download.blender.org.
@@ -92,15 +99,18 @@ Newest first. One line each: what was chosen, and why.
 
 - Repo: `derekpcollins/spark-tv` (public, MIT), default branch `main` (first commit pushed 2026-11-18). Protected (PR required, 0 approvals, enforced for admins, no force-push/deletion, required check `check`); merged branches auto-delete.
 - Hosting: Vercel project `spark-tv`, Git-connected, previews on every branch (no `vercel.json` limits), production at `spark-tv.vercel.app`. Vercel Authentication on previews only; production is public.
-- Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Next: R2 upload credentials for the video pipeline (an R2 API token scoped to `spark-tv-media`; names go in `.env.example` when the upload script lands). Vercel needs none.
+- Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` (R2 Account API token `spark-tv-upload`, Object Read & Write on `spark-tv-media` only, local `.env.local` only, used by `npm run media:upload`). Vercel needs none.
+- Media: six films encoded and on R2 (`spark-tv-media`, about 2.3 GB): backdrop still, trailer and full film each.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
-- App: Milestone 1 on PR `feat/m1-core`: canvas, keymap, focus engine + overlay stack, registries, i18n, page view (vertical motion, dim, virtualization), header, hero B, Apps row, Trending (landscape) and Popular on Prime Video (poster), generic Display Page. 37 tests. Catalog snapshot 2026-11-18: 40 titles, 8 providers.
+- App: M1 and the M2 shell are merged (Home with header, hero, Apps, Trending, Popular on Prime Video, Credits banner; Display Page; start screen, Glint launch, moderator panel with presets, live `es`, Credits). Spark Free on PR `feat/spark-free`: six Blender films with hero A video, a Spark Free row, Display Page trailer + Play, and the player. 56 tests. Catalog snapshot 2026-11-18: 46 titles, 8 providers.
 
 ## Open items
 
 - Re-run `npm run sync` before demos: trending rows go stale. `catalog.json` is a snapshot by design.
 - Exact remote button for the moderator sequence (decide during FLIRC setup).
-- Which Blender films make the cut, and which have usable 1080p sources.
+- Spark Free stills and trailer cuts: each is one number in `data/sparkfree.json`; Derek may want different frames once he sees them on the TV.
+- The Spark Free app tile, the Spark Free promo banner, Continue Watching and Top 10 rows aren't built yet (M3).
+- Blender Studio subscription (one month, for Spring, Wing It! and Sprite Fright): cancel auto-renew if not already done.
 - Whether the Movies, Shows and Spark Free pages ship in v1 or only Home.
 - Display Page designs (Derek's, coming).
 - Recorded snap sound (Derek). Brand and launch timing are settled (Glint).
@@ -109,5 +119,5 @@ Newest first. One line each: what was chosen, and why.
 
 1. Derek reviews and merges the Milestone 1 PR (setup checklist complete: PRs #1 and #2 merged, `main` protected, Vercel previews on).
 2. ~~Milestone 1~~ (in review): canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
-3. **Milestone 2** (shell on PR `feat/m2-shell`: start screen, launch, moderator panel with presets, live es, Credits; Spark Free next, waiting on R2 setup and the film shortlist): Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
+3. **Milestone 2** (shell merged in #4; Spark Free on PR `feat/spark-free`: data, encode and upload pipeline, hero A video, Spark Free row, Display Page video and Play, player): Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
 4. **Milestone 3:** remaining card types and pages, polish and performance pass, README with the FLIRC key map, brand swap.

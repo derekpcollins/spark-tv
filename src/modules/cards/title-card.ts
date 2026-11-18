@@ -23,8 +23,11 @@ export function titleCard(
   img.decoding = 'async';
   frame.append(img);
 
-  // Landscape cards set the title in type over the backdrop.
-  if (shape === 'landscape' && title && showTitle) {
+  // Landscape cards set the title in type over the backdrop. Poster cards without a poster
+  // (Spark Free films with no textless poster) set it in type instead of showing an empty frame.
+  const typeset = shape === 'poster' && title && !title.images.poster;
+  if (typeset) frame.classList.add('card__frame--typeset');
+  if ((shape === 'landscape' && title && showTitle) || typeset) {
     const label = document.createElement('div');
     label.className = 'card__label';
     label.textContent = localized(title, ctx.locale()).title;

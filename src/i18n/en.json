@@ -50,5 +50,9 @@
   "mod.build": "Build",
   "mod.catalog": "Catalog snapshot",
   "opt.heroDots": "Hero: slide dots",
-  "opt.cardTitles": "Landscape cards: titles"
+  "opt.cardTitles": "Landscape cards: titles",
+  "display.play": "Play",
+  "player.hint": "OK pause · ← → 10 s · Back to exit",
+  "opt.heroSound": "Hero: trailer sound",
+  "row.sparkfree": "Spark Free"
 }

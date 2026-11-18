@@ -32,7 +32,10 @@ export interface Title {
   images: { poster: string | null; backdrop: string | null; logo?: string | null };
   providers: number[]; // Provider ids (US flatrate)
   text: Record<Locale, LocalizedText>;
+  /** R2 keys, relative to ASSET_BASE_URL (Spark Free only). */
   video?: { trailer: string; full: string };
+  /** CC attribution (Spark Free only). */
+  credit?: { line: string; license: string; extra?: string };
 }
 
 export interface Catalog {
@@ -48,7 +51,9 @@ export type SectionSource =
   | { tmdb: string; params?: Record<string, string> }
   | { ids: string[] }
   /** App tiles: 'sparkfree' or a TMDB watch-provider id. */
-  | { apps: (string | number)[] };
+  | { apps: (string | number)[] }
+  /** Every Spark Free film, in data/sparkfree.json order. */
+  | { sparkfree: true };
 
 export interface SectionConfig {
   id: string;

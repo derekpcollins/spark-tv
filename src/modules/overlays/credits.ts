@@ -48,7 +48,13 @@ overlays.register({
       const list = document.createElement('ul');
       for (const film of films) {
         const li = document.createElement('li');
-        li.textContent = `${localized(film, ctx.locale()).title}: (CC) Blender Foundation | studio.blender.org`;
+        li.textContent = [
+          `${localized(film, ctx.locale()).title}: ${film.credit?.line ?? '(CC) Blender Foundation | studio.blender.org'}`,
+          film.credit?.license,
+          film.credit?.extra,
+        ]
+          .filter(Boolean)
+          .join(' · ');
         list.append(li);
       }
       section(ctx.t('credits.films'), list);

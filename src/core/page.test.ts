@@ -28,7 +28,17 @@ function title(n: number): Title {
   };
 }
 
-const titles = Object.fromEntries([1, 2, 3, 4, 5, 6].map((n) => [`movie:${n}`, title(n)]));
+const titles: Record<string, Title> = Object.fromEntries(
+  [1, 2, 3, 4, 5, 6].map((n) => [`movie:${n}`, title(n)]),
+);
+titles['sparkfree:spring'] = {
+  ...title(7),
+  id: 'sparkfree:spring',
+  source: 'sparkfree',
+  providers: [],
+  video: { trailer: 'sparkfree/spring/trailer.mp4', full: 'sparkfree/spring/film.mp4' },
+  credit: { line: '© Blender Foundation | cloud.blender.org/spring', license: 'CC BY 4.0' },
+};
 const catalog: Catalog = {
   generatedAt: '',
   region: 'US',
@@ -38,7 +48,7 @@ const catalog: Catalog = {
     hero: ['movie:1', 'movie:2'],
     apps: ['app:sparkfree', 'provider:9'],
     rowA: ['movie:3', 'movie:4', 'movie:5'],
-    rowB: ['movie:6', 'movie:5'],
+    rowB: ['movie:6', 'movie:5', 'sparkfree:spring'],
   },
 };
 const configs: SectionConfig[] = [
@@ -51,6 +61,7 @@ const configs: SectionConfig[] = [
 
 function setup() {
   const opened: Title[] = [];
+  const overlaysOpened: { type: string; props: Record<string, unknown> }[] = [];
   const overlayHost = document.createElement('div');
   const ctx: ModuleContext = {
     catalog,
@@ -58,7 +69,7 @@ function setup() {
     locale: () => 'en',
     memory: createMemory(),
     option: () => undefined,
-    openOverlay: () => {},
+    openOverlay: (type, props = {}) => overlaysOpened.push({ type, props }),
     openTitle(t) {
       opened.push(t);
       stack.push(displayPages.get(t.contentType, 'A').create(t, ctx));
@@ -70,7 +81,7 @@ function setup() {
   const press = (...keys: Parameters<OverlayStack['handleKey']>[0][]) =>
     keys.forEach((k) => stack.handleKey(k));
   const focusedCard = () => page.el.querySelector('.card.is-focused');
-  return { page, stack, press, opened, overlayHost, focusedCard };
+  return { page, stack, press, opened, overlaysOpened, overlayHost, focusedCard };
 }
 
 describe('Home page integration', () => {
@@ -133,5 +144,18 @@ describe('Home page integration', () => {
     press('down', 'ok', 'right', 'ok');
     expect(opened).toEqual([]);
     expect(stack.depth).toBe(0);
+  });
+
+  it('gives Spark Free titles a Play button and their credit, and Play opens the player', () => {
+    const { press, opened, overlaysOpened, overlayHost } = setup();
+    press('down', 'down', 'down', 'right', 'right', 'ok'); // rowB, third card
+    expect(opened.map((t) => t.id)).toEqual(['sparkfree:spring']);
+    const display = overlayHost.querySelector('.display');
+    expect(display?.querySelector('.button--primary')?.textContent).toBe('Play');
+    expect(display?.querySelector('.display__credit')?.textContent).toContain('CC BY 4.0');
+    expect(display?.textContent).not.toContain('Watch on');
+    press('ok');
+    expect(overlaysOpened.map((o) => o.type)).toEqual(['player']);
+    expect((overlaysOpened[0]?.props.title as Title).id).toBe('sparkfree:spring');
   });
 });

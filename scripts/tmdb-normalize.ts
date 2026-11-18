@@ -1,5 +1,6 @@
 /** Pure TMDB → catalog normalization (no network), so it can be unit-tested. */
 import type { Locale, LocalizedText, MetadataItem, Provider, Title } from '../src/core/catalog.ts';
+import type { Film } from './sparkfree.ts';
 
 export const IMG = 'https://image.tmdb.org/t/p';
 
@@ -128,4 +129,40 @@ export function normalizeProvider(p: {
   logo_path: string;
 }): Provider {
   return { id: p.provider_id, name: p.provider_name, logo: imageUrl('w300', p.logo_path) ?? '' };
+}
+
+/**
+ * A Spark Free film: TMDB text; the backdrop is our own still from R2 and the poster only a
+ * textless (language-null) one, because Blender film logos are not CC-licensed. No logo, no
+ * providers; video keys and the CC credit attached.
+ */
+export function normalizeSparkFree(
+  film: Film,
+  en: TmdbDetail,
+  es: Pick<TmdbDetail, 'title' | 'name' | 'overview' | 'genres'>,
+  keys: { trailer: string; full: string; backdrop: string },
+  assetBase: string,
+): Title {
+  const t = normalizeTitle('movie', en, es);
+  t.id = `sparkfree:${film.slug}`;
+  t.source = 'sparkfree';
+  t.rating = film.rating ?? t.rating;
+  t.year = film.year ?? t.year;
+  t.images = {
+    poster: imageUrl('w500', pickImage(en.images?.posters, [null])),
+    // A frame cut from the film itself (scripts/media-encode.ts): textless and CC BY.
+    backdrop: `${assetBase}/${keys.backdrop}`,
+    logo: null,
+  };
+  t.providers = [];
+  t.video = { trailer: keys.trailer, full: keys.full };
+  t.credit = {
+    line: film.credit,
+    license: film.license,
+    ...(film.extraCredit ? { extra: film.extraCredit } : {}),
+  };
+  for (const locale of ['en', 'es'] as const) {
+    t.text[locale].metadataLine = metadataLine(t, t.text[locale].genres, locale);
+  }
+  return t;
 }

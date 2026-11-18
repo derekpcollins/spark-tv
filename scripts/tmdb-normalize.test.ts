@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { formatRuntime, normalizeTitle, pickImage, type TmdbDetail } from './tmdb-normalize.ts';
+import {
+  formatRuntime,
+  normalizeSparkFree,
+  normalizeTitle,
+  pickImage,
+  type TmdbDetail,
+} from './tmdb-normalize.ts';
 
 const img = (file_path: string, iso_639_1: string | null, vote_average = 5, width = 1000) => ({
   file_path,
@@ -86,5 +92,49 @@ describe('helpers', () => {
   it('formatRuntime handles under an hour', () => {
     expect(formatRuntime(45, 'en')).toBe('45m');
     expect(formatRuntime(45, 'es')).toBe('45 min');
+  });
+});
+
+describe('normalizeSparkFree', () => {
+  const film = {
+    slug: 'spring',
+    tmdb: 593048,
+    file: 'spring.mp4',
+    rating: 'PG',
+    year: 2019,
+    license: 'CC BY 4.0',
+    credit: '(CC) Blender Foundation | studio.blender.org',
+    trailer: { start: 0, duration: 30 },
+    still: 10,
+  };
+  const keys = {
+    trailer: 'sparkfree/spring/trailer.mp4',
+    full: 'sparkfree/spring/film.mp4',
+    backdrop: 'sparkfree/spring/backdrop.jpg',
+  };
+  const t = normalizeSparkFree(
+    film,
+    movie,
+    { title: 'Primavera', overview: 'es', genres: [] },
+    keys,
+    'https://cdn.test',
+  );
+
+  it('uses its own still, only textless posters, and never a logo (Blender film logos are not CC-licensed)', () => {
+    expect(t.images.logo).toBeNull();
+    expect(t.images.backdrop).toBe('https://cdn.test/sparkfree/spring/backdrop.jpg');
+    expect(t.images.poster).toBeNull(); // the only poster has English text
+  });
+
+  it('is a Spark Free title with video keys, credit and overrides, and no providers', () => {
+    expect(t.id).toBe('sparkfree:spring');
+    expect(t.source).toBe('sparkfree');
+    expect(t.providers).toEqual([]);
+    expect(t.video).toEqual({ trailer: keys.trailer, full: keys.full });
+    expect(t.credit).toEqual({ line: film.credit, license: 'CC BY 4.0' });
+    expect(t.rating).toBe('PG');
+    expect(t.year).toBe(2019);
+    expect(t.text.en.metadataLine).toContainEqual({ kind: 'badge', text: 'PG' });
+    expect(t.text.es.title).toBe('Primavera');
   });
 });

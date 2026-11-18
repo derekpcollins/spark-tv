@@ -1,0 +1,81 @@
+{
+  "$comment": "Spark Free: Blender open movies (CC BY). Hand-authored. Titles are always set in type: Blender film logos are not CC-licensed. Text comes from TMDB at sync time; the backdrop is a frame cut from the film at `still` seconds (served from R2) and the poster is TMDB's textless poster if there is one. `file` is the source in SPARKFREE_SOURCE_DIR; trailer start/duration are in seconds. `year`/`rating` override TMDB where it is wrong or missing.",
+  "films": [
+    {
+      "slug": "spring",
+      "tmdb": 593048,
+      "file": "spring_2019.mp4",
+      "rating": "PG",
+      "license": "CC BY 4.0",
+      "credit": "© Blender Foundation | cloud.blender.org/spring",
+      "trailer": {
+        "start": 23,
+        "duration": 40
+      },
+      "still": 66
+    },
+    {
+      "slug": "sprite-fright",
+      "tmdb": 891761,
+      "file": "sprite_fright-x264.mp4",
+      "rating": "PG",
+      "license": "CC BY 4.0",
+      "credit": "(CC) Blender Foundation | studio.blender.org",
+      "trailer": {
+        "start": 125,
+        "duration": 45
+      },
+      "year": 2021,
+      "still": 158
+    },
+    {
+      "slug": "wing-it",
+      "tmdb": 1177628,
+      "file": "pets_wing_it_x264.mp4",
+      "license": "CC BY 4.0",
+      "credit": "(CC) Blender Foundation | studio.blender.org",
+      "trailer": {
+        "start": 50,
+        "duration": 40
+      },
+      "still": 15
+    },
+    {
+      "slug": "sintel",
+      "tmdb": 45745,
+      "file": "Sintel.2010.1080p.mkv",
+      "license": "CC BY 3.0",
+      "credit": "© copyright Blender Foundation | durian.blender.org",
+      "trailer": {
+        "start": 270,
+        "duration": 40
+      },
+      "still": 314
+    },
+    {
+      "slug": "tears-of-steel",
+      "tmdb": 133701,
+      "file": "tears_of_steel_1080p.mov",
+      "license": "CC BY 3.0",
+      "credit": "(CC) Blender Foundation | mango.blender.org",
+      "extraCredit": "Music © Joram Letwory, CC BY-ND 3.0",
+      "trailer": {
+        "start": 352,
+        "duration": 40
+      },
+      "still": 31
+    },
+    {
+      "slug": "big-buck-bunny",
+      "tmdb": 10378,
+      "file": "bbb_sunflower_1080p_30fps_normal.mp4",
+      "license": "CC BY 3.0",
+      "credit": "© copyright 2008, Blender Foundation | www.bigbuckbunny.org",
+      "trailer": {
+        "start": 119,
+        "duration": 40
+      },
+      "still": 80
+    }
+  ]
+}

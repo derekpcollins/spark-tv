@@ -6,7 +6,9 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Catalog, Layout, SectionConfig, Title } from '../src/core/catalog.ts';
-import { normalizeProvider, normalizeTitle, type TmdbDetail } from './tmdb-normalize.ts';
+import { ASSET_BASE_URL } from '../src/config.ts';
+import { films, mediaKeys } from './sparkfree.ts';
+import { normalizeProvider, normalizeSparkFree, normalizeTitle, type TmdbDetail } from './tmdb-normalize.ts';
 
 const root = join(import.meta.dirname, '..');
 const REGION = 'US';
@@ -59,6 +61,7 @@ interface ListResult {
 async function resolveSection(s: SectionConfig): Promise<string[]> {
   const src = s.source;
   if ('ids' in src) return src.ids;
+  if ('sparkfree' in src) return films.map((f) => `sparkfree:${f.slug}`);
   if ('apps' in src) return src.apps.map((id) => (typeof id === 'number' ? `provider:${id}` : `app:${id}`));
   const media = src.tmdb.includes('/tv') ? 'tv' : 'movie';
   const ids: string[] = [];
@@ -72,7 +75,20 @@ async function resolveSection(s: SectionConfig): Promise<string[]> {
   return ids.slice(0, s.limit ?? 20);
 }
 
+async function fetchSparkFree(id: string): Promise<Title | null> {
+  const film = films.find((f) => `sparkfree:${f.slug}` === id);
+  if (!film) return null;
+  const en = await tmdb<TmdbDetail>(`movie/${film.tmdb}`, {
+    language: 'en-US',
+    append_to_response: 'images,release_dates',
+    include_image_language: 'en,null',
+  });
+  const es = await tmdb<TmdbDetail>(`movie/${film.tmdb}`, { language: 'es-ES' });
+  return normalizeSparkFree(film, en, es, mediaKeys(film.slug), ASSET_BASE_URL);
+}
+
 async function fetchTitle(id: string): Promise<Title | null> {
+  if (id.startsWith('sparkfree:')) return fetchSparkFree(id);
   const [type, num] = id.split(':') as ['movie' | 'tv', string];
   const extra = type === 'movie' ? 'release_dates' : 'content_ratings';
   try {
@@ -122,13 +138,14 @@ async function main(): Promise<void> {
     titles[t.id] = t;
   }
 
-  // Drop titles we couldn't fetch, and titles with no usable artwork.
+  // Drop titles we couldn't fetch, and titles with no usable artwork. Spark Free titles only
+  // need a backdrop: a missing textless poster falls back to the title set in type.
   for (const [sid, ids] of Object.entries(sections)) {
     sections[sid] = ids.filter(
       (id) =>
         id.startsWith('provider:') ||
         id.startsWith('app:') ||
-        (titles[id]?.images.backdrop && titles[id]?.images.poster),
+        (titles[id]?.images.backdrop && (titles[id]?.images.poster || titles[id]?.source === 'sparkfree')),
     );
   }
 

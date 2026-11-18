@@ -25,5 +25,8 @@
   "credits.unbounded": "Unbounded, con licencia SIL Open Font License.",
   "credits.trademarks": "Marcas",
   "credits.disclaimer": "Los logotipos y marcas pertenecen a sus respectivos propietarios. Spark TV es un prototipo y no está afiliado a ellos.",
-  "credits.back": "Pulsa Atrás para volver"
+  "credits.back": "Pulsa Atrás para volver",
+  "display.play": "Reproducir",
+  "player.hint": "OK pausa · ← → 10 s · Atrás para salir",
+  "row.sparkfree": "Spark Free"
 }
