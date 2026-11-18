@@ -12,6 +12,8 @@ Newest first. One line each: what was chosen, and why.
 
 ### Setup choices (2026-11-18)
 
+- 2026-11-18: `main` is protected: PR required (0 approvals), enforced for admins, no force-push or deletion, required check `check` (CI). Merged branches auto-delete. Why: `main` is production, and enforcing for admins makes the rules apply to Claude pushing as Derek.
+- 2026-11-18: Bootstrap gotcha: the push-guard hook fails closed, so in a session that loaded it, checking out a branch without `.claude/hooks/guard-push.py` (e.g. `main` before this PR merges) blocks every Bash call, including `!` commands. Once this PR is on `main`, every branch has the hook.
 - 2026-11-18: Vercel Authentication protects previews only (`ssoProtection: preview`); production `spark-tv.vercel.app` is public. Why: it's a public portfolio piece, and previews stay behind a Vercel login. Set with the Vercel CLI (the MCP connector returned 403 for project updates).
 - 2026-11-18: Vercel project `spark-tv` (Derek's Projects, `prj_vtfTnqGQAK9fLJQYztazrzHmw6fU`), framework Vite, connected to `derekpcollins/spark-tv`, holds `spark-tv.vercel.app`. Created with the Vercel CLI because the MCP connector returned 403 for project creation. Why: one project per repo, and the legacy project had released the domain.
 - 2026-11-18: `engines.node` is pinned to `24.x`. Why: Vercel defaults to Node 26; this makes builds match local and CI.
@@ -47,7 +49,7 @@ Newest first. One line each: what was chosen, and why.
 
 ## Current state
 
-- Repo: `derekpcollins/spark-tv` (public, MIT), default branch `main` (first commit pushed 2026-11-18). Branch protection not set yet.
+- Repo: `derekpcollins/spark-tv` (public, MIT), default branch `main` (first commit pushed 2026-11-18). Protected (PR required, 0 approvals, enforced for admins, no force-push/deletion, required check `check`); merged branches auto-delete.
 - Hosting: Vercel project `spark-tv`, Git-connected, previews on every branch (no `vercel.json` limits), production at `spark-tv.vercel.app`. Vercel Authentication on previews only; production is public.
 - Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Later: R2 upload credentials for the video pipeline (names TBD in M2). Vercel needs none.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
@@ -64,7 +66,7 @@ Newest first. One line each: what was chosen, and why.
 
 ## Next steps
 
-1. Setup checklist: merge the `setup/guardrails` PR (CLAUDE.md, deny rules, CI, license), protect `main` with the required `check` job, confirm a Vercel preview.
+1. Setup checklist: Derek merges PR #1 (`setup/guardrails`). Branch protection and the Vercel preview are done.
 2. **Milestone 1:** canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
 3. **Milestone 2:** Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
 4. **Milestone 3:** remaining card types and pages, polish and performance pass, README with the FLIRC key map, brand swap.
