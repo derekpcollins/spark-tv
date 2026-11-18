@@ -91,6 +91,21 @@ describe('Home page integration', () => {
     expect(focusedCard()?.textContent).toBe('Title 5'); // stopped at the end
   });
 
+  it('wraps the hero carousel in both directions', () => {
+    const { page, press } = setup();
+    const heroText = () => page.el.querySelector('.hero')?.textContent ?? '';
+    const first = heroText();
+    press('left');
+    const last = heroText();
+    expect(last).not.toBe(first);
+    press('right');
+    expect(heroText()).toBe(first);
+    press('right');
+    expect(heroText()).toBe(last); // two slides: right from the first lands on the last
+    press('right');
+    expect(heroText()).toBe(first); // and wraps back around
+  });
+
   it('remembers each row’s position when focus leaves and returns', () => {
     const { page, press, focusedCard } = setup();
     press('down', 'down', 'right'); // rowA, second card

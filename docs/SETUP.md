@@ -29,6 +29,7 @@ Newest first. One line each: what was chosen, and why.
 
 ### Milestone 1 build choices (2026-11-18)
 
+- 2026-11-18: The hero carousel wraps: Right on the last slide goes to the first, Left on the first to the last. Its neighbours on both sides preload. With one slide, Left/Right leave the hero as before.
 - 2026-11-18: Focus ring fixes. The focused card gets `z-index: 1`, so its scaled frame and ring draw over the next card. The ring's radius is the frame's radius plus the ring offset (`--frame-radius`, default `--radius-md`), so it stays concentric and leaves no gap at the corners.
 
 - 2026-11-18: Apps row services (TMDB US provider IDs): Netflix 8, Prime Video 9, Disney+ 337, HBO Max 1899, Hulu 15, Apple TV 350, Peacock 386, Paramount+ 2303 (TMDB's old ID 531 is gone). A title's "Watch on" buttons only list these services, with ad tiers folded in (1796→8, 2100→9, 2616→2303). Why: TMDB lists many add-on channel variants per title, which would clutter the Display Page.
