@@ -27,7 +27,9 @@ interface Slot {
   height: number;
 }
 
+/** `host` must be in the document: heights are measured right after mounting. */
 export function createPage(
+  host: HTMLElement,
   configs: SectionConfig[],
   ctx: ModuleContext,
   variantFor: (c: SectionConfig) => string | undefined,
@@ -37,6 +39,7 @@ export function createPage(
   const track = document.createElement('div');
   track.className = 'page__track';
   el.append(track);
+  host.append(el);
 
   const anchor = px('layout', 'row-anchor');
   const gap = px('layout', 'row-gap');

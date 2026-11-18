@@ -14,7 +14,7 @@
           "type": "row",
           "card": "app",
           "title": "row.apps",
-          "source": { "apps": ["sparkfree", 8, 9, 337, 1899, 15, 350, 386, 531] }
+          "source": { "apps": ["sparkfree", 8, 9, 337, 1899, 15, 350, 386, 2303] }
         },
         {
           "id": "trending",

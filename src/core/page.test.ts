@@ -63,7 +63,7 @@ function setup() {
       stack.push(displayPages.get(t.contentType, 'A').create(t, ctx));
     },
   };
-  const page = createPage(configs, ctx, (c) => c.variant);
+  const page = createPage(document.body, configs, ctx, (c) => c.variant);
   const stack = new OverlayStack(page, overlayHost);
   page.focus({ from: 'initial' });
   const press = (...keys: Parameters<OverlayStack['handleKey']>[0][]) =>

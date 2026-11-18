@@ -10,6 +10,8 @@ import { normalizeProvider, normalizeTitle, type TmdbDetail } from './tmdb-norma
 
 const root = join(import.meta.dirname, '..');
 const REGION = 'US';
+/** Ad tiers and alternate plans that should count as the main service. */
+const PROVIDER_ALIASES: Record<number, number> = { 1796: 8, 2100: 9, 2616: 2303 };
 const API = 'https://api.themoviedb.org/3';
 
 if (existsSync(join(root, '.env.local'))) process.loadEnvFile(join(root, '.env.local'));
@@ -99,13 +101,26 @@ async function main(): Promise<void> {
     ...new Set(
       Object.values(sections)
         .flat()
-        .filter((id) => !id.startsWith('provider:')),
+        .filter((id) => !id.startsWith('provider:') && !id.startsWith('app:')),
     ),
   ];
   console.log(`Fetching ${titleIds.length} titles (en-US + es-ES)…`);
   const fetched = await pool(titleIds, 4, fetchTitle);
+  // "Watch on" buttons: only the services in the Apps row(s), with ad tiers folded in.
+  const appProviders = new Set(
+    Object.values(sections)
+      .flat()
+      .filter((id) => id.startsWith('provider:'))
+      .map((id) => Number(id.slice(9))),
+  );
   const titles: Catalog['titles'] = {};
-  for (const t of fetched) if (t) titles[t.id] = t;
+  for (const t of fetched) {
+    if (!t) continue;
+    t.providers = [...new Set(t.providers.map((id) => PROVIDER_ALIASES[id] ?? id))].filter((id) =>
+      appProviders.has(id),
+    );
+    titles[t.id] = t;
+  }
 
   // Drop titles we couldn't fetch, and titles with no usable artwork.
   for (const [sid, ids] of Object.entries(sections)) {

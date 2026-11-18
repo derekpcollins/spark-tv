@@ -12,6 +12,8 @@ Newest first. One line each: what was chosen, and why.
 
 ### Milestone 1 build choices (2026-11-18)
 
+- 2026-11-18: Apps row services (TMDB US provider IDs): Netflix 8, Prime Video 9, Disney+ 337, HBO Max 1899, Hulu 15, Apple TV 350, Peacock 386, Paramount+ 2303 (TMDB's old ID 531 is gone). A title's "Watch on" buttons only list these services, with ad tiers folded in (1796→8, 2100→9, 2616→2303). Why: TMDB lists many add-on channel variants per title, which would clutter the Display Page.
+- 2026-11-18: TMDB key: reusing Derek's existing TMDB API application, renamed to Spark TV. The old v3 key was hard-coded in the public `CodePath-Flicks-App` repo (2017), so regenerating it was recommended. `TMDB_READ_TOKEN` lives only in `.env.local` on Guardian.
 - 2026-11-18: Modules self-register, and `src/modules/index.ts` loads them all with `import.meta.glob`. Why: adding a module or variant is just a new file, with no edits to the core or an index (decision 10).
 - 2026-11-18: Cards use a lighter, display-only contract (`el`, `width`, `load()`, `activate()`, `destroy()`). The row owns focus and the fixed cursor. Cards still register by type in the `cards` registry. Why: cards never route keys, so the full module contract would only add ceremony.
 - 2026-11-18: Virtualization keeps live every section that intersects the viewport ± `layout.window-buffer`, plus the focused section ±1. Why: with real row heights, focused ±1 alone leaves blank rows on screen below the anchor. This keeps the intent: sections far off screen are destroyed.
@@ -72,10 +74,12 @@ Newest first. One line each: what was chosen, and why.
 - Hosting: Vercel project `spark-tv`, Git-connected, previews on every branch (no `vercel.json` limits), production at `spark-tv.vercel.app`. Vercel Authentication on previews only; production is public.
 - Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). Later: R2 upload credentials for the video pipeline (names TBD in M2). Vercel needs none.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
-- App (branch `feat/m1-core`): canvas, keymap, focus engine + overlay stack, registries, i18n, page view (vertical motion, dim, virtualization), header, hero B, row with app/landscape/poster cards, generic Display Page. 37 tests. `data/catalog.json` waits on the TMDB token.
+- App: Milestone 1 on PR `feat/m1-core`: canvas, keymap, focus engine + overlay stack, registries, i18n, page view (vertical motion, dim, virtualization), header, hero B, Apps row, Trending (landscape) and Popular on Prime Video (poster), generic Display Page. 37 tests. Catalog snapshot 2026-11-18: 40 titles, 8 providers.
 
 ## Open items
 
+- Polish (M3): a focused card's 1.06 scale and ring slightly overlap the next card; reconsider the card gap or shift neighbors when the focus treatment gets its pass.
+- Re-run `npm run sync` before demos: trending rows go stale. `catalog.json` is a snapshot by design.
 - Exact remote button for the moderator sequence (decide during FLIRC setup).
 - Which Blender films make the cut, and which have usable 1080p sources.
 - R2 bucket name, and whether it uses the public r2.dev URL or a custom domain.
@@ -85,7 +89,7 @@ Newest first. One line each: what was chosen, and why.
 
 ## Next steps
 
-1. Setup checklist: Derek merges PR #1 (`setup/guardrails`). Branch protection and the Vercel preview are done.
-2. **Milestone 1:** canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
+1. Derek reviews and merges the Milestone 1 PR (setup checklist complete: PRs #1 and #2 merged, `main` protected, Vercel previews on).
+2. ~~Milestone 1~~ (in review): canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
 3. **Milestone 2:** Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
 4. **Milestone 3:** remaining card types and pages, polish and performance pass, README with the FLIRC key map, brand swap.

@@ -39,8 +39,7 @@ export function startApp(canvas: HTMLElement): void {
 
   const header: SectionConfig = { id: 'header', type: 'header', source: { ids: [] } };
   const home = layout.pages.home?.sections ?? [];
-  const page = createPage([header, ...home], ctx, (c) => c.variant);
-  pageLayer.append(page.el);
+  const page = createPage(pageLayer, [header, ...home], ctx, (c) => c.variant);
 
   const stack = new OverlayStack(page, overlayLayer);
   page.focus({ from: 'initial' });
