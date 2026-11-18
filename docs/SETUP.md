@@ -37,6 +37,7 @@ Newest first. One line each: what was chosen, and why.
 ### Milestone 1 build choices (2026-11-18)
 
 - 2026-11-18: The hero carousel wraps: Right on the last slide goes to the first, Left on the first to the last. Its neighbours on both sides preload. With one slide, Left/Right leave the hero as before.
+- 2026-11-18: The hero scrim overhangs the backdrop by 8px and is solid for its bottom 16px. Why: on a scaled canvas (any window that isn't exactly 1920×1080) the backdrop's last row lands on a fractional pixel and showed through as a 1px light line, brightest when a trailer played.
 - 2026-11-18: Focus ring fixes. The focused card gets `z-index: 1`, so its scaled frame and ring draw over the next card. The ring's radius is the frame's radius plus the ring offset (`--frame-radius`, default `--radius-md`), so it stays concentric and leaves no gap at the corners.
 
 - 2026-11-18: Apps row services (TMDB US provider IDs): Netflix 8, Prime Video 9, Disney+ 337, HBO Max 1899, Hulu 15, Apple TV 350, Peacock 386, Paramount+ 2303 (TMDB's old ID 531 is gone). A title's "Watch on" buttons only list these services, with ad tiers folded in (1796→8, 2100→9, 2616→2303). Why: TMDB lists many add-on channel variants per title, which would clutter the Display Page.
@@ -102,7 +103,7 @@ Newest first. One line each: what was chosen, and why.
 - Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` (R2 Account API token `spark-tv-upload`, Object Read & Write on `spark-tv-media` only, local `.env.local` only, used by `npm run media:upload`). Vercel needs none.
 - Media: six films encoded and on R2 (`spark-tv-media`, about 2.3 GB): backdrop still, trailer and full film each.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
-- App: M1 and the M2 shell are merged (Home with header, hero, Apps, Trending, Popular on Prime Video, Credits banner; Display Page; start screen, Glint launch, moderator panel with presets, live `es`, Credits). Spark Free on PR `feat/spark-free`: six Blender films with hero A video, a Spark Free row, Display Page trailer + Play, and the player. 56 tests. Catalog snapshot 2026-11-18: 46 titles, 8 providers.
+- App: M1 and the M2 shell are merged (Home with header, hero, Apps, Trending, Popular on Prime Video, Credits banner; Display Page; start screen, Glint launch, moderator panel with presets, live `es`, Credits). Spark Free merged in #7: six Blender films with hero A video, a Spark Free row, Display Page trailer + Play, and the player. 56 tests. Catalog snapshot 2026-11-18: 46 titles, 8 providers.
 
 ## Open items
 
@@ -119,5 +120,5 @@ Newest first. One line each: what was chosen, and why.
 
 1. Derek reviews and merges the Milestone 1 PR (setup checklist complete: PRs #1 and #2 merged, `main` protected, Vercel previews on).
 2. ~~Milestone 1~~ (in review): canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
-3. **Milestone 2** (shell merged in #4; Spark Free on PR `feat/spark-free`: data, encode and upload pipeline, hero A video, Spark Free row, Display Page video and Play, player): Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
+3. **Milestone 2** (shell merged in #4; Spark Free merged in #7: data, encode and upload pipeline, hero A video, Spark Free row, Display Page video and Play, player): Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
 4. **Milestone 3:** remaining card types and pages, polish and performance pass, README with the FLIRC key map, brand swap.
