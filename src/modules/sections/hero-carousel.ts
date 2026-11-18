@@ -84,7 +84,9 @@ sections.register({
 
     function render(): void {
       loadImage(index);
-      loadImage(index + 1); // ahead of focus
+      // Ahead of focus in both directions, since the carousel wraps.
+      loadImage((index + 1) % slides.length);
+      loadImage((index - 1 + slides.length) % slides.length);
       layers.forEach((img, i) => img.classList.toggle('is-visible', i === index));
       dotEls.forEach((d, i) => d.classList.toggle('is-current', i === index));
       renderContent();
@@ -107,9 +109,9 @@ sections.register({
       },
       handleKey(key: Key): KeyResult {
         if (key === 'left' || key === 'right') {
-          const next = index + (key === 'right' ? 1 : -1);
-          if (next < 0 || next >= slides.length) return key === 'left' ? 'exit-left' : 'exit-right';
-          index = next;
+          // Wraps: Right on the last slide goes to the first, Left on the first to the last.
+          if (slides.length < 2) return key === 'left' ? 'exit-left' : 'exit-right';
+          index = (index + (key === 'right' ? 1 : -1) + slides.length) % slides.length;
           ctx.memory.set(memoryKey, index);
           render();
           return 'handled';
