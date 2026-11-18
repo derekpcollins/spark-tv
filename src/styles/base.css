@@ -32,10 +32,3 @@ body {
   transform-origin: 0 0;
   background: var(--color-surface-app);
 }
-
-.placeholder-center {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-}
