@@ -31,6 +31,7 @@ Newest first. One line each: what was chosen, and why.
 - 2026-11-18: Moderator state persists to localStorage and mirrors to URL params (`lang`, `v.<slot>`, `o.<type.option>`, `sound`, `skip`, `dur`, `preset`). Any moderator param in the URL replaces stored state, so a bookmarked condition always reproduces exactly. Any manual change clears the active preset.
 - 2026-11-18: Moderator panel strings are English-only (they fall back to `en`). Why: the panel is for the facilitator, outside the fiction; participant-facing strings are translated.
 - 2026-11-18: Moderator changes rebuild Home in place, keeping the focused row and each row's focus memory. The panel opens on M ×3 within 1.5 s (`MODERATOR_SEQUENCE` in `src/config.ts`, so a FLIRC-mapped remote key can replace M) or `?moderator=1`; Back or the sequence again closes it.
+- 2026-11-18: The moderator panel has a dark theme, on by default, with a Panel → Theme row to switch back to light. Why: a white panel is glaring next to a dark TV UI in a dimmed research room. Its colours are cool neutrals (`color.moderator.dark.*`) so it still reads as outside the warm Glint UI. The theme is the facilitator's preference, not part of a condition, so it lives in its own localStorage key (`spark-tv:moderator-theme`), outside presets, Reset session and the URL.
 - 2026-11-18: The Credits screen uses TMDB's official "blue short" logo (`public/attribution/tmdb-short.svg`, from themoviedb.org/about/logos-attribution), shown smaller than the Spark lockup.
 - 2026-11-18: Home scroll is clamped so the last section rests at the bottom safe area instead of scrolling to the top anchor and leaving empty space.
 
@@ -103,7 +104,7 @@ Newest first. One line each: what was chosen, and why.
 - Secrets needed (names only): `TMDB_READ_TOKEN` (TMDB API Read Access Token, local `.env.local` only, used by `npm run sync`). `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` (R2 Account API token `spark-tv-upload`, Object Read & Write on `spark-tv-media` only, local `.env.local` only, used by `npm run media:upload`). Vercel needs none.
 - Media: six films encoded and on R2 (`spark-tv-media`, about 2.3 GB): backdrop still, trailer and full film each.
 - Build and tests: `npm run typecheck`, `npm run lint`, `npm test`, `npm run build` (all four: `npm run check`).
-- App: M1 and the M2 shell are merged (Home with header, hero, Apps, Trending, Popular on Prime Video, Credits banner; Display Page; start screen, Glint launch, moderator panel with presets, live `es`, Credits). Spark Free merged in #7: six Blender films with hero A video, a Spark Free row, Display Page trailer + Play, and the player. 56 tests. Catalog snapshot 2026-11-18: 46 titles, 8 providers.
+- App: M1 and the M2 shell are merged (Home with header, hero, Apps, Trending, Popular on Prime Video, Credits banner; Display Page; start screen, Glint launch, moderator panel with presets, live `es`, Credits). Spark Free merged in #7, the hero seam fix in #8, the moderator dark theme in #9. Spark Free: six Blender films with hero A video, a Spark Free row, Display Page trailer + Play, and the player. 58 tests. Catalog snapshot 2026-11-18: 46 titles, 8 providers.
 
 ## Open items
 

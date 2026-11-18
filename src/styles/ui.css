@@ -608,6 +608,17 @@
   animation: none;
 }
 
+/* Dark panel theme: same roles, swapped values (cool neutrals, so it still reads as outside the TV UI). */
+.moderator--dark {
+  --color-moderator-bg: var(--color-moderator-dark-bg);
+  --color-moderator-panel: var(--color-moderator-dark-panel);
+  --color-moderator-text: var(--color-moderator-dark-text);
+  --color-moderator-muted: var(--color-moderator-dark-muted);
+  --color-moderator-line: var(--color-moderator-dark-line);
+  --color-moderator-accent: var(--color-moderator-dark-accent);
+  --color-moderator-accent-text: var(--color-moderator-dark-accent-text);
+}
+
 .moderator__panel {
   position: absolute;
   top: 0;
