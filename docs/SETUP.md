@@ -97,7 +97,6 @@ Newest first. One line each: what was chosen, and why.
 
 ## Open items
 
-- Polish (M3): a focused card's 1.06 scale and ring slightly overlap the next card; reconsider the card gap or shift neighbors when the focus treatment gets its pass.
 - Re-run `npm run sync` before demos: trending rows go stale. `catalog.json` is a snapshot by design.
 - Exact remote button for the moderator sequence (decide during FLIRC setup).
 - Which Blender films make the cut, and which have usable 1080p sources.
