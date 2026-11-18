@@ -54,7 +54,8 @@
   content: '';
   position: absolute;
   inset: calc(-1 * var(--focus-ring-offset));
-  border-radius: inherit;
+  /* Concentric with the frame: the ring sits outside it, so its radius grows by the offset. */
+  border-radius: calc(var(--frame-radius, var(--radius-md)) + var(--focus-ring-offset));
   border: var(--focus-ring-width) solid var(--color-focus-ring);
   box-shadow: 0 0 var(--focus-glow-blur) var(--color-focus-glow);
   opacity: 0;
@@ -309,6 +310,7 @@
 
 .card.is-focused {
   transform: scale(var(--focus-scale));
+  z-index: 1; /* the scaled card and its ring draw over the next card */
 }
 
 .card__frame {
@@ -473,6 +475,7 @@
 }
 
 .banner__frame {
+  --frame-radius: var(--radius-lg);
   width: 100%;
   gap: var(--space-lg);
   padding: var(--space-lg);

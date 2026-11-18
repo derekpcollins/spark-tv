@@ -29,6 +29,8 @@ Newest first. One line each: what was chosen, and why.
 
 ### Milestone 1 build choices (2026-11-18)
 
+- 2026-11-18: Focus ring fixes. The focused card gets `z-index: 1`, so its scaled frame and ring draw over the next card. The ring's radius is the frame's radius plus the ring offset (`--frame-radius`, default `--radius-md`), so it stays concentric and leaves no gap at the corners.
+
 - 2026-11-18: Apps row services (TMDB US provider IDs): Netflix 8, Prime Video 9, Disney+ 337, HBO Max 1899, Hulu 15, Apple TV 350, Peacock 386, Paramount+ 2303 (TMDB's old ID 531 is gone). A title's "Watch on" buttons only list these services, with ad tiers folded in (1796→8, 2100→9, 2616→2303). Why: TMDB lists many add-on channel variants per title, which would clutter the Display Page.
 - 2026-11-18: TMDB key: reusing Derek's existing TMDB API application, renamed to Spark TV. The key was regenerated on 2026-11-18, because the old v3 key was hard-coded in the public `CodePath-Flicks-App` repo (2017). The new token was verified against `/3/authentication`. `TMDB_READ_TOKEN` lives only in `.env.local` on Guardian.
 - 2026-11-18: Modules self-register, and `src/modules/index.ts` loads them all with `import.meta.glob`. Why: adding a module or variant is just a new file, with no edits to the core or an index (decision 10).
@@ -95,7 +97,6 @@ Newest first. One line each: what was chosen, and why.
 
 ## Open items
 
-- Polish (M3): a focused card's 1.06 scale and ring slightly overlap the next card; reconsider the card gap or shift neighbors when the focus treatment gets its pass.
 - Re-run `npm run sync` before demos: trending rows go stale. `catalog.json` is a snapshot by design.
 - Exact remote button for the moderator sequence (decide during FLIRC setup).
 - Which Blender films make the cut, and which have usable 1080p sources.
