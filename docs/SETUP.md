@@ -12,6 +12,7 @@ Newest first. One line each: what was chosen, and why.
 
 ### Setup choices (2026-11-18)
 
+- 2026-11-18: Guardrails: `.claude/settings.json` denies pushes to `main`, CLI production deploys (`vercel --prod`, `vercel promote`) and reading `.env.local`. The push-guard hook (`.claude/hooks/guard-push.py`, 149/149 tests passing) blocks any `git push` that would update `main`. Why: `main` is production, and the repo is public.
 - 2026-11-18: Movies, Shows and Spark Free nav items take focus but don't switch pages until Milestone 3; only Home is built in M1–M2. Why: the milestones already put the remaining pages in M3, and this keeps M1 focused. Whether they ship in v1 is still open.
 - 2026-11-18: GitHub Actions job `check` runs typecheck, lint, test and build on every PR, and it's the required check on `main`. Why: the same gate as the pre-commit checks, enforced on GitHub.
 - 2026-11-18: Design tokens live in `design/tokens.json` and are applied at runtime as CSS custom properties (`--color-text-default`, etc.). Why: no build step, and the brand swap stays a one-file change (decision 14).
