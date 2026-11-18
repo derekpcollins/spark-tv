@@ -1,7 +1,8 @@
 /** Shared contracts. Spec: docs/SPEC.md, "Module contract". */
 import type { Catalog, Title } from './catalog.ts';
 
-export type Key = 'up' | 'down' | 'left' | 'right' | 'ok' | 'back' | 'playpause';
+/** App keys. 'moderator' comes from the moderator key sequence, not a single key. */
+export type Key = 'up' | 'down' | 'left' | 'right' | 'ok' | 'back' | 'playpause' | 'moderator';
 
 export type KeyResult = 'handled' | 'exit-up' | 'exit-down' | 'exit-left' | 'exit-right' | 'back';
 
@@ -45,5 +46,8 @@ export interface ModuleContext {
   locale: () => string;
   memory: FocusMemory;
   openTitle: (title: Title) => void;
-  options: Record<string, boolean | string>;
+  /** Push an overlay registered in the overlays registry (e.g. 'credits'). */
+  openOverlay: (type: string, props?: Record<string, unknown>) => void;
+  /** A module option's current value (moderator setting, else the schema default). */
+  option: (type: string, id: string) => boolean | string | undefined;
 }

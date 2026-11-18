@@ -6,7 +6,9 @@
           "id": "hero",
           "type": "hero",
           "variant": "B",
-          "source": { "tmdb": "trending/all/week" },
+          "source": {
+            "tmdb": "trending/all/week"
+          },
           "limit": 5
         },
         {
@@ -14,14 +16,18 @@
           "type": "row",
           "card": "app",
           "title": "row.apps",
-          "source": { "apps": ["sparkfree", 8, 9, 337, 1899, 15, 350, 386, 2303] }
+          "source": {
+            "apps": ["sparkfree", 8, 9, 337, 1899, 15, 350, 386, 2303]
+          }
         },
         {
           "id": "trending",
           "type": "row",
           "card": "landscape",
           "title": "row.trending",
-          "source": { "tmdb": "trending/all/week" },
+          "source": {
+            "tmdb": "trending/all/week"
+          },
           "limit": 20
         },
         {
@@ -29,12 +35,27 @@
           "type": "row",
           "card": "poster",
           "title": "row.popularOn",
-          "titleParams": { "provider": "provider:9" },
+          "titleParams": {
+            "provider": "provider:9"
+          },
           "source": {
             "tmdb": "discover/movie",
-            "params": { "with_watch_providers": "9", "watch_region": "US", "sort_by": "popularity.desc" }
+            "params": {
+              "with_watch_providers": "9",
+              "watch_region": "US",
+              "sort_by": "popularity.desc"
+            }
           },
           "limit": 20
+        },
+        {
+          "id": "credits",
+          "type": "banner",
+          "variant": "credits",
+          "title": "banner.credits",
+          "source": {
+            "ids": []
+          }
         }
       ]
     }

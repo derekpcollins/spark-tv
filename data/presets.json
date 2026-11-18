@@ -1,0 +1,22 @@
+[
+  {
+    "id": "baseline",
+    "label": "Baseline (EN, static hero)",
+    "settings": { "locale": "en", "variants": { "hero": "B" } }
+  },
+  {
+    "id": "spanish",
+    "label": "Spanish participant",
+    "settings": { "locale": "es", "variants": { "hero": "B" } }
+  },
+  {
+    "id": "posters",
+    "label": "Poster-heavy Home",
+    "settings": { "variants": { "row:trending": "poster" } }
+  },
+  {
+    "id": "quick-start",
+    "label": "Quick start (no launch)",
+    "settings": { "skipLaunch": true }
+  }
+]

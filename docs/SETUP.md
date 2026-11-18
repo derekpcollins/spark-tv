@@ -10,6 +10,16 @@ The product and architecture reference (module contract, data schemas, Home layo
 
 Newest first. One line each: what was chosen, and why.
 
+### Milestone 2 shell choices (2026-11-18)
+
+- 2026-11-18: Start → launch → Home flow. "Skip launch screen" also skips the start screen at boot; Reset session always returns to the start screen, and OK then plays the launch unless skip is on. Why: the start screen exists to unlock audio and to reset between participants; with skip on, a facilitator wants Home immediately.
+- 2026-11-18: The launch timeline is the SPEC's 2700 ms timeline scaled to "Launch duration" (1.8 / 2.7 / 4.0 s), built with the Web Animations API (transform/opacity only). The snap sound is a slot in `src/config.ts` (`SNAP_SOUND.src` null = silence), timed so its peak lands at 300 ms (scaled).
+- 2026-11-18: Moderator state persists to localStorage and mirrors to URL params (`lang`, `v.<slot>`, `o.<type.option>`, `sound`, `skip`, `dur`, `preset`). Any moderator param in the URL replaces stored state, so a bookmarked condition always reproduces exactly. Any manual change clears the active preset.
+- 2026-11-18: Moderator panel strings are English-only (they fall back to `en`). Why: the panel is for the facilitator, outside the fiction; participant-facing strings are translated.
+- 2026-11-18: Moderator changes rebuild Home in place, keeping the focused row and each row's focus memory. The panel opens on M ×3 within 1.5 s (`MODERATOR_SEQUENCE` in `src/config.ts`, so a FLIRC-mapped remote key can replace M) or `?moderator=1`; Back or the sequence again closes it.
+- 2026-11-18: The Credits screen uses TMDB's official "blue short" logo (`public/attribution/tmdb-short.svg`, from themoviedb.org/about/logos-attribution), shown smaller than the Spark lockup.
+- 2026-11-18: Home scroll is clamped so the last section rests at the bottom safe area instead of scrolling to the top anchor and leaving empty space.
+
 ### Milestone 1 build choices (2026-11-18)
 
 - 2026-11-18: Apps row services (TMDB US provider IDs): Netflix 8, Prime Video 9, Disney+ 337, HBO Max 1899, Hulu 15, Apple TV 350, Peacock 386, Paramount+ 2303 (TMDB's old ID 531 is gone). A title's "Watch on" buttons only list these services, with ad tiers folded in (1796→8, 2100→9, 2616→2303). Why: TMDB lists many add-on channel variants per title, which would clutter the Display Page.
@@ -91,5 +101,5 @@ Newest first. One line each: what was chosen, and why.
 
 1. Derek reviews and merges the Milestone 1 PR (setup checklist complete: PRs #1 and #2 merged, `main` protected, Vercel previews on).
 2. ~~Milestone 1~~ (in review): canvas scaling, keymap, focus engine and overlay stack, registries. A TMDB sync script producing `catalog.json`. Home renders the header, hero B (static), the Apps row and two content rows from real data, with full LRUD, vertical row motion and focus memory. The generic Display Page opens and Back restores focus. Vitest coverage for the focus engine and registries. A Vercel preview deployed.
-3. **Milestone 2:** Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
+3. **Milestone 2** (shell on PR `feat/m2-shell`: start screen, launch, moderator panel with presets, live es, Credits; Spark Free next, waiting on R2 setup and the film shortlist): Spark Free (sources, clips, R2, hero A video, player), start screen and launch sequence (placeholder brand), moderator panel with presets, `es` locale, Credits screen.
 4. **Milestone 3:** remaining card types and pages, polish and performance pass, README with the FLIRC key map, brand swap.

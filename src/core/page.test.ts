@@ -57,7 +57,8 @@ function setup() {
     t: createI18n(() => 'en'),
     locale: () => 'en',
     memory: createMemory(),
-    options: {},
+    option: () => undefined,
+    openOverlay: () => {},
     openTitle(t) {
       opened.push(t);
       stack.push(displayPages.get(t.contentType, 'A').create(t, ctx));
