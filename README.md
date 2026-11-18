@@ -15,15 +15,16 @@ npm run dev
 
 ## Commands
 
-| Command             | What it does                                               |
-| ------------------- | ---------------------------------------------------------- |
-| `npm run dev`       | Local dev server                                           |
-| `npm run build`     | Production build into `dist/`                              |
-| `npm run typecheck` | TypeScript check                                           |
-| `npm run lint`      | ESLint and Prettier check                                  |
-| `npm test`          | Vitest                                                     |
-| `npm run check`     | All of the above, in order                                 |
-| `npm run sync`      | Refresh `data/catalog.json` from TMDB (needs `.env.local`) |
+| Command                | What it does                                               |
+| ---------------------- | ---------------------------------------------------------- |
+| `npm run dev`          | Local dev server                                           |
+| `npm run build`        | Production build into `dist/`                              |
+| `npm run typecheck`    | TypeScript check                                           |
+| `npm run lint`         | ESLint and Prettier check                                  |
+| `npm test`             | Vitest                                                     |
+| `npm run check`        | All of the above, in order                                 |
+| `npm run brand:assets` | Regenerate the static mark SVGs and favicons               |
+| `npm run sync`         | Refresh `data/catalog.json` from TMDB (needs `.env.local`) |
 
 ## Docs
 
@@ -40,4 +41,4 @@ The source code is MIT licensed (see [LICENSE](LICENSE)). The license covers onl
 
 ## Credits
 
-This product uses the TMDB API but is not endorsed or certified by TMDB. Streaming provider data is powered by JustWatch. Logos and trademarks belong to their owners; Spark TV is not affiliated with them.
+This product uses the TMDB API but is not endorsed or certified by TMDB. Streaming provider data is powered by JustWatch. The Unbounded typeface is licensed under the SIL Open Font License. Logos and trademarks belong to their owners; Spark TV is not affiliated with them.

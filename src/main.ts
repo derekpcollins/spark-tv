@@ -1,14 +1,16 @@
+import '@fontsource/unbounded/latin-300.css';
 import tokens from '../design/tokens.json';
 import { applyTokens } from './core/tokens.ts';
 import { mountCanvas } from './core/canvas.ts';
+import { createWordmark } from './brand/wordmark.ts';
 import './styles/base.css';
+import './styles/brand.css';
 
 applyTokens(tokens);
 const canvas = mountCanvas(document.querySelector<HTMLElement>('#app')!);
 
-const wordmark = document.createElement('div');
-wordmark.className = 'wordmark';
-wordmark.textContent = 'Spark TV';
-wordmark.style.cssText =
-  'position:absolute;inset:0;display:grid;place-items:center;font-size:var(--font-size-xxl);font-weight:var(--font-weight-bold);color:var(--color-brand-wordmark)';
-canvas.append(wordmark);
+// Placeholder until Home lands in Milestone 1: the stacked lockup, centered.
+const holder = document.createElement('div');
+holder.className = 'placeholder-center';
+holder.append(createWordmark({ fontSize: 56, lockup: 'stacked' }));
+canvas.append(holder);

@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run lint && npm test && npm run build"
+    "check": "npm run typecheck && npm run lint && npm test && npm run build",
+    "brand:assets": "node scripts/brand-assets.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -28,5 +29,8 @@
   "engines": {
     "node": "24.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/unbounded": "^5.3.0"
+  }
 }

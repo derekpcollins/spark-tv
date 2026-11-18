@@ -1,0 +1,47 @@
+/* Glint brand: wordmark and lockups. Spec: docs/SPEC.md, "Brand". */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--brand-font-size);
+  gap: 0.5em;
+}
+
+.brand--stacked {
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.brand__text {
+  display: inline-flex;
+  gap: 0.5em;
+  font-family: var(--font-family-brand);
+  font-weight: var(--font-weight-light);
+  letter-spacing: var(--font-tracking-brand);
+  line-height: 1;
+  white-space: nowrap;
+  /* Trim the text box to the cap height so a horizontal lockup centers the mark on it. */
+  text-box: trim-both cap alphabetic;
+}
+
+.brand__spark {
+  color: var(--color-wordmark-spark);
+}
+
+.brand__tv {
+  color: var(--color-wordmark-tv);
+  margin-right: calc(-1 * var(--font-tracking-brand));
+}
+
+.brand--on-light .brand__spark {
+  color: var(--color-wordmark-spark-on-light);
+}
+
+.brand--on-light .brand__tv {
+  color: var(--color-wordmark-tv-on-light);
+}
+
+.glint {
+  display: block;
+  flex: none;
+  overflow: visible;
+}

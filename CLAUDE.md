@@ -18,7 +18,8 @@ A browser-based prototype of a TV platform home screen (in the style of webOS or
 - `src/core/`: app core (canvas, tokens, keymap, focus engine, overlay stack, registries, store, i18n)
 - `src/modules/`: one module per file (sections, cards, display pages, overlays), each registering itself
 - `src/styles/`: global CSS (tokens only, no raw values)
-- `design/tokens.json`: every brand and visual value, applied as CSS custom properties (`--color-text-default`)
+- `design/tokens.json`: the Glint design system: every brand and visual value, applied as CSS custom properties (`--color-text-primary`)
+- `src/brand/`: Glint mark (`createMark`), wordmark and lockups (`createWordmark`); `npm run brand:assets` regenerates the static SVGs and favicons
 - `data/`: `layout.json` (hand-authored), `catalog.json` (generated), later `sparkfree.json`, `presets.json`
 - `scripts/`: Node scripts (TypeScript, run directly by Node 24), e.g. `scripts/sync.ts`
 
@@ -50,7 +51,8 @@ Before every commit, all of these must pass (`npm run check` runs them in order)
 - Modules implement the contract in `docs/SPEC.md` (`create(config, ctx)` returning `el`, `focus`, `blur`, `handleKey`, `destroy`). The focus engine knows only the contract.
 - Every key goes through the keymap (`src/core/keymap.ts`). Never read `KeyboardEvent.key` anywhere else.
 - Animate transform and opacity only. Batch layout reads before writes. Measure with `offsetWidth`/`offsetHeight`, never `getBoundingClientRect` (the canvas is scaled). No vw/vh in components.
-- All visible strings go through the i18n function. All brand and visual values go through tokens; never hard-code colours, sizes, spacing, durations or fonts.
+- All visible strings go through the i18n function. All brand and visual values go through tokens; never hard-code colours, sizes, spacing, durations or fonts. `src/core/tokens-usage.test.ts` fails the build on hard-coded colours, fonts, easings and durations in `src/`; a line marked `tokens-ok` is a reviewed exception.
+- Brand (Glint, see SPEC.md "Brand"): the spark spectrum is only for the mark, focus and progress. No red anywhere in the UI. The TV header shows the wordmark only.
 - No Netflix-specific anything. Netflix titles and the Netflix logo from TMDB/JustWatch data are treated exactly like every other provider; no Netflix-specific screens, card treatments or flows. Import nothing from `spark-tv-legacy`.
 - Blender film logos are not CC-licensed: set Spark Free titles in type, never with their logos.
 - Video: `preload="none"`, set `src` only when visible, on exit pause + remove `src` + `load()`, never play under an overlay.
