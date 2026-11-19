@@ -58,6 +58,98 @@
           "limit": 20
         },
         {
+          "id": "because-you-watched",
+          "type": "row",
+          "card": "poster",
+          "title": "row.becauseYouWatched",
+          "titleParams": {
+            "title": "seed"
+          },
+          "source": {
+            "recommendations": {
+              "section": "continue-watching",
+              "id": "tv:95396"
+            }
+          },
+          "limit": 20,
+          "requireProvider": true
+        },
+        {
+          "id": "new-on-streaming",
+          "type": "row",
+          "card": "poster",
+          "title": "row.newOnStreaming",
+          "source": {
+            "tmdb": ["discover/movie", "discover/tv"],
+            "params": {
+              "watch_region": "US",
+              "with_watch_monetization_types": "flatrate",
+              "with_watch_providers": "@apps",
+              "vote_count.gte": "10",
+              "sort_by": "popularity.desc"
+            },
+            "sinceDays": 60
+          },
+          "limit": 20,
+          "requireProvider": true
+        },
+        {
+          "id": "critically-acclaimed",
+          "type": "row",
+          "card": "landscape",
+          "title": "row.criticallyAcclaimed",
+          "source": {
+            "tmdb": ["discover/movie", "discover/tv"],
+            "params": {
+              "watch_region": "US",
+              "with_watch_monetization_types": "flatrate",
+              "with_watch_providers": "@apps",
+              "vote_count.gte": "1000",
+              "sort_by": "vote_average.desc"
+            }
+          },
+          "limit": 20,
+          "requireProvider": true
+        },
+        {
+          "id": "genre-scifi",
+          "type": "row",
+          "card": "poster",
+          "title": "row.genreScifi",
+          "source": {
+            "tmdb": "discover/movie",
+            "params": {
+              "watch_region": "US",
+              "with_watch_monetization_types": "flatrate",
+              "with_watch_providers": "@apps",
+              "with_genres": "878",
+              "vote_count.gte": "100",
+              "sort_by": "popularity.desc"
+            }
+          },
+          "limit": 20,
+          "requireProvider": true
+        },
+        {
+          "id": "genre-animation",
+          "type": "row",
+          "card": "landscape",
+          "title": "row.genreAnimation",
+          "source": {
+            "tmdb": "discover/movie",
+            "params": {
+              "watch_region": "US",
+              "with_watch_monetization_types": "flatrate",
+              "with_watch_providers": "@apps",
+              "with_genres": "16",
+              "vote_count.gte": "100",
+              "sort_by": "popularity.desc"
+            }
+          },
+          "limit": 20,
+          "requireProvider": true
+        },
+        {
           "id": "credits",
           "type": "banner",
           "variant": "credits",

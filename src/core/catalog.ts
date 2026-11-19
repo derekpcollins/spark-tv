@@ -45,10 +45,19 @@ export interface Catalog {
   providers: Record<string, Provider>;
   /** Resolved item ids per section: title ids, or 'app:sparkfree' / 'provider:<id>' for app rows. */
   sections: Record<string, string[]>;
+  /** Section id → the title a recommendations row was built from (for "Because You Watched {title}"). */
+  seeds?: Record<string, string>;
 }
 
 export type SectionSource =
-  | { tmdb: string; params?: Record<string, string> }
+  /**
+   * A TMDB list endpoint, or several interleaved (e.g. discover/movie + discover/tv).
+   * A param value of "@apps" becomes the Apps row's provider ids joined with "|".
+   * sinceDays limits to titles released (movie) or first aired (tv) in the last N days.
+   */
+  | { tmdb: string | string[]; params?: Record<string, string>; sinceDays?: number }
+  /** TMDB recommendations for the first title of `section` if it exists and has items, else for `id`. */
+  | { recommendations: { section?: string; id: string } }
   | { ids: string[] }
   /** App tiles: 'sparkfree' or a TMDB watch-provider id. */
   | { apps: (string | number)[] }
@@ -64,10 +73,33 @@ export interface SectionConfig {
   titleParams?: Record<string, string>;
   source: SectionSource;
   limit?: number;
+  /** Drop titles not streaming (US flatrate) on a service in the Apps row. */
+  requireProvider?: boolean;
 }
 
 export interface Layout {
   pages: Record<string, { sections: SectionConfig[] }>;
+}
+
+/**
+ * Row title params: "provider:<id>" → the provider's name, "seed" → the localized title the
+ * section's recommendations were built from; anything else is used as is.
+ */
+export function resolveTitleParams(
+  section: Pick<SectionConfig, 'id' | 'titleParams'>,
+  catalog: Catalog,
+  locale: string,
+): Record<string, string> {
+  return Object.fromEntries(
+    Object.entries(section.titleParams ?? {}).map(([k, v]) => {
+      if (v.startsWith('provider:')) return [k, catalog.providers[v.slice(9)]?.name ?? v];
+      if (v === 'seed') {
+        const seed = catalog.titles[catalog.seeds?.[section.id] ?? ''];
+        return [k, seed ? localized(seed, locale).title : ''];
+      }
+      return [k, v];
+    }),
+  );
 }
 
 export function localized(title: Title, locale: string): LocalizedText {

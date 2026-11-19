@@ -8,6 +8,7 @@ import { join } from 'node:path';
 import type { Catalog, Layout, SectionConfig, Title } from '../src/core/catalog.ts';
 import { ASSET_BASE_URL } from '../src/config.ts';
 import { films, mediaKeys } from './sparkfree.ts';
+import { expandParams, interleave, mediaOf } from './sync-sources.ts';
 import { normalizeProvider, normalizeSparkFree, normalizeTitle, type TmdbDetail } from './tmdb-normalize.ts';
 
 const root = join(import.meta.dirname, '..');
@@ -56,23 +57,61 @@ async function pool<T, R>(items: T[], size: number, fn: (item: T) => Promise<R>)
 
 interface ListResult {
   results: { id: number; media_type?: string }[];
+  total_pages?: number;
 }
 
-async function resolveSection(s: SectionConfig): Promise<string[]> {
-  const src = s.source;
-  if ('ids' in src) return src.ids;
-  if ('sparkfree' in src) return films.map((f) => `sparkfree:${f.slug}`);
-  if ('apps' in src) return src.apps.map((id) => (typeof id === 'number' ? `provider:${id}` : `app:${id}`));
-  const media = src.tmdb.includes('/tv') ? 'tv' : 'movie';
+/** Rows that must survive the provider and artwork filters fetch extra candidates. */
+const OVERFETCH = 3;
+const MAX_PAGES = 5;
+
+interface ResolveContext {
+  appProviders: number[];
+  sections: Catalog['sections'];
+  seeds: Record<string, string>;
+}
+
+async function listIds(path: string, params: Record<string, string>, want: number): Promise<string[]> {
+  const media = mediaOf(path);
   const ids: string[] = [];
-  for (let page = 1; ids.length < (s.limit ?? 20) && page <= 3; page++) {
-    const list = await tmdb<ListResult>(src.tmdb, { language: 'en-US', page: String(page), ...src.params });
+  for (let page = 1; ids.length < want && page <= MAX_PAGES; page++) {
+    const list = await tmdb<ListResult>(path, { language: 'en-US', ...params, page: String(page) });
     for (const r of list.results) {
       const type = r.media_type ?? media;
       if (type === 'movie' || type === 'tv') ids.push(`${type}:${r.id}`);
     }
+    if (page >= (list.total_pages ?? 1)) break;
   }
-  return ids.slice(0, s.limit ?? 20);
+  return ids;
+}
+
+/** Candidate ids for a section, in order. main() filters them and trims to the limit. */
+async function resolveSection(s: SectionConfig, ctx: ResolveContext): Promise<string[]> {
+  const src = s.source;
+  if ('ids' in src) return src.ids;
+  if ('sparkfree' in src) return films.map((f) => `sparkfree:${f.slug}`);
+  if ('apps' in src) return src.apps.map((id) => (typeof id === 'number' ? `provider:${id}` : `app:${id}`));
+  const limit = s.limit ?? 20;
+  const want = s.requireProvider ? limit * OVERFETCH : limit;
+  if ('recommendations' in src) {
+    const fromSection = src.recommendations.section
+      ? ctx.sections[src.recommendations.section]?.find((id) => /^(movie|tv):/.test(id))
+      : undefined;
+    const seed = fromSection ?? src.recommendations.id;
+    ctx.seeds[s.id] = seed;
+    const [type, num] = seed.split(':');
+    return listIds(`${type}/${num}/recommendations`, {}, want);
+  }
+  const paths = Array.isArray(src.tmdb) ? src.tmdb : [src.tmdb];
+  const lists = await Promise.all(
+    paths.map((path) =>
+      listIds(
+        path,
+        expandParams(src.params, mediaOf(path), { appProviders: ctx.appProviders, sinceDays: src.sinceDays }),
+        want,
+      ),
+    ),
+  );
+  return interleave(lists);
 }
 
 async function fetchSparkFree(id: string): Promise<Title | null> {
@@ -110,44 +149,62 @@ async function main(): Promise<void> {
   const sections: Catalog['sections'] = {};
   const allSections = Object.values(layout.pages).flatMap((p) => p.sections);
 
+  // Provider ids in the Apps row(s), plus the ad tiers that fold into them (for "@apps").
+  const appIds = allSections.flatMap((s) =>
+    'apps' in s.source ? s.source.apps.filter((id): id is number => typeof id === 'number') : [],
+  );
+  const appProviders = [
+    ...appIds,
+    ...Object.entries(PROVIDER_ALIASES)
+      .filter(([, main]) => appIds.includes(main))
+      .map(([alias]) => Number(alias)),
+  ];
+  const seeds: Record<string, string> = {};
+
   console.log(`Resolving ${allSections.length} sections…`);
-  for (const s of allSections) sections[s.id] = await resolveSection(s);
+  for (const s of allSections) sections[s.id] = await resolveSection(s, { appProviders, sections, seeds });
 
   const titleIds = [
     ...new Set(
       Object.values(sections)
         .flat()
-        .filter((id) => !id.startsWith('provider:') && !id.startsWith('app:')),
+        .filter((id) => !id.startsWith('provider:') && !id.startsWith('app:'))
+        .concat(Object.values(seeds)),
     ),
   ];
   console.log(`Fetching ${titleIds.length} titles (en-US + es-ES)…`);
   const fetched = await pool(titleIds, 4, fetchTitle);
   // "Watch on" buttons: only the services in the Apps row(s), with ad tiers folded in.
-  const appProviders = new Set(
-    Object.values(sections)
-      .flat()
-      .filter((id) => id.startsWith('provider:'))
-      .map((id) => Number(id.slice(9))),
-  );
+  const appProviderSet = new Set(appIds);
   const titles: Catalog['titles'] = {};
   for (const t of fetched) {
     if (!t) continue;
     t.providers = [...new Set(t.providers.map((id) => PROVIDER_ALIASES[id] ?? id))].filter((id) =>
-      appProviders.has(id),
+      appProviderSet.has(id),
     );
     titles[t.id] = t;
   }
 
   // Drop titles we couldn't fetch, and titles with no usable artwork. Spark Free titles only
-  // need a backdrop: a missing textless poster falls back to the title set in type.
+  // need a backdrop: a missing textless poster falls back to the title set in type. Rows marked
+  // requireProvider also drop titles not streaming on an Apps-row service. Then trim to the limit.
+  const configs = new Map(allSections.map((s) => [s.id, s]));
   for (const [sid, ids] of Object.entries(sections)) {
-    sections[sid] = ids.filter(
-      (id) =>
-        id.startsWith('provider:') ||
-        id.startsWith('app:') ||
-        (titles[id]?.images.backdrop && (titles[id]?.images.poster || titles[id]?.source === 'sparkfree')),
-    );
+    const config = configs.get(sid);
+    const kept = ids.filter((id) => {
+      if (id.startsWith('provider:') || id.startsWith('app:')) return true;
+      const t = titles[id];
+      if (!t?.images.backdrop || !(t.images.poster || t.source === 'sparkfree')) return false;
+      return !config?.requireProvider || t.providers.length > 0;
+    });
+    sections[sid] = config?.limit ? kept.slice(0, config.limit) : kept;
+    if (config?.limit && kept.length < config.limit)
+      console.warn(`  ${sid}: only ${kept.length} of ${config.limit}`);
   }
+
+  // Keep only titles that something shows: a section item or a recommendations seed.
+  const used = new Set([...Object.values(sections).flat(), ...Object.values(seeds)]);
+  for (const id of Object.keys(titles)) if (!used.has(id)) delete titles[id];
 
   console.log('Fetching US watch providers…');
   const lists = await Promise.all(
@@ -185,6 +242,7 @@ async function main(): Promise<void> {
     titles,
     providers,
     sections,
+    ...(Object.keys(seeds).length ? { seeds } : {}),
   };
   writeFileSync(join(root, 'data/catalog.json'), JSON.stringify(catalog, null, 1) + '\n');
   console.log(
