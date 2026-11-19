@@ -73,6 +73,8 @@ export interface SectionConfig {
   titleParams?: Record<string, string>;
   source: SectionSource;
   limit?: number;
+  /** Ad sections: which advertiser (see src/modules/sections/ad.ts). */
+  ad?: string;
   /** Drop titles not streaming (US flatrate) on a service in the Apps row. */
   requireProvider?: boolean;
 }

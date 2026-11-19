@@ -16,7 +16,8 @@
     "brand:assets": "node scripts/brand-assets.ts",
     "sync": "node scripts/sync.ts",
     "media:encode": "node scripts/media-encode.ts",
-    "media:upload": "node scripts/media-upload.ts"
+    "media:upload": "node scripts/media-upload.ts",
+    "ads": "node scripts/ads.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

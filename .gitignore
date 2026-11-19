@@ -30,3 +30,6 @@ dist-ssr
 
 # Coverage
 coverage
+
+# Built ad images (uploaded to R2 by npm run ads -- --upload)
+assets-src/ads/build/

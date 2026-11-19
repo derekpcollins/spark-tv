@@ -30,34 +30,6 @@
           }
         },
         {
-          "id": "trending",
-          "type": "row",
-          "card": "landscape",
-          "title": "row.trending",
-          "source": {
-            "tmdb": "trending/all/week"
-          },
-          "limit": 20
-        },
-        {
-          "id": "popular-prime",
-          "type": "row",
-          "card": "poster",
-          "title": "row.popularOn",
-          "titleParams": {
-            "provider": "provider:9"
-          },
-          "source": {
-            "tmdb": "discover/movie",
-            "params": {
-              "with_watch_providers": "9",
-              "watch_region": "US",
-              "sort_by": "popularity.desc"
-            }
-          },
-          "limit": 20
-        },
-        {
           "id": "because-you-watched",
           "type": "row",
           "card": "poster",
@@ -92,6 +64,25 @@
           },
           "limit": 20,
           "requireProvider": true
+        },
+        {
+          "id": "trending",
+          "type": "row",
+          "card": "landscape",
+          "title": "row.trending",
+          "source": {
+            "tmdb": "trending/all/week"
+          },
+          "limit": 20
+        },
+        {
+          "id": "ad",
+          "type": "ad",
+          "variant": "banner",
+          "ad": "northwake",
+          "source": {
+            "ids": []
+          }
         },
         {
           "id": "critically-acclaimed",
@@ -147,6 +138,47 @@
             }
           },
           "limit": 20,
+          "requireProvider": true
+        },
+        {
+          "id": "popular-prime",
+          "type": "row",
+          "card": "poster",
+          "title": "row.popularOn",
+          "titleParams": {
+            "provider": "provider:9"
+          },
+          "source": {
+            "tmdb": "discover/movie",
+            "params": {
+              "with_watch_providers": "9",
+              "watch_region": "US",
+              "sort_by": "popularity.desc"
+            }
+          },
+          "limit": 20
+        },
+        {
+          "id": "weekend-picks",
+          "type": "row",
+          "card": "landscape",
+          "title": "row.weekendPicks",
+          "source": {
+            "ids": [
+              "tv:136315",
+              "movie:693134",
+              "tv:126308",
+              "movie:569094",
+              "tv:66732",
+              "movie:346648",
+              "tv:100088",
+              "movie:361743",
+              "tv:97546",
+              "movie:872585",
+              "tv:76479",
+              "movie:1022789"
+            ]
+          },
           "requireProvider": true
         },
         {
