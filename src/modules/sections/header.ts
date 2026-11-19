@@ -6,6 +6,25 @@ import { sections } from '../../core/app-registries.ts';
 import { createWordmark } from '../../brand/wordmark.ts';
 import type { Key, KeyResult } from '../../core/types.ts';
 
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+/** Simple outline person (head + shoulders), drawn in currentColor. */
+function userIcon(): SVGSVGElement {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.classList.add('header__profile-icon');
+  for (const d of [
+    'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z',
+    'M4.5 20.5c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5',
+  ]) {
+    const path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', d);
+    svg.append(path);
+  }
+  return svg;
+}
+
 const NAV = ['nav.home', 'nav.movies', 'nav.shows', 'nav.sparkfree'];
 const MEMORY_KEY = 'header';
 
@@ -33,6 +52,7 @@ sections.register({
     const profile = document.createElement('span');
     profile.className = 'header__profile';
     profile.setAttribute('aria-label', ctx.t('nav.profile'));
+    profile.append(userIcon());
     el.append(profile);
     items.push(profile);
 
