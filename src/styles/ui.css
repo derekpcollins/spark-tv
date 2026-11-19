@@ -502,6 +502,7 @@
 .banner__frame {
   --frame-radius: var(--radius-lg);
   width: 100%;
+  height: var(--card-banner-height);
   gap: var(--space-lg);
   padding: var(--space-lg);
   border-radius: var(--radius-lg);
@@ -517,6 +518,88 @@
 .banner__sub {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
+}
+
+/* ---------- Ad banner ---------- */
+
+/* Same footprint and frame as the Credits banner; the advertiser's own type and palette inside. */
+.ad {
+  padding: 0 var(--space-safe-x);
+}
+
+.ad__frame {
+  --frame-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--card-banner-height);
+  padding: 0 var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-surface-border);
+}
+
+/* Clips the image to the frame; the focus ring lives on the frame, outside this clip. */
+.ad__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.ad__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--motion-duration-base) var(--motion-easing-standard);
+}
+
+.ad__media.is-loaded .ad__img {
+  opacity: 1;
+}
+
+.ad__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--color-ad-scrim-start) 0%,
+    var(--color-ad-scrim-end) var(--ad-scrim-stop)
+  );
+}
+
+.ad__text {
+  position: relative;
+  max-width: var(--ad-text-width);
+  font-family: var(--font-family-ad);
+}
+
+.ad__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--font-tracking-ad);
+  text-transform: uppercase;
+  color: var(--color-ad-text);
+}
+
+.ad__tagline {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ad-tagline);
+}
+
+.ad__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 0 var(--space-xs);
+  border-radius: var(--radius-sm);
+  background: var(--color-badge-ad-bg);
+  color: var(--color-badge-ad-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
 }
 
 /* ---------- Start screen and launch ---------- */

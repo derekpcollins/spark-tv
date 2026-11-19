@@ -33,6 +33,7 @@ A browser-based prototype of a TV platform home screen (in the style of webOS or
 - `npm run check`: all four checks, in order
 - `npm run sync`: refresh `data/catalog.json` from TMDB. Needs `TMDB_READ_TOKEN` in `.env.local`. It calls a third-party API, so run it only when the catalog or layout needs refreshing.
 - `npm run media:encode [-- --only <slug>]`: cut each Spark Free film's backdrop still and trailer and encode the full film with ffmpeg (Homebrew, not an npm dependency). Reads the masters from `SPARKFREE_SOURCE_DIR` (default `~/Downloads/spark-tv-films`) and writes outside the repo to its `encoded/` folder. Skips existing files; delete one to re-cut it.
+- `npm run ads [-- --upload]`: cut each ad banner image from its master in `assets-src/ads/` to the banner's exact size and encode WebP (needs Homebrew `webp` for `cwebp`). `--upload` writes to the public R2 bucket, so check the image first.
 - `npm run media:upload [-- --only <slug>]`: upload encoded media to R2, skipping objects already there at the same size. Needs the `R2_*` names in `.env.local`. It writes to a public bucket, so run it only after an encode you've checked.
 
 ## Pre-commit checks

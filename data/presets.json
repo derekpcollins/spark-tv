@@ -2,21 +2,46 @@
   {
     "id": "baseline",
     "label": "Baseline (EN, static hero)",
-    "settings": { "locale": "en", "variants": { "hero": "B" } }
+    "settings": {
+      "locale": "en",
+      "variants": {
+        "hero": "B"
+      }
+    }
   },
   {
     "id": "spanish",
     "label": "Spanish participant",
-    "settings": { "locale": "es", "variants": { "hero": "B" } }
+    "settings": {
+      "locale": "es",
+      "variants": {
+        "hero": "B"
+      }
+    }
   },
   {
     "id": "posters",
     "label": "Poster-heavy Home",
-    "settings": { "variants": { "row:trending": "poster" } }
+    "settings": {
+      "variants": {
+        "row:trending": "poster"
+      }
+    }
   },
   {
     "id": "quick-start",
     "label": "Quick start (no launch)",
-    "settings": { "skipLaunch": true }
+    "settings": {
+      "skipLaunch": true
+    }
+  },
+  {
+    "id": "ad-free",
+    "label": "Ad-free Home",
+    "settings": {
+      "options": {
+        "ad.visible": false
+      }
+    }
   }
 ]

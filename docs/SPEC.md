@@ -76,6 +76,7 @@ create(config, ctx) => {
 
 - **Heroes:** A = full-bleed video billboard; B = static carousel.
 - **Cards:** poster (2:3), landscape (16:9), continue-watching (with a progress bar), top-10 (numbered), app tile, banner.
+- **Ad (section `ad`, variant `banner`):** a full-width third-party ad card, the Credits banner's size and frame. Background image on R2 (cut by `npm run ads`), advertiser name and tagline as live i18n text over a left-to-right scrim, an "AD" badge upper right (caps via CSS) (spark amber, a logged brand exception). Takes focus; OK does nothing. Option `visible` (moderator "Ad banner: show"); preset "Ad-free Home" turns it off. First advertiser: Northwake (fictional outdoor gear), "Go where the morning starts."
 - **Display Page:** one generic template per contentType (movie, tv), with a clearly marked placeholder region for Derek's designs. Variant slots A and B are ready.
 - **Overlays:** Start screen, Launch, Display Page, Player, Credits, Moderator panel.
 

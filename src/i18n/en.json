@@ -64,5 +64,10 @@
   "row.criticallyAcclaimed": "Critically Acclaimed",
   "row.genreScifi": "Sci-Fi Movies",
   "row.genreAnimation": "Animated Movies",
-  "row.weekendPicks": "Weekend Picks"
+  "row.weekendPicks": "Weekend Picks",
+  "ad.badge": "Ad",
+  "ad.northwake.name": "Northwake",
+  "ad.northwake.tagline": "Go where the morning starts.",
+  "opt.adVisible": "Ad banner: show",
+  "mod.slot.ad": "Ad banner"
 }

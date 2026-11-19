@@ -60,10 +60,13 @@ export function startApp(canvas: HTMLElement): void {
   };
 
   // Home sections with the moderator's variant choices applied.
+  // A module that declares a `visible` option is left out entirely while it's off.
   const homeConfigs = (): SectionConfig[] =>
-    [HEADER, ...(layout.pages.home?.sections ?? [])].map((c) =>
-      c.type === 'row' && c.card !== 'app' ? { ...c, card: variantFor(store, `row:${c.id}`, c.card) } : c,
-    );
+    [HEADER, ...(layout.pages.home?.sections ?? [])]
+      .filter((c) => ctx.option(c.type, 'visible') !== false)
+      .map((c) =>
+        c.type === 'row' && c.card !== 'app' ? { ...c, card: variantFor(store, `row:${c.id}`, c.card) } : c,
+      );
   const sectionVariant = (c: SectionConfig): string | undefined => variantFor(store, c.type, c.variant);
 
   let page: Page = createPage(pageLayer, homeConfigs(), ctx, sectionVariant);
