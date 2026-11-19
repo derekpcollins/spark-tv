@@ -3,6 +3,7 @@
  * focus stays in the first slot), no wrap, per-row focus memory, images loaded ahead of focus.
  */
 import { cards, sections, type CardInstance } from '../../core/app-registries.ts';
+import { resolveTitleParams } from '../../core/catalog.ts';
 import { px } from '../../core/layout-tokens.ts';
 import type { FocusEntry, Key, KeyResult } from '../../core/types.ts';
 
@@ -24,13 +25,7 @@ sections.register({
     if (config.title) {
       const h = document.createElement('h2');
       h.className = 'row__title';
-      const params = Object.fromEntries(
-        Object.entries(config.titleParams ?? {}).map(([k, v]) => [
-          k,
-          v.startsWith('provider:') ? (ctx.catalog.providers[v.slice(9)]?.name ?? v) : v,
-        ]),
-      );
-      h.textContent = ctx.t(config.title, params);
+      h.textContent = ctx.t(config.title, resolveTitleParams(config, ctx.catalog, ctx.locale()));
       el.append(h);
     }
     const strip = document.createElement('div');

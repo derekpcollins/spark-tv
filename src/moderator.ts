@@ -3,7 +3,7 @@ import catalogData from '../data/catalog.json';
 import presetsData from '../data/presets.json';
 import { LAUNCH_DURATIONS } from './config.ts';
 import { cards, displayPages, sections } from './core/app-registries.ts';
-import type { Catalog, SectionConfig } from './core/catalog.ts';
+import { resolveTitleParams, type Catalog, type SectionConfig } from './core/catalog.ts';
 import type { SettingRow } from './core/settings.ts';
 import type { Preset, Store } from './core/store.ts';
 
@@ -20,14 +20,8 @@ function rowTitle(
   section: SectionConfig,
   t: (key: string, params?: Record<string, string>) => string,
 ): string {
-  if (!section.title) return section.id;
-  const params = Object.fromEntries(
-    Object.entries(section.titleParams ?? {}).map(([k, v]) => [
-      k,
-      v.startsWith('provider:') ? (catalog.providers[v.slice(9)]?.name ?? v) : v,
-    ]),
-  );
-  return t(section.title, params);
+  // The panel is English-only, so names resolve in English too.
+  return section.title ? t(section.title, resolveTitleParams(section, catalog, 'en')) : section.id;
 }
 
 export function moderatorRows(

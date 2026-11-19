@@ -58,5 +58,11 @@
   "display.play": "Play",
   "player.hint": "OK pause · ← → 10 s · Back to exit",
   "opt.heroSound": "Hero: trailer sound",
-  "row.sparkfree": "Spark Free"
+  "row.sparkfree": "Spark Free",
+  "row.becauseYouWatched": "Because You Watched {title}",
+  "row.newOnStreaming": "New on Streaming",
+  "row.criticallyAcclaimed": "Critically Acclaimed",
+  "row.genreScifi": "Sci-Fi Movies",
+  "row.genreAnimation": "Animated Movies",
+  "row.weekendPicks": "Weekend Picks"
 }

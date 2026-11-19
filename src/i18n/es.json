@@ -28,5 +28,11 @@
   "credits.back": "Pulsa Atrás para volver",
   "display.play": "Reproducir",
   "player.hint": "OK pausa · ← → 10 s · Atrás para salir",
-  "row.sparkfree": "Spark Free"
+  "row.sparkfree": "Spark Free",
+  "row.becauseYouWatched": "Porque viste {title}",
+  "row.newOnStreaming": "Novedades en streaming",
+  "row.criticallyAcclaimed": "Aclamadas por la crítica",
+  "row.genreScifi": "Películas de ciencia ficción",
+  "row.genreAnimation": "Películas de animación",
+  "row.weekendPicks": "Para el fin de semana"
 }
