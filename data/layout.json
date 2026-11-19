@@ -5,10 +5,11 @@
         {
           "id": "hero",
           "type": "hero",
-          "variant": "A",
+          "variant": "B",
           "source": {
-            "sparkfree": true
-          }
+            "tmdb": "trending/all/week"
+          },
+          "limit": 5
         },
         {
           "id": "apps",

@@ -1,7 +1,277 @@
 {
- "generatedAt": "2026-11-18T17:18:48.488Z",
+ "generatedAt": "2026-11-19T15:57:43.185Z",
  "region": "US",
  "titles": {
+  "movie:1368337": {
+   "id": "movie:1368337",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": "R",
+   "runtime": 173,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/c7btGYblBnfAaw713WvFM0Kimc7.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/cLBbiPqF8IvmkANROY3Ar4NhOgY.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "The Odyssey",
+     "overview": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
+     "genres": [
+      "Adventure",
+      "Action",
+      "Fantasy"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "2h 53m",
+      "Adventure",
+      "Action"
+     ]
+    },
+    "es": {
+     "title": "La Odisea",
+     "overview": "Tras la caída de Troya, el legendario rey de Ítaca, Odiseo a.k.a. Ulises, emprende un largo y peligroso viaje para regresar junto a su esposa Penélope y su hijo Telémaco. En el camino deberá enfrentarse a criaturas mitológicas, dioses caprichosos y pruebas que pondrán a prueba su ingenio, su resistencia y su humanidad. Mientras tanto, en Ítaca, el futuro de su reino pende de un hilo ante la creciente amenaza de quienes creen que jamás volverá.",
+     "genres": [
+      "Aventura",
+      "Acción",
+      "Fantasía"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "2 h 53 min",
+      "Aventura",
+      "Acción"
+     ]
+    }
+   }
+  },
+  "movie:1300968": {
+   "id": "movie:1300968",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": "PG-13",
+   "runtime": 159,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/nzIXSQNgYZwFOMrmv0d0I3ulvkM.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/vezToHmUsQApQKHChwz8E9LBfEA.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/saubzsVS7BhgYx67CasOAl4r83t.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "The Hunger Games: Sunrise on the Reaping",
+     "overview": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+     "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "2h 39m",
+      "Science Fiction",
+      "Action"
+     ]
+    },
+    "es": {
+     "title": "Los Juegos del Hambre: Amanecer en la cosecha",
+     "overview": "v‌e‌r‌cineo.net – Películas y series HD, Gratis  Explora Panem 24 años antes de la saga de Katniss, comenzando en la mañana de la siega de los 50º Juegos del Hambre, donde participa un joven Haymitch Abernathy.",
+     "genres": [
+      "Ciencia ficción",
+      "Acción",
+      "Aventura"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "2 h 39 min",
+      "Ciencia ficción",
+      "Acción"
+     ]
+    }
+   }
+  },
+  "movie:1003596": {
+   "id": "movie:1003596",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": "PG-13",
+   "runtime": 165,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/1zqWkLwC1zLBBBtIWzmkmWeMWnT.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/rObL4of4eFA8yWaN9pRFo9aOVNi.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/ggTGX5lMwzoSbm2WmlAFBK0EQdO.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Avengers: Doomsday",
+     "overview": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
+     "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "2h 45m",
+      "Science Fiction",
+      "Action"
+     ]
+    },
+    "es": {
+     "title": "Vengadores: Doomsday",
+     "overview": "Los héroes más queridos de tres universos distintos son abocados a una colisión catastrófica donde tendrán que hacer frente a la mayor amenaza a su existencia hasta la fecha.",
+     "genres": [
+      "Ciencia ficción",
+      "Acción",
+      "Aventura"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "2 h 45 min",
+      "Ciencia ficción",
+      "Acción"
+     ]
+    }
+   }
+  },
+  "tv:84773": {
+   "id": "tv:84773",
+   "source": "tmdb",
+   "contentType": "tv",
+   "year": 2022,
+   "rating": "TV-14",
+   "seasons": 3,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/mYLOqiStMxDK3fYZFirgrMt8z5d.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/i1phX1JpaqSnHBBGta6LBFYVCZq.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/fA1eS6rfYjS9W8AZbBVG0fpxXn1.png"
+   },
+   "providers": [
+    9
+   ],
+   "text": {
+    "en": {
+     "title": "The Lord of the Rings: The Rings of Power",
+     "overview": "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone.",
+     "genres": [
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+     ],
+     "metadataLine": [
+      "2022",
+      {
+       "kind": "badge",
+       "text": "TV-14"
+      },
+      "3 Seasons",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+     ]
+    },
+    "es": {
+     "title": "El Señor de los Anillos: Los Anillos de Poder",
+     "overview": "Un reparto coral de personajes —unos conocidos y otros nuevos— debe afrontar la reaparición del mal en la Tierra Media. Desde las profundidades más oscuras de las Montañas Nubladas hasta los majestuosos bosques de Lindon, desde el reino insular de Númenor hasta los extremos más remotos del mapa, estos parajes y personajes forjarán los legados que perdurarán más allá de su desaparición.",
+     "genres": [
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+     ],
+     "metadataLine": [
+      "2022",
+      {
+       "kind": "badge",
+       "text": "TV-14"
+      },
+      "3 temporadas",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+     ]
+    }
+   }
+  },
+  "tv:213375": {
+   "id": "tv:213375",
+   "source": "tmdb",
+   "contentType": "tv",
+   "year": 2026,
+   "rating": "TV-14",
+   "seasons": 1,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/uoXXbN2PrOxH6UKyP7kYwmGpAAP.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/skoYQABun0gdw4VpN85ZbTIclmT.png"
+   },
+   "providers": [
+    337
+   ],
+   "text": {
+    "en": {
+     "title": "VisionQuest",
+     "overview": "With a bounty on his head, Vision must confront his nature and resist Ultron's influence to survive.",
+     "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "TV-14"
+      },
+      "1 Season",
+      "Sci-Fi & Fantasy",
+      "Drama"
+     ]
+    },
+    "es": {
+     "title": "VisionQuest",
+     "overview": "Tras reiniciarse, Visión ha estado huyendo de quienes pretenden convertirlo en un arma y ahora se encuentra escondido. Buscando un nuevo propósito, pide consejo a las distintas IA que están integradas en su programación, incluidos Friday, Edith, Jarvis y el infame Ultrón. Su discreta existencia llega a su fin cuando una recompensa por su cabeza le obliga a huir junto a Thomas Shepard, un misterioso joven que podría ser la reencarnación de su hijo. Mientras evita ser capturado, Visión tendrá que enfrentarse a su propia naturaleza, resistirse a la influencia de Ultrón y desentrañar el misterio que rodea a su joven compañero si quiere sobrevivir.",
+     "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "TV-14"
+      },
+      "1 temporada",
+      "Sci-Fi & Fantasy",
+      "Drama"
+     ]
+    }
+   }
+  },
   "sparkfree:spring": {
    "id": "sparkfree:spring",
    "source": "sparkfree",
@@ -357,367 +627,55 @@
     "license": "CC BY 3.0"
    }
   },
-  "movie:1368337": {
-   "id": "movie:1368337",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "R",
-   "runtime": 173,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/zG7hzAyqa9KIjM0Yse0bxty4Cq8.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/c7btGYblBnfAaw713WvFM0Kimc7.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/cLBbiPqF8IvmkANROY3Ar4NhOgY.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "The Odyssey",
-     "overview": "Odysseus, the legendary King of Ithaca, embarks on a long and perilous journey home following the Trojan War. Throughout his voyage, he is forced to confront the whims of gods, mythological monsters, and trials that stretch both his cunning and his humanity to the breaking point.",
-     "genres": [
-      "Adventure",
-      "Action",
-      "Fantasy"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "2h 53m",
-      "Adventure",
-      "Action"
-     ]
-    },
-    "es": {
-     "title": "La Odisea",
-     "overview": "Tras la caída de Troya, el legendario rey de Ítaca, Odiseo a.k.a. Ulises, emprende un largo y peligroso viaje para regresar junto a su esposa Penélope y su hijo Telémaco. En el camino deberá enfrentarse a criaturas mitológicas, dioses caprichosos y pruebas que pondrán a prueba su ingenio, su resistencia y su humanidad. Mientras tanto, en Ítaca, el futuro de su reino pende de un hilo ante la creciente amenaza de quienes creen que jamás volverá.",
-     "genres": [
-      "Aventura",
-      "Acción",
-      "Fantasía"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "2 h 53 min",
-      "Aventura",
-      "Acción"
-     ]
-    }
-   }
-  },
-  "tv:84773": {
-   "id": "tv:84773",
-   "source": "tmdb",
-   "contentType": "tv",
-   "year": 2022,
-   "rating": "TV-14",
-   "seasons": 3,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/mYLOqiStMxDK3fYZFirgrMt8z5d.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/uVOcz7JBOuZxsx9IYpx6Ah174LX.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/fA1eS6rfYjS9W8AZbBVG0fpxXn1.png"
-   },
-   "providers": [
-    9
-   ],
-   "text": {
-    "en": {
-     "title": "The Lord of the Rings: The Rings of Power",
-     "overview": "Beginning in a time of relative peace, we follow an ensemble cast of characters as they confront the re-emergence of evil to Middle-earth. From the darkest depths of the Misty Mountains, to the majestic forests of Lindon, to the breathtaking island kingdom of Númenor, to the furthest reaches of the map, these kingdoms and characters will carve out legacies that live on long after they are gone.",
-     "genres": [
-      "Action & Adventure",
-      "Sci-Fi & Fantasy"
-     ],
-     "metadataLine": [
-      "2022",
-      {
-       "kind": "badge",
-       "text": "TV-14"
-      },
-      "3 Seasons",
-      "Action & Adventure",
-      "Sci-Fi & Fantasy"
-     ]
-    },
-    "es": {
-     "title": "El Señor de los Anillos: Los Anillos de Poder",
-     "overview": "Un reparto coral de personajes —unos conocidos y otros nuevos— debe afrontar la reaparición del mal en la Tierra Media. Desde las profundidades más oscuras de las Montañas Nubladas hasta los majestuosos bosques de Lindon, desde el reino insular de Númenor hasta los extremos más remotos del mapa, estos parajes y personajes forjarán los legados que perdurarán más allá de su desaparición.",
-     "genres": [
-      "Action & Adventure",
-      "Sci-Fi & Fantasy"
-     ],
-     "metadataLine": [
-      "2022",
-      {
-       "kind": "badge",
-       "text": "TV-14"
-      },
-      "3 temporadas",
-      "Action & Adventure",
-      "Sci-Fi & Fantasy"
-     ]
-    }
-   }
-  },
-  "movie:1300968": {
-   "id": "movie:1300968",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "PG-13",
-   "runtime": 159,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/aqFZcr2dxSZ2UwWSo1WC6C0rwDf.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/saubzsVS7BhgYx67CasOAl4r83t.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "The Hunger Games: Sunrise on the Reaping",
-     "overview": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-     "genres": [
-      "Science Fiction",
-      "Action",
-      "Adventure"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "2h 39m",
-      "Science Fiction",
-      "Action"
-     ]
-    },
-    "es": {
-     "title": "Los Juegos del Hambre: Amanecer en la cosecha",
-     "overview": "Explora Panem 24 años antes de la saga de Katniss, comenzando en la mañana de la siega de los 50º Juegos del Hambre, donde participa un joven Haymitch Abernathy.",
-     "genres": [
-      "Ciencia ficción",
-      "Acción",
-      "Aventura"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "2 h 39 min",
-      "Ciencia ficción",
-      "Acción"
-     ]
-    }
-   }
-  },
-  "movie:1003596": {
-   "id": "movie:1003596",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "PG-13",
-   "runtime": 165,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/1zqWkLwC1zLBBBtIWzmkmWeMWnT.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/rObL4of4eFA8yWaN9pRFo9aOVNi.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/ggTGX5lMwzoSbm2WmlAFBK0EQdO.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "Avengers: Doomsday",
-     "overview": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
-     "genres": [
-      "Science Fiction",
-      "Action",
-      "Adventure"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "2h 45m",
-      "Science Fiction",
-      "Action"
-     ]
-    },
-    "es": {
-     "title": "Vengadores: Doomsday",
-     "overview": "Los héroes más queridos de tres universos distintos son abocados a una colisión catastrófica donde tendrán que hacer frente a la mayor amenaza a su existencia hasta la fecha.",
-     "genres": [
-      "Ciencia ficción",
-      "Acción",
-      "Aventura"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "2 h 45 min",
-      "Ciencia ficción",
-      "Acción"
-     ]
-    }
-   }
-  },
-  "movie:1131943": {
-   "id": "movie:1131943",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "R",
-   "runtime": 110,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/dj2ZTXlYdhZSnLp7PR7tOwoiDnM.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/iNKyRudHcd2oXV5eaWE0LbixkX3.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/jNbyhCjMpaTuofzIGiUvsjJs2eI.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "Madden",
-     "overview": "Chronicles John Madden's incredible journey alongside best friend and true original Al Davis—from a Super Bowl-winning partnership with the Raiders, to becoming football’s most recognizable voice, to building the worldwide Madden NFL video game.",
-     "genres": [
-      "Drama",
-      "History"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "1h 50m",
-      "Drama",
-      "History"
-     ]
-    },
-    "es": {
-     "title": "Madden",
-     "overview": "Narra la increíble trayectoria de John Madden junto a su mejor amigo y figura verdaderamente singular, Al Davis: desde su colaboración con los Raiders —con quienes ganaron un Super Bowl— hasta convertirse en la voz más reconocible del fútbol americano y crear la serie de videojuegos Madden NFL, conocida a nivel mundial.",
-     "genres": [
-      "Drama",
-      "Historia"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "1 h 50 min",
-      "Drama",
-      "Historia"
-     ]
-    }
-   }
-  },
-  "movie:1551025": {
-   "id": "movie:1551025",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": null,
-   "runtime": 109,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/wWNizZ4IcSld3xXH1WEXziJiNJN.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/qHvap0vpfTBIbv7cnR0OyBRqQHG.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/5yB5ISzk2PaRGgE0JL2Hpt7ZgA3.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "Guarding Stars",
-     "overview": "When a no-nonsense bodyguard is assigned to protect a charming action star over the holidays, sparks fly, secrets unravel, and Christmas gets a whole lot more complicated.",
-     "genres": [
-      "Comedy",
-      "Romance"
-     ],
-     "metadataLine": [
-      "2026",
-      "1h 49m",
-      "Comedy",
-      "Romance"
-     ]
-    },
-    "es": {
-     "title": "Guardaespaldas por navidad",
-     "overview": "Una estricta guardaespaldas viaja a un rancho de Montana con el famoso actor al que protege. Pero al fingir ser pareja por Navidad surge un amor real.",
-     "genres": [
-      "Comedia",
-      "Romance"
-     ],
-     "metadataLine": [
-      "2026",
-      "1 h 49 min",
-      "Comedia",
-      "Romance"
-     ]
-    }
-   }
-  },
-  "tv:213375": {
-   "id": "tv:213375",
+  "tv:291507": {
+   "id": "tv:291507",
    "source": "tmdb",
    "contentType": "tv",
    "year": 2026,
-   "rating": "TV-14",
+   "rating": "TV-MA",
    "seasons": 1,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/uoXXbN2PrOxH6UKyP7kYwmGpAAP.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/skoYQABun0gdw4VpN85ZbTIclmT.png"
+    "poster": "https://image.tmdb.org/t/p/w500/195kCuy2RqGaEAZDDpGTx7gBUBZ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/hYJqUoXRZnodGxgVZTM8uwr5kbC.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/c7PCh5wDlXODksBXElQHiotV9M5.png"
    },
    "providers": [
-    337
+    8
    ],
    "text": {
     "en": {
-     "title": "VisionQuest",
-     "overview": "With a bounty on his head, Vision must confront his nature and resist Ultron's influence to survive.",
+     "title": "The Body",
+     "overview": "On Halloween night, an all-girls dance squad tumbles into Catholic guilt, unholy desires and ghostly visions when an initiation goes to hell.",
      "genres": [
-      "Sci-Fi & Fantasy",
+      "Mystery",
       "Drama"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "TV-14"
+       "text": "TV-MA"
       },
       "1 Season",
-      "Sci-Fi & Fantasy",
+      "Mystery",
       "Drama"
      ]
     },
     "es": {
-     "title": "VisionQuest",
-     "overview": "Tras reiniciarse, Visión ha estado huyendo de quienes pretenden convertirlo en un arma y ahora se encuentra escondido. Buscando un nuevo propósito, pide consejo a las distintas IA que están integradas en su programación, incluidos Friday, Edith, Jarvis y el infame Ultrón. Su discreta existencia llega a su fin cuando una recompensa por su cabeza le obliga a huir junto a Thomas Shepard, un misterioso joven que podría ser la reencarnación de su hijo. Mientras evita ser capturado, Visión tendrá que enfrentarse a su propia naturaleza, resistirse a la influencia de Ultrón y desentrañar el misterio que rodea a su joven compañero si quiere sobrevivir.",
+     "title": "El cuerpo",
+     "overview": "v‌e‌r‌cineo.net – Películas y series HD, Gratis\n\nLa noche de Halloween, un grupo de baile femenino lidia con remordimientos, deseos impuros y visiones fantasmales cuando una novatada sale endemoniadamente mal.",
      "genres": [
-      "Sci-Fi & Fantasy",
+      "Misterio",
       "Drama"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "TV-14"
+       "text": "TV-MA"
       },
       "1 temporada",
-      "Sci-Fi & Fantasy",
+      "Misterio",
       "Drama"
      ]
     }
@@ -757,7 +715,7 @@
     },
     "es": {
      "title": "The Beast",
-     "overview": "Cuando una milicia de hostiles no identificados coordina un golpe contra Estados Unidos, el presidente descubre el alcance de las capacidades ofensivas altamente clasificadas de La Bestia para salvar su vida y la de Estados Unidos.",
+     "overview": "v‌e‌r‌cineo.net – Películas y series HD, Gratis  Cuando una milicia de hostiles no identificados coordina un golpe contra Estados Unidos, el presidente descubre el alcance de las capacidades ofensivas altamente clasificadas de La Bestia para salvar su vida y la de Estados Unidos.",
      "genres": [
       "Acción",
       "Suspense"
@@ -775,27 +733,82 @@
     }
    }
   },
-  "tv:291507": {
-   "id": "tv:291507",
+  "movie:969681": {
+   "id": "movie:969681",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": "PG-13",
+   "runtime": 145,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/37PERiF0BA36UfQLLoLQ8Ui9ME7.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/subj7knTn4DeS6KS7qI66EQKe9i.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/dGMb0iSnNp7UMAHkKX63Kh6AJvy.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Spider-Man: Brand New Day",
+     "overview": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
+     "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "2h 25m",
+      "Science Fiction",
+      "Action"
+     ]
+    },
+    "es": {
+     "title": "Spider-Man: Brand New Day",
+     "overview": "Han pasado cuatro años desde los acontecimientos de No Way Home, y Peter Parker ahora es un adulto que vive completamente solo, ha desaparecido voluntariamente de las vidas y recuerdos de quienes ama. Combatiendo el crimen en una Nueva York que ya no conoce su nombre, se ha dedicado por completo a proteger su ciudad—un Spider-Man a tiempo completo—, pero a medida que aumentan las exigencias sobre él, la presión desencadena una evolución física que amenaza su existencia, al mismo tiempo que un extraño nuevo patrón de crímenes da lugar a una de las amenazas más poderosas a las que se ha enfrentado.",
+     "genres": [
+      "Ciencia ficción",
+      "Acción",
+      "Aventura"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "2 h 25 min",
+      "Ciencia ficción",
+      "Acción"
+     ]
+    }
+   }
+  },
+  "tv:254630": {
+   "id": "tv:254630",
    "source": "tmdb",
    "contentType": "tv",
    "year": 2026,
    "rating": "TV-MA",
    "seasons": 1,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/zleCYDRbW5mKwgZwVK4SNIrKXWx.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/hYJqUoXRZnodGxgVZTM8uwr5kbC.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/c7PCh5wDlXODksBXElQHiotV9M5.png"
+    "poster": "https://image.tmdb.org/t/p/w500/8q6BvFQuKM1Rud4E9NQDaMGy9EL.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/tjy25xpiFeo2gahl7N0hoxbRtG7.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/pczEboTXvQhnOo0VCAFJrd2Y8E2.png"
    },
    "providers": [
-    8
+    350
    ],
    "text": {
     "en": {
-     "title": "The Body",
-     "overview": "On Halloween night, an all-girls dance squad tumbles into Catholic guilt, unholy desires and ghostly visions when an initiation goes to hell.",
+     "title": "12 12 12",
+     "overview": "A heist takes 12 months to plan, 12 hours to execute—and a thief not caught within 12 days won't be caught at all. Across three pulse-pounding timelines, an FBI agent and a career criminal face off in a deadly game of cat and mouse through Europe.",
      "genres": [
-      "Mystery",
+      "Action & Adventure",
+      "Crime",
       "Drama"
      ],
      "metadataLine": [
@@ -805,15 +818,16 @@
        "text": "TV-MA"
       },
       "1 Season",
-      "Mystery",
-      "Drama"
+      "Action & Adventure",
+      "Crime"
      ]
     },
     "es": {
-     "title": "El cuerpo",
-     "overview": "La noche de Halloween, un grupo de baile femenino lidia con remordimientos, deseos impuros y visiones fantasmales cuando una novatada sale endemoniadamente mal.",
+     "title": "12 12 12",
+     "overview": "Un robo lleva 12 meses de planificación y 12 horas de ejecución. Y, si no se atrapa al ladrón al cabo de 12 días, ya no se lo atrapa. A través de tres frenéticas líneas temporales, un agente del FBI y un delincuente habitual juegan al gato y el ratón por toda Europa con resultados fatales.",
      "genres": [
-      "Misterio",
+      "Action & Adventure",
+      "Crimen",
       "Drama"
      ],
      "metadataLine": [
@@ -823,8 +837,8 @@
        "text": "TV-MA"
       },
       "1 temporada",
-      "Misterio",
-      "Drama"
+      "Action & Adventure",
+      "Crimen"
      ]
     }
    }
@@ -931,60 +945,6 @@
     }
    }
   },
-  "movie:969681": {
-   "id": "movie:969681",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "PG-13",
-   "runtime": 145,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/37PERiF0BA36UfQLLoLQ8Ui9ME7.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/subj7knTn4DeS6KS7qI66EQKe9i.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/dGMb0iSnNp7UMAHkKX63Kh6AJvy.png"
-   },
-   "providers": [],
-   "text": {
-    "en": {
-     "title": "Spider-Man: Brand New Day",
-     "overview": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
-     "genres": [
-      "Science Fiction",
-      "Action",
-      "Adventure"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "2h 25m",
-      "Science Fiction",
-      "Action"
-     ]
-    },
-    "es": {
-     "title": "Spider-Man: Brand New Day",
-     "overview": "Han pasado cuatro años desde los acontecimientos de No Way Home, y Peter Parker ahora es un adulto que vive completamente solo, ha desaparecido voluntariamente de las vidas y recuerdos de quienes ama. Combatiendo el crimen en una Nueva York que ya no conoce su nombre, se ha dedicado por completo a proteger su ciudad—un Spider-Man a tiempo completo—, pero a medida que aumentan las exigencias sobre él, la presión desencadena una evolución física que amenaza su existencia, al mismo tiempo que un extraño nuevo patrón de crímenes da lugar a una de las amenazas más poderosas a las que se ha enfrentado.",
-     "genres": [
-      "Ciencia ficción",
-      "Acción",
-      "Aventura"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "2 h 25 min",
-      "Ciencia ficción",
-      "Acción"
-     ]
-    }
-   }
-  },
   "movie:1381071": {
    "id": "movie:1381071",
    "source": "tmdb",
@@ -1039,25 +999,131 @@
     }
    }
   },
-  "movie:1567605": {
-   "id": "movie:1567605",
+  "tv:308007": {
+   "id": "tv:308007",
    "source": "tmdb",
-   "contentType": "movie",
+   "contentType": "tv",
    "year": 2026,
-   "rating": "PG-13",
-   "runtime": 115,
+   "rating": "TV-MA",
+   "seasons": 1,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/6H2N59jJW1hZEzn2ZdrMvJw5vNI.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/fdOVxyNNL95SuI8BGaN6vudEuYX.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/aHgQzaMPhqSzXgwft1PQNEnZSPY.svg"
+    "poster": "https://image.tmdb.org/t/p/w500/foTyGlJ1jJh8QID5KwjsMytsJTV.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/m8JTMj7jDMJFZAPP1ASmSi4gMWi.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/cSZZcMspcaQt1jopPM30rs0TrTz.png"
    },
    "providers": [],
    "text": {
     "en": {
-     "title": "Ebenezer",
-     "overview": "An elderly miser embarks on a supernatural journey after visits from the ghost of his former business partner and the Spirits of Christmas Past, Present, and Yet to Come force him to confront his past and fight for a second chance at happiness.",
+     "title": "The Altruists",
+     "overview": "The story of Sam Bankman-Fried and Caroline Ellison, two hyper-smart, ambitious young idealists who tried to remake the global financial system in the blink of an eye - before they were accused of stealing $8 billion and became Gen Z's own Bonnie & Clyde.",
      "genres": [
-      "Fantasy",
+      "Drama",
+      "Crime"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "TV-MA"
+      },
+      "1 Season",
+      "Drama",
+      "Crime"
+     ]
+    },
+    "es": {
+     "title": "Los altruistas",
+     "overview": "La historia de Sam Bankman-Fried, el joven visionario del sector de las criptomonedas caído en desgracia, y el tumultuoso romance entre él, cofundador de FTX en 2019, y su novia, Caroline Ellison. La miniserie retrata sus intentos por revolucionar el sistema financiero, que acabaron en un fraude de 36.000 millones de dólares y con él en la cárcel condenado a 25 años de prisión en el 2024.",
+     "genres": [
+      "Drama",
+      "Crimen"
+     ],
+     "metadataLine": [
+      "2026",
+      {
+       "kind": "badge",
+       "text": "TV-MA"
+      },
+      "1 temporada",
+      "Drama",
+      "Crimen"
+     ]
+    }
+   }
+  },
+  "tv:247718": {
+   "id": "tv:247718",
+   "source": "tmdb",
+   "contentType": "tv",
+   "year": 2025,
+   "rating": "TV-MA",
+   "seasons": 2,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/fTlH5NNTXOP96mElp0DaIStRVvK.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/h0OC7ouop8YLwbAVfS3UUE2Lw4T.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/fh6N94BUPuLPN70WpbM0OEgOJbc.png"
+   },
+   "providers": [
+    2303
+   ],
+   "text": {
+    "en": {
+     "title": "MobLand",
+     "overview": "Two mob families clash in a war that threatens to topple empires and lives.",
+     "genres": [
+      "Crime",
+      "Drama"
+     ],
+     "metadataLine": [
+      "2025",
+      {
+       "kind": "badge",
+       "text": "TV-MA"
+      },
+      "2 Seasons",
+      "Crime",
+      "Drama"
+     ]
+    },
+    "es": {
+     "title": "Tierra de mafiosos",
+     "overview": "El poder está en juego cuando los Harrigan y los Stevenson, dos familias criminales londinenses en guerra, se enfrentan en una batalla de matar o morir que amenaza con derribar imperios y arruinar vidas. Atrapado en el fuego cruzado está Harry Da Souza, el astuto \"solucionador\" tan peligroso como atractivo, que sabe muy bien dónde están las lealtades cuando las fuerzas opuestas chocan. A medida que los reinos se enfrentan, se cruzarán las líneas, y la única gracia salvadora es una garantía de vida o muerte: la familia por encima de todo.",
+     "genres": [
+      "Crimen",
+      "Drama"
+     ],
+     "metadataLine": [
+      "2025",
+      {
+       "kind": "badge",
+       "text": "TV-MA"
+      },
+      "2 temporadas",
+      "Crimen",
+      "Drama"
+     ]
+    }
+   }
+  },
+  "movie:1551025": {
+   "id": "movie:1551025",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2026,
+   "rating": "PG-13",
+   "runtime": 109,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/wWNizZ4IcSld3xXH1WEXziJiNJN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qHvap0vpfTBIbv7cnR0OyBRqQHG.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/mpG3vGPb39w3dMMbZR9G0UGVbfM.png"
+   },
+   "providers": [],
+   "text": {
+    "en": {
+     "title": "Guarding Stars",
+     "overview": "When a no-nonsense bodyguard is assigned to protect a charming action star over the holidays, sparks fly, secrets unravel, and Christmas gets a whole lot more complicated.",
+     "genres": [
+      "Romance",
       "Comedy"
      ],
      "metadataLine": [
@@ -1066,16 +1132,16 @@
        "kind": "badge",
        "text": "PG-13"
       },
-      "1h 55m",
-      "Fantasy",
+      "1h 49m",
+      "Romance",
       "Comedy"
      ]
     },
     "es": {
-     "title": "Scrooge y los fantasmas de la Navidad",
-     "overview": "Reimaginación del clásico literario, una historia de fantasmas ambientada en el Londres de Dickens que sigue el viaje sobrenatural de un hombre para enfrentarse a su pasado, presente y futuro y luchar por una segunda oportunidad.",
+     "title": "Guardaespaldas por navidad",
+     "overview": "Una estricta guardaespaldas viaja a un rancho de Montana con el famoso actor al que protege. Pero al fingir ser pareja por Navidad surge un amor real.",
      "genres": [
-      "Fantasía",
+      "Romance",
       "Comedia"
      ],
      "metadataLine": [
@@ -1084,8 +1150,8 @@
        "kind": "badge",
        "text": "PG-13"
       },
-      "1 h 55 min",
-      "Fantasía",
+      "1 h 49 min",
+      "Romance",
       "Comedia"
      ]
     }
@@ -1143,113 +1209,110 @@
     }
    }
   },
-  "tv:254630": {
-   "id": "tv:254630",
+  "movie:1131943": {
+   "id": "movie:1131943",
    "source": "tmdb",
-   "contentType": "tv",
+   "contentType": "movie",
    "year": 2026,
-   "rating": "TV-MA",
-   "seasons": 1,
+   "rating": "R",
+   "runtime": 112,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/8q6BvFQuKM1Rud4E9NQDaMGy9EL.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/tjy25xpiFeo2gahl7N0hoxbRtG7.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/pczEboTXvQhnOo0VCAFJrd2Y8E2.png"
+    "poster": "https://image.tmdb.org/t/p/w500/bsx02blf7gynqCEKvcBt1WlDAWD.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/lRsapglJZIyMfGl8oQyNASlZqDC.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/jNbyhCjMpaTuofzIGiUvsjJs2eI.png"
    },
    "providers": [
-    350
+    9
    ],
    "text": {
     "en": {
-     "title": "12 12 12",
-     "overview": "A heist takes 12 months to plan, 12 hours to execute—and a thief not caught within 12 days won't be caught at all. Across three pulse-pounding timelines, an FBI agent and a career criminal face off in a deadly game of cat and mouse through Europe.",
+     "title": "Madden",
+     "overview": "Chronicles John Madden's incredible journey alongside best friend and true original Al Davis—from a Super Bowl-winning partnership with the Raiders, to becoming football's most recognizable voice, to building the worldwide Madden NFL video game.",
      "genres": [
-      "Action & Adventure",
-      "Crime",
-      "Drama"
+      "Drama",
+      "History",
+      "Comedy"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "TV-MA"
+       "text": "R"
       },
-      "1 Season",
-      "Action & Adventure",
-      "Crime"
+      "1h 52m",
+      "Drama",
+      "History"
      ]
     },
     "es": {
-     "title": "12 12 12",
-     "overview": "Un robo lleva 12 meses de planificación y 12 horas de ejecución. Y, si no se atrapa al ladrón al cabo de 12 días, ya no se lo atrapa. A través de tres frenéticas líneas temporales, un agente del FBI y un delincuente habitual juegan al gato y el ratón por toda Europa con resultados fatales.",
+     "title": "Madden",
+     "overview": "Narra la increíble trayectoria de John Madden junto a su mejor amigo y figura verdaderamente singular, Al Davis: desde su colaboración con los Raiders —con quienes ganaron un Super Bowl— hasta convertirse en la voz más reconocible del fútbol americano y crear la serie de videojuegos Madden NFL, conocida a nivel mundial.",
      "genres": [
-      "Action & Adventure",
-      "Crimen",
-      "Drama"
+      "Drama",
+      "Historia",
+      "Comedia"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "TV-MA"
+       "text": "R"
       },
-      "1 temporada",
-      "Action & Adventure",
-      "Crimen"
+      "1 h 52 min",
+      "Drama",
+      "Historia"
      ]
     }
    }
   },
-  "tv:279246": {
-   "id": "tv:279246",
+  "movie:1567605": {
+   "id": "movie:1567605",
    "source": "tmdb",
-   "contentType": "tv",
+   "contentType": "movie",
    "year": 2026,
-   "rating": "TV-14",
-   "seasons": 1,
+   "rating": "PG-13",
+   "runtime": 115,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/zn3IXZzGavH3qle3o3g1r32eXDy.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/fNcpHmuZLKoyhNMBEzdqzX8iIvg.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/cR7DBBRMFLAwQR4A1FOMcUEe5Hp.png"
+    "poster": "https://image.tmdb.org/t/p/w500/6H2N59jJW1hZEzn2ZdrMvJw5vNI.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/bF6nvHAt2jU7PnkOI4cnaUF2DZn.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/aHgQzaMPhqSzXgwft1PQNEnZSPY.svg"
    },
-   "providers": [
-    337,
-    15
-   ],
+   "providers": [],
    "text": {
     "en": {
-     "title": "The Remarried Empress",
-     "overview": "Beloved Empress Navier rules the Eastern Empire alongside Emperor Sovieshu. But when Sovieshu falls for a runaway slave and demands a divorce, Navier will agree on one condition: that she's given approval to remarry rival Prince Heinrey of the Western Kingdom.",
+     "title": "Ebenezer",
+     "overview": "An elderly miser embarks on a supernatural journey after visits from the ghost of his former business partner and the Spirits of Christmas Past, Present, and Yet to Come force him to confront his past and fight for a second chance at happiness.",
      "genres": [
-      "Drama",
-      "Sci-Fi & Fantasy"
+      "Fantasy",
+      "Comedy"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "TV-14"
+       "text": "PG-13"
       },
-      "1 Season",
-      "Drama",
-      "Sci-Fi & Fantasy"
+      "1h 55m",
+      "Fantasy",
+      "Comedy"
      ]
     },
     "es": {
-     "title": "La emperatriz divorciada",
-     "overview": "Navier, la querida emperatriz del Imperio Oriental, gobierna junto al emperador Sovieshu. Pero cuando Sovieshu se enamora de una esclava fugitiva y pide el divorcio, Navier accede con la condición de poder volver a casarse con su rival, el príncipe Heinrey del Reino Occidental.",
+     "title": "Scrooge y los fantasmas de la Navidad",
+     "overview": "Reimaginación del clásico literario, una historia de fantasmas ambientada en el Londres de Dickens que sigue el viaje sobrenatural de un hombre para enfrentarse a su pasado, presente y futuro y luchar por una segunda oportunidad.",
      "genres": [
-      "Drama",
-      "Sci-Fi & Fantasy"
+      "Fantasía",
+      "Comedia"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "TV-14"
+       "text": "PG-13"
       },
-      "1 temporada",
-      "Drama",
-      "Sci-Fi & Fantasy"
+      "1 h 55 min",
+      "Fantasía",
+      "Comedia"
      ]
     }
    }
@@ -1263,7 +1326,7 @@
    "runtime": 140,
    "images": {
     "poster": "https://image.tmdb.org/t/p/w500/hKROmLddpzpjkxKKVFYFRAOXX1b.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/hir35iIjs1FIzp7PrY1JK2Eg40n.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/bjt53Hjqwl9VrtJkDv39GwmE1QN.jpg",
     "logo": "https://image.tmdb.org/t/p/w500/u1mJlxIpce2Bc2wVOlenGfwOEYt.png"
    },
    "providers": [
@@ -1291,7 +1354,7 @@
     },
     "es": {
      "title": "No nos rendimos",
-     "overview": "Una peligrosa banda irrumpe en la remota casa de un veterano atormentado por la culpa. Para sobrevivir, tendrá que unir fuerzas con unos nietos a los que apenas conoce.",
+     "overview": "v‌e‌r‌cineo.net – Películas y series HD, Gratis  Una peligrosa banda irrumpe en la remota casa de un veterano atormentado por la culpa. Para sobrevivir, tendrá que unir fuerzas con unos nietos a los que apenas conoce.",
      "genres": [
       "Acción",
       "Crimen",
@@ -1358,60 +1421,6 @@
       "2 h 30 min",
       "Ciencia ficción",
       "Aventura"
-     ]
-    }
-   }
-  },
-  "tv:247718": {
-   "id": "tv:247718",
-   "source": "tmdb",
-   "contentType": "tv",
-   "year": 2025,
-   "rating": "TV-MA",
-   "seasons": 2,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/fTlH5NNTXOP96mElp0DaIStRVvK.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/h0OC7ouop8YLwbAVfS3UUE2Lw4T.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/fh6N94BUPuLPN70WpbM0OEgOJbc.png"
-   },
-   "providers": [
-    2303
-   ],
-   "text": {
-    "en": {
-     "title": "MobLand",
-     "overview": "Two mob families clash in a war that threatens to topple empires and lives.",
-     "genres": [
-      "Crime",
-      "Drama"
-     ],
-     "metadataLine": [
-      "2025",
-      {
-       "kind": "badge",
-       "text": "TV-MA"
-      },
-      "2 Seasons",
-      "Crime",
-      "Drama"
-     ]
-    },
-    "es": {
-     "title": "Tierra de mafiosos",
-     "overview": "El poder está en juego cuando los Harrigan y los Stevenson, dos familias criminales londinenses en guerra, se enfrentan en una batalla de matar o morir que amenaza con derribar imperios y arruinar vidas. Atrapado en el fuego cruzado está Harry Da Souza, el astuto \"solucionador\" tan peligroso como atractivo, que sabe muy bien dónde están las lealtades cuando las fuerzas opuestas chocan. A medida que los reinos se enfrentan, se cruzarán las líneas, y la única gracia salvadora es una garantía de vida o muerte: la familia por encima de todo.",
-     "genres": [
-      "Crimen",
-      "Drama"
-     ],
-     "metadataLine": [
-      "2025",
-      {
-       "kind": "badge",
-       "text": "TV-MA"
-      },
-      "2 temporadas",
-      "Crimen",
-      "Drama"
      ]
     }
    }
@@ -1507,7 +1516,7 @@
     },
     "es": {
      "title": "Apocalipsis Z: Nuevo mundo",
-     "overview": "Tras el brote del virus TSJ, las Islas Canarias son el último refugio de Europa. Cuando una misión viaja a Madrid en busca de suministros, Roberto se une al equipo con dudosas intenciones. Rodeados de infectados y lealtades divididas, deberán luchar por sobrevivir mientras afrontan un dilema moral: salvarse a sí mismos o arriesgarlo todo por lo que queda de humanidad.",
+     "overview": "v‌e‌r‌cineo.net – Películas y series HD, Gratis  Tras el brote del virus TSJ, las Islas Canarias son el último refugio de Europa. Cuando una misión viaja a Madrid en busca de suministros, Roberto se une al equipo con dudosas intenciones. Rodeados de infectados y lealtades divididas, deberán luchar por sobrevivir mientras afrontan un dilema moral: salvarse a sí mismos o arriesgarlo todo por lo que queda de humanidad.",
      "genres": [
       "Acción",
       "Suspense",
@@ -1562,7 +1571,7 @@
     },
     "es": {
      "title": "Drive: Los farsantes",
-     "overview": "Una joven mecánica de coches de carreras finge estar comprometida con la estrella más escandalosa del mundo del automovilismo: oficialmente, por su reputación; pero, en secreto, para tener la oportunidad de ponerse al volante. Pronto, la mentira amenaza con lo destruir todo.",
+     "overview": "v‌e‌r‌cineo.net – Películas y series HD, Gratis  Una joven mecánica de coches de carreras finge estar comprometida con la estrella más escandalosa del mundo del automovilismo: oficialmente, por su reputación; pero, en secreto, para tener la oportunidad de ponerse al volante. Pronto, la mentira amenaza con lo destruir todo.",
      "genres": [
       "Romance",
       "Suspense"
@@ -1575,6 +1584,60 @@
       },
       "1 h 43 min",
       "Romance",
+      "Suspense"
+     ]
+    }
+   }
+  },
+  "movie:755898": {
+   "id": "movie:755898",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2025,
+   "rating": "PG-13",
+   "runtime": 91,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/yvirUYrva23IudARHn3mMGVxWqM.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/1XURF3Uwy70KBjYDG1qD1kBQaui.png"
+   },
+   "providers": [
+    9
+   ],
+   "text": {
+    "en": {
+     "title": "War of the Worlds",
+     "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
+     "genres": [
+      "Science Fiction",
+      "Thriller"
+     ],
+     "metadataLine": [
+      "2025",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "1h 31m",
+      "Science Fiction",
+      "Thriller"
+     ]
+    },
+    "es": {
+     "title": "La guerra de los mundos",
+     "overview": "Will Radford, un destacado analista de ciberseguridad, pasa sus días rastreando posibles amenazas a la seguridad nacional a través de un programa de vigilancia masiva. Un ataque de una entidad desconocida le lleva a cuestionarse si el gobierno le está ocultando algo a él... y al resto del mundo.",
+     "genres": [
+      "Ciencia ficción",
+      "Suspense"
+     ],
+     "metadataLine": [
+      "2025",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "1 h 31 min",
+      "Ciencia ficción",
       "Suspense"
      ]
     }
@@ -1636,60 +1699,6 @@
     }
    }
   },
-  "movie:755898": {
-   "id": "movie:755898",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2025,
-   "rating": "PG-13",
-   "runtime": 91,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/yvirUYrva23IudARHn3mMGVxWqM.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/1XURF3Uwy70KBjYDG1qD1kBQaui.png"
-   },
-   "providers": [
-    9
-   ],
-   "text": {
-    "en": {
-     "title": "War of the Worlds",
-     "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
-     "genres": [
-      "Science Fiction",
-      "Thriller"
-     ],
-     "metadataLine": [
-      "2025",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "1h 31m",
-      "Science Fiction",
-      "Thriller"
-     ]
-    },
-    "es": {
-     "title": "La guerra de los mundos",
-     "overview": "Will Radford, un destacado analista de ciberseguridad, pasa sus días rastreando posibles amenazas a la seguridad nacional a través de un programa de vigilancia masiva. Un ataque de una entidad desconocida le lleva a cuestionarse si el gobierno le está ocultando algo a él... y al resto del mundo.",
-     "genres": [
-      "Ciencia ficción",
-      "Suspense"
-     ],
-     "metadataLine": [
-      "2025",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "1 h 31 min",
-      "Ciencia ficción",
-      "Suspense"
-     ]
-    }
-   }
-  },
   "movie:1234139": {
    "id": "movie:1234139",
    "source": "tmdb",
@@ -1742,6 +1751,115 @@
       "2 h 45 min",
       "Acción",
       "Comedia"
+     ]
+    }
+   }
+  },
+  "movie:1366": {
+   "id": "movie:1366",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 1976,
+   "rating": "PG",
+   "runtime": 119,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/1mcJmdbRLusxhoSGjFI3pbEboXt.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/bacOuUnRBoAO1NjMfsAGX2EKRrS.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/4ZMlbEpP1gY7QkW5UdeoVwk814x.png"
+   },
+   "providers": [
+    9,
+    2303
+   ],
+   "text": {
+    "en": {
+     "title": "Rocky",
+     "overview": "Rocky Balboa is a Philadelphia club fighter who seems to be going nowhere. But when a stroke of fate puts him in the ring with a world heavyweight champion, Rocky knows that it's his one shot at the big time — a once-in-a-lifetime opportunity to go the distance and come out a winner!",
+     "genres": [
+      "Drama"
+     ],
+     "metadataLine": [
+      "1976",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "1h 59m",
+      "Drama"
+     ]
+    },
+    "es": {
+     "title": "Rocky",
+     "overview": "Rocky Balboa es un desconocido boxeador a quien se le ofrece la posibilidad de pelear por el título mundial de los pesos pesados. Con mucha fuerza de voluntad, Rocky se preparará concienzudamente para este combate, y también para los cambios que producirá en su vida.",
+     "genres": [
+      "Drama"
+     ],
+     "metadataLine": [
+      "1976",
+      {
+       "kind": "badge",
+       "text": "PG"
+      },
+      "1 h 59 min",
+      "Drama"
+     ]
+    }
+   }
+  },
+  "movie:1311031": {
+   "id": "movie:1311031",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2025,
+   "rating": "R",
+   "runtime": 156,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/w3H7PDwwss5SLuMQ8UBrAProasG.png"
+   },
+   "providers": [
+    8,
+    9,
+    15
+   ],
+   "text": {
+    "en": {
+     "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+     "overview": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
+     "genres": [
+      "Animation",
+      "Action",
+      "Fantasy"
+     ],
+     "metadataLine": [
+      "2025",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "2h 36m",
+      "Animation",
+      "Action"
+     ]
+    },
+    "es": {
+     "title": "Guardianes de la noche: Kimetsu no Yaiba La fortaleza infinita",
+     "overview": "El Cuerpo de Cazadores de Demonios se enfrenta a los Doce Kizuki restantes antes de enfrentarse a Muzan en el Castillo del Infinito para derrotarlo de una vez por todas.",
+     "genres": [
+      "Animación",
+      "Acción",
+      "Fantasía"
+     ],
+     "metadataLine": [
+      "2025",
+      {
+       "kind": "badge",
+       "text": "R"
+      },
+      "2 h 36 min",
+      "Animación",
+      "Acción"
      ]
     }
    }
@@ -1844,57 +1962,6 @@
     }
    }
   },
-  "movie:1366": {
-   "id": "movie:1366",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 1976,
-   "rating": "PG",
-   "runtime": 119,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/1mcJmdbRLusxhoSGjFI3pbEboXt.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/bacOuUnRBoAO1NjMfsAGX2EKRrS.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/4ZMlbEpP1gY7QkW5UdeoVwk814x.png"
-   },
-   "providers": [
-    9,
-    2303
-   ],
-   "text": {
-    "en": {
-     "title": "Rocky",
-     "overview": "Rocky Balboa is a Philadelphia club fighter who seems to be going nowhere. But when a stroke of fate puts him in the ring with a world heavyweight champion, Rocky knows that it's his one shot at the big time — a once-in-a-lifetime opportunity to go the distance and come out a winner!",
-     "genres": [
-      "Drama"
-     ],
-     "metadataLine": [
-      "1976",
-      {
-       "kind": "badge",
-       "text": "PG"
-      },
-      "1h 59m",
-      "Drama"
-     ]
-    },
-    "es": {
-     "title": "Rocky",
-     "overview": "Rocky Balboa es un desconocido boxeador a quien se le ofrece la posibilidad de pelear por el título mundial de los pesos pesados. Con mucha fuerza de voluntad, Rocky se preparará concienzudamente para este combate, y también para los cambios que producirá en su vida.",
-     "genres": [
-      "Drama"
-     ],
-     "metadataLine": [
-      "1976",
-      {
-       "kind": "badge",
-       "text": "PG"
-      },
-      "1 h 59 min",
-      "Drama"
-     ]
-    }
-   }
-  },
   "movie:1561726": {
    "id": "movie:1561726",
    "source": "tmdb",
@@ -1945,64 +2012,6 @@
       "1 h 50 min",
       "Acción",
       "Suspense"
-     ]
-    }
-   }
-  },
-  "movie:1311031": {
-   "id": "movie:1311031",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2025,
-   "rating": "R",
-   "runtime": 156,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/w3H7PDwwss5SLuMQ8UBrAProasG.png"
-   },
-   "providers": [
-    8,
-    9,
-    15
-   ],
-   "text": {
-    "en": {
-     "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
-     "overview": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
-     "genres": [
-      "Animation",
-      "Action",
-      "Fantasy"
-     ],
-     "metadataLine": [
-      "2025",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "2h 36m",
-      "Animation",
-      "Action"
-     ]
-    },
-    "es": {
-     "title": "Guardianes de la noche: Kimetsu no Yaiba La fortaleza infinita",
-     "overview": "El Cuerpo de Cazadores de Demonios se enfrenta a los Doce Kizuki restantes antes de enfrentarse a Muzan en el Castillo del Infinito para derrotarlo de una vez por todas.",
-     "genres": [
-      "Animación",
-      "Acción",
-      "Fantasía"
-     ],
-     "metadataLine": [
-      "2025",
-      {
-       "kind": "badge",
-       "text": "R"
-      },
-      "2 h 36 min",
-      "Animación",
-      "Acción"
      ]
     }
    }
@@ -2062,62 +2071,6 @@
     }
    }
   },
-  "movie:1110034": {
-   "id": "movie:1110034",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2026,
-   "rating": "NR",
-   "runtime": 94,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/u8x0jvVCEpRyN8q5ORyJZzBZ2Ho.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/sN3DRrHA6ieb982e4lXuqCYtYfZ.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/8HMuWDM1bsaqdwCGPt2bMXaIGdQ.png"
-   },
-   "providers": [
-    9
-   ],
-   "text": {
-    "en": {
-     "title": "Kraken",
-     "overview": "A marine biologist is doing research on a fish farm when she encounters several strange occurrences. Along with the brutal deaths of two teenagers, all signs point to the deep fjord; can there be more to the depths than the eye can see?",
-     "genres": [
-      "Horror",
-      "Action",
-      "Thriller"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "NR"
-      },
-      "1h 34m",
-      "Horror",
-      "Action"
-     ]
-    },
-    "es": {
-     "title": "Kraken",
-     "overview": "Johanne es una bióloga marina que está investigando en una piscifactoría de Vangsnes, una comunidad rural situada junto al fiordo, cuando se topa con varios sucesos extraños. Junto con las brutales muertes de dos adolescentes de la localidad, todos los indicios apuntan al profundo fiordo. ¿Puede haber más en las profundidades de lo que el ojo puede ver? En el fondo del fiordo más profundo de Noruega descansa un monstruo mítico tan grande como una montaña, con una miríada de brazos dispuestos a aplastar y devorar todo lo que puedan agarrar.",
-     "genres": [
-      "Terror",
-      "Acción",
-      "Suspense"
-     ],
-     "metadataLine": [
-      "2026",
-      {
-       "kind": "badge",
-       "text": "NR"
-      },
-      "1 h 34 min",
-      "Terror",
-      "Acción"
-     ]
-    }
-   }
-  },
   "movie:290098": {
    "id": "movie:290098",
    "source": "tmdb",
@@ -2155,7 +2108,7 @@
     },
     "es": {
      "title": "La doncella",
-     "overview": "Corea, década de 1930, durante la colonización japonesa. Una joven llamada Sookee es contratada como doncella de una rica mujer japonesa, Hideko, que vive recluida en una gran mansión bajo la influencia de un tirano. Sookee guarda un secreto y con la ayuda de un estafador que se hace pasar por un conde japonés, planea algo para Hideko.",
+     "overview": "v‌e‌r‌cineo.net – Películas y series HD, Gratis .  Corea, década de 1930, durante la colonización japonesa. Una joven llamada Sookee es contratada como doncella de una rica mujer japonesa, Hideko, que vive recluida en una gran mansión bajo la influencia de un tirano. Sookee guarda un secreto y con la ayuda de un estafador que se hace pasar por un conde japonés, planea algo para Hideko.",
      "genres": [
       "Suspense",
       "Drama",
@@ -2281,113 +2234,58 @@
     }
    }
   },
-  "movie:823464": {
-   "id": "movie:823464",
-   "source": "tmdb",
-   "contentType": "movie",
-   "year": 2024,
-   "rating": "PG-13",
-   "runtime": 115,
-   "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/v4uvGFAkKuYfyKLGZnYj6l47ERQ.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/gvLG3Fnznkxl4SmYfcK8gUuqxM8.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/4skeKFtpdXvHFj7ab86cU20nju0.png"
-   },
-   "providers": [
-    9,
-    1899
-   ],
-   "text": {
-    "en": {
-     "title": "Godzilla x Kong: The New Empire",
-     "overview": "Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.",
-     "genres": [
-      "Action",
-      "Adventure",
-      "Science Fiction"
-     ],
-     "metadataLine": [
-      "2024",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "1h 55m",
-      "Action",
-      "Adventure"
-     ]
-    },
-    "es": {
-     "title": "Godzilla y Kong: El nuevo imperio",
-     "overview": "Una aventura cinematográfica completamente nueva, que enfrentará al todopoderoso Kong y al temible Godzilla contra una colosal amenaza desconocida escondida dentro de nuestro mundo. La nueva y épica película profundizará en las historias de estos titanes, sus orígenes y los misterios de Isla Calavera y más allá, mientras descubre la batalla mítica que ayudó a forjar a estos seres extraordinarios y los unió a la humanidad para siempre.",
-     "genres": [
-      "Acción",
-      "Aventura",
-      "Ciencia ficción"
-     ],
-     "metadataLine": [
-      "2024",
-      {
-       "kind": "badge",
-       "text": "PG-13"
-      },
-      "1 h 55 min",
-      "Acción",
-      "Aventura"
-     ]
-    }
-   }
-  },
-  "movie:1381078": {
-   "id": "movie:1381078",
+  "movie:1110034": {
+   "id": "movie:1110034",
    "source": "tmdb",
    "contentType": "movie",
    "year": 2026,
-   "rating": "R",
-   "runtime": 109,
+   "rating": "NR",
+   "runtime": 94,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/dL3Tcv4FU2K85bgnGRBgLjFSrLr.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/4hneB0UFKOZAGJHqJ3VhDcG72uH.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/h2xEYbJzgMFnBSk0xRSP4f31BHQ.png"
+    "poster": "https://image.tmdb.org/t/p/w500/u8x0jvVCEpRyN8q5ORyJZzBZ2Ho.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/sN3DRrHA6ieb982e4lXuqCYtYfZ.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/8HMuWDM1bsaqdwCGPt2bMXaIGdQ.png"
    },
    "providers": [
     9
    ],
    "text": {
     "en": {
-     "title": "Love of Your Life",
-     "overview": "After a chance encounter sparks a sweeping romance, Maya's future is suddenly upended, sending her on an unexpected journey to love and live again.",
+     "title": "Kraken",
+     "overview": "A marine biologist is doing research on a fish farm when she encounters several strange occurrences. Along with the brutal deaths of two teenagers, all signs point to the deep fjord; can there be more to the depths than the eye can see?",
      "genres": [
-      "Romance",
-      "Drama"
+      "Horror",
+      "Action",
+      "Thriller"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "R"
+       "text": "NR"
       },
-      "1h 49m",
-      "Romance",
-      "Drama"
+      "1h 34m",
+      "Horror",
+      "Action"
      ]
     },
     "es": {
-     "title": "El amor de tu vida",
-     "overview": "Maya, una enfermera de Boston de 26 años, abandona su vida y su matrimonio con Charlie tras la pandemia. Convertida en nómada digital en Portugal, conoce a Felix, con quien se muda a Inglaterra mientras afronta su identidad, sus deseos y la opción de volver a amar.",
+     "title": "Kraken",
+     "overview": "Johanne es una bióloga marina que está investigando en una piscifactoría de Vangsnes, una comunidad rural situada junto al fiordo, cuando se topa con varios sucesos extraños. Junto con las brutales muertes de dos adolescentes de la localidad, todos los indicios apuntan al profundo fiordo. ¿Puede haber más en las profundidades de lo que el ojo puede ver? En el fondo del fiordo más profundo de Noruega descansa un monstruo mítico tan grande como una montaña, con una miríada de brazos dispuestos a aplastar y devorar todo lo que puedan agarrar.",
      "genres": [
-      "Romance",
-      "Drama"
+      "Terror",
+      "Acción",
+      "Suspense"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "R"
+       "text": "NR"
       },
-      "1 h 49 min",
-      "Romance",
-      "Drama"
+      "1 h 34 min",
+      "Terror",
+      "Acción"
      ]
     }
    }
@@ -2446,58 +2344,113 @@
     }
    }
   },
-  "movie:454639": {
-   "id": "movie:454639",
+  "movie:1381078": {
+   "id": "movie:1381078",
    "source": "tmdb",
    "contentType": "movie",
    "year": 2026,
-   "rating": "PG-13",
-   "runtime": 141,
+   "rating": "R",
+   "runtime": 109,
    "images": {
-    "poster": "https://image.tmdb.org/t/p/w500/3YMd9Ogae4rDKLWuAZFuse9xhc5.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/5MUMB3aPEPEQPCIAaygXFUTWE9Y.jpg",
-    "logo": "https://image.tmdb.org/t/p/w500/aBS0RzFsuKbg7npGADgFEl8bKt2.png"
+    "poster": "https://image.tmdb.org/t/p/w500/dL3Tcv4FU2K85bgnGRBgLjFSrLr.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/4hneB0UFKOZAGJHqJ3VhDcG72uH.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/h2xEYbJzgMFnBSk0xRSP4f31BHQ.png"
    },
    "providers": [
     9
    ],
    "text": {
     "en": {
-     "title": "Masters of the Universe",
-     "overview": "After being separated for 15 years, the Sword of Power leads Prince Adam back to Eternia, where he discovers his home shattered under the fiendish rule of Skeletor. To save his family and his world, Adam must join forces with his closest allies, Teela and Duncan/Man-At-Arms, and embrace his true destiny as He-Man — the most powerful man in the universe.",
+     "title": "Love of Your Life",
+     "overview": "After a chance encounter sparks a sweeping romance, Maya's future is suddenly upended, sending her on an unexpected journey to love and live again.",
      "genres": [
-      "Action",
-      "Fantasy",
-      "Science Fiction"
+      "Romance",
+      "Drama"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
-       "text": "PG-13"
+       "text": "R"
       },
-      "2h 21m",
-      "Action",
-      "Fantasy"
+      "1h 49m",
+      "Romance",
+      "Drama"
      ]
     },
     "es": {
-     "title": "He-Man y los Masters del Universo",
-     "overview": "En las regiones más lejanas del espacio, el reino de Eternia está amenazado por el villano Skeletor y sus traviesos ejércitos de oscuridad. Para salvar el reino de su padre y proteger las vidas de sus seres queridos, el joven príncipe Adam tiene que recuperar una espada mítica y convertirse en el legendario guerrero conocido como He-Man.",
+     "title": "El amor de tu vida",
+     "overview": "Maya, una enfermera de Boston de 26 años, abandona su vida y su matrimonio con Charlie tras la pandemia. Convertida en nómada digital en Portugal, conoce a Felix, con quien se muda a Inglaterra mientras afronta su identidad, sus deseos y la opción de volver a amar.",
      "genres": [
-      "Acción",
-      "Fantasía",
-      "Ciencia ficción"
+      "Romance",
+      "Drama"
      ],
      "metadataLine": [
       "2026",
       {
        "kind": "badge",
+       "text": "R"
+      },
+      "1 h 49 min",
+      "Romance",
+      "Drama"
+     ]
+    }
+   }
+  },
+  "movie:823464": {
+   "id": "movie:823464",
+   "source": "tmdb",
+   "contentType": "movie",
+   "year": 2024,
+   "rating": "PG-13",
+   "runtime": 115,
+   "images": {
+    "poster": "https://image.tmdb.org/t/p/w500/v4uvGFAkKuYfyKLGZnYj6l47ERQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/gvLG3Fnznkxl4SmYfcK8gUuqxM8.jpg",
+    "logo": "https://image.tmdb.org/t/p/w500/4skeKFtpdXvHFj7ab86cU20nju0.png"
+   },
+   "providers": [
+    9,
+    1899
+   ],
+   "text": {
+    "en": {
+     "title": "Godzilla x Kong: The New Empire",
+     "overview": "Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.",
+     "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction"
+     ],
+     "metadataLine": [
+      "2024",
+      {
+       "kind": "badge",
        "text": "PG-13"
       },
-      "2 h 21 min",
+      "1h 55m",
+      "Action",
+      "Adventure"
+     ]
+    },
+    "es": {
+     "title": "Godzilla y Kong: El nuevo imperio",
+     "overview": "Una aventura cinematográfica completamente nueva, que enfrentará al todopoderoso Kong y al temible Godzilla contra una colosal amenaza desconocida escondida dentro de nuestro mundo. La nueva y épica película profundizará en las historias de estos titanes, sus orígenes y los misterios de Isla Calavera y más allá, mientras descubre la batalla mítica que ayudó a forjar a estos seres extraordinarios y los unió a la humanidad para siempre.",
+     "genres": [
       "Acción",
-      "Fantasía"
+      "Aventura",
+      "Ciencia ficción"
+     ],
+     "metadataLine": [
+      "2024",
+      {
+       "kind": "badge",
+       "text": "PG-13"
+      },
+      "1 h 55 min",
+      "Acción",
+      "Aventura"
      ]
     }
    }
@@ -2527,7 +2480,7 @@
   "350": {
    "id": 350,
    "name": "Apple TV",
-   "logo": "https://image.tmdb.org/t/p/w300/9icYBfYFcwgCbky5VdGUIKJ4C5i.png"
+   "logo": "https://image.tmdb.org/t/p/w300/v9SnyvYt0U3KGgBH3Sbh3z4yODe.png"
   },
   "386": {
    "id": 386,
@@ -2547,12 +2500,11 @@
  },
  "sections": {
   "hero": [
-   "sparkfree:spring",
-   "sparkfree:sprite-fright",
-   "sparkfree:wing-it",
-   "sparkfree:sintel",
-   "sparkfree:tears-of-steel",
-   "sparkfree:big-buck-bunny"
+   "movie:1368337",
+   "movie:1300968",
+   "movie:1003596",
+   "tv:84773",
+   "tv:213375"
   ],
   "apps": [
    "app:sparkfree",
@@ -2575,47 +2527,47 @@
   ],
   "trending": [
    "movie:1368337",
-   "tv:84773",
    "movie:1300968",
    "movie:1003596",
-   "movie:1131943",
-   "movie:1551025",
+   "tv:84773",
    "tv:213375",
-   "movie:1185344",
    "tv:291507",
+   "movie:1185344",
+   "movie:969681",
+   "tv:254630",
    "movie:1400837",
    "movie:1423191",
-   "movie:969681",
    "movie:1381071",
-   "movie:1567605",
+   "tv:308007",
+   "tv:247718",
+   "movie:1551025",
    "movie:1263337",
-   "tv:254630",
-   "tv:279246",
+   "movie:1131943",
+   "movie:1567605",
    "movie:1616687",
-   "movie:1170608",
-   "tv:247718"
+   "movie:1170608"
   ],
   "popular-prime": [
    "movie:687163",
    "movie:1507696",
    "movie:1596275",
-   "movie:1595325",
    "movie:755898",
+   "movie:1595325",
    "movie:1234139",
+   "movie:1366",
+   "movie:1131943",
+   "movie:1311031",
    "movie:9963",
    "movie:1128204",
-   "movie:1366",
    "movie:1561726",
-   "movie:1311031",
    "movie:335984",
-   "movie:1110034",
    "movie:290098",
    "movie:760104",
    "movie:1061474",
-   "movie:823464",
-   "movie:1381078",
+   "movie:1110034",
    "movie:1516698",
-   "movie:454639"
+   "movie:1381078",
+   "movie:823464"
   ],
   "credits": []
  }
