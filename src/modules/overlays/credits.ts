@@ -39,7 +39,7 @@ overlays.register({
 
     const tmdb = document.createElement('img');
     tmdb.className = 'credits__tmdb';
-    tmdb.src = '/attribution/tmdb-short.svg';
+    tmdb.src = `${import.meta.env.BASE_URL}attribution/tmdb-short.svg`;
     tmdb.alt = 'TMDB';
     section(ctx.t('credits.data'), tmdb, ctx.t('credits.tmdb'), ctx.t('credits.justwatch'));
 
