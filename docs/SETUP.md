@@ -109,6 +109,7 @@ Newest first. One line each: what was chosen, and why.
 15. **Launch sequence.** A "Press OK to start" screen, then the launch animation: a finger-snap sound, the spark mark bursting in on the snap, and the "Spark TV" wordmark sliding out from behind the mark (masked), all in about 2.5 s. Why the start screen: browsers block audio until the user interacts, the OK press unlocks it, and it doubles as the reset point between research participants. Built as a module with a placeholder mark and a sound slot. The real mark, timing and recorded snap arrive with the brand.
 16. **Deployment: Vercel,** with previews on every branch; `main` is production. The legacy project (now `spark-tv-legacy`) has released `spark-tv.vercel.app` (confirmed 2026-11-18: it holds only `spark-tv-legacy.vercel.app`), so the new project takes that name.
 17. **Performance: hold 60fps.** Animate transform and opacity only, virtualize rows, lazy-load images ahead of focus, keep video inert until visible, and release it fully on exit.
+18. **2026-11-19: Runs under a sub-path.** Asset paths built in code use `import.meta.env.BASE_URL`, never a leading `/`, so the app also works when built with `--base` (the Prototype Viewer hosts a copy at `/prototypes/spark-tv/`). Paths in `index.html` are rewritten by Vite automatically.
 
 ## Current state
 
