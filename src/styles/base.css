@@ -1,3 +1,8 @@
+/* Startup sentinel: src/core/boot.ts waits for this before building the page (it measures). */
+:root {
+  --styles-ready: 1;
+}
+
 *,
 *::before,
 *::after {
