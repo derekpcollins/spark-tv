@@ -53,6 +53,7 @@ Before every commit, all of these must pass (`npm run check` runs them in order)
 - One module per file. Every module registers its type, variants and options schema. Adding a variant means one new file plus one registration, with no edits to navigation or the core.
 - Modules implement the contract in `docs/SPEC.md` (`create(config, ctx)` returning `el`, `focus`, `blur`, `handleKey`, `destroy`). The focus engine knows only the contract.
 - Every key goes through the keymap (`src/core/keymap.ts`). Never read `KeyboardEvent.key` anywhere else.
+- Pages measure section heights when they're built, so build only after `stylesReady()` (`src/core/boot.ts`): WebKit runs the module script before the stylesheet applies.
 - Animate transform and opacity only. Batch layout reads before writes. Measure with `offsetWidth`/`offsetHeight`, never `getBoundingClientRect` (the canvas is scaled). No vw/vh in components.
 - All visible strings go through the i18n function. All brand and visual values go through tokens; never hard-code colours, sizes, spacing, durations or fonts. `src/core/tokens-usage.test.ts` fails the build on hard-coded colours, fonts, easings and durations in `src/`; a line marked `tokens-ok` is a reviewed exception.
 - Brand (Glint, see SPEC.md "Brand"): the spark spectrum is only for the mark, focus and progress. No red anywhere in the UI. The TV header shows the wordmark only.

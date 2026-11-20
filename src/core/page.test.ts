@@ -2,7 +2,7 @@
  * Integration: Home-like page with real modules. Covers LRUD, focus memory across
  * virtualization, and Display Page open → Back restores focus.
  */
-import { beforeAll, describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import type { Catalog, SectionConfig, Title } from './catalog.ts';
 import { displayPages } from './app-registries.ts';
 import { createMemory, OverlayStack } from './focus.ts';
@@ -157,5 +157,85 @@ describe('Home page integration', () => {
     press('ok');
     expect(overlaysOpened.map((o) => o.type)).toEqual(['player']);
     expect((overlaysOpened[0]?.props.title as Title).id).toBe('sparkfree:spring');
+  });
+});
+
+describe('Home page resilience', () => {
+  const ctxFor = (): ModuleContext => ({
+    catalog,
+    t: createI18n(() => 'en'),
+    locale: () => 'en',
+    memory: createMemory(),
+    option: () => undefined,
+    openOverlay: () => {},
+    openTitle: () => {},
+  });
+
+  it('keeps the header and the other sections when one section throws', async () => {
+    const { sections } = await import('./app-registries.ts');
+    sections.register({
+      type: 'test-broken',
+      variant: 'default',
+      label: 'Broken',
+      create() {
+        throw new Error('render failed');
+      },
+    });
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const host = document.createElement('div');
+    document.body.append(host);
+    const page = createPage(
+      host,
+      [configs[0]!, { id: 'broken', type: 'test-broken', source: { ids: [] } }, ...configs.slice(2)],
+      ctxFor(),
+      (c) => c.variant,
+    );
+    page.focus({ from: 'initial' });
+    expect(host.querySelector('.header')).not.toBeNull();
+    expect(host.querySelectorAll('.page__slot--row .card').length).toBeGreaterThan(0);
+    expect(error).toHaveBeenCalledWith(expect.stringContaining('"broken"'), expect.any(Error));
+    expect(page.focusEngine.index).toBe(2); // focus skips the broken slot and lands on Apps
+    page.destroy();
+    error.mockRestore();
+  });
+
+  it('re-measures and repositions sections when their size changes after the first measure', async () => {
+    // Stand-in for the WebKit race: the first measure sees unstyled (too tall) sections.
+    let unstyled = true;
+    const size = vi.spyOn(HTMLElement.prototype, 'offsetHeight', 'get').mockImplementation(function (
+      this: HTMLElement,
+    ) {
+      if (!this.classList.contains('page__slot') || !this.firstElementChild) return 0;
+      if (this.classList.contains('page__slot--header')) return unstyled ? 1944 : 132;
+      return unstyled ? 900 : 300;
+    });
+    let observed: (() => void) | null = null;
+    vi.stubGlobal(
+      'ResizeObserver',
+      class {
+        constructor(cb: () => void) {
+          observed = cb;
+        }
+        observe() {}
+        disconnect() {}
+      },
+    );
+    vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
+      cb(0);
+      return 1;
+    });
+    const host = document.createElement('div');
+    document.body.append(host);
+    const page = createPage(host, configs, ctxFor(), (c) => c.variant);
+    const hero = () => host.querySelector<HTMLElement>('.page__slot--hero')!;
+    expect(hero().style.transform).toBe('translateY(1944px)');
+
+    unstyled = false;
+    observed!();
+    expect(hero().style.transform).toBe('translateY(132px)');
+    expect(host.querySelector<HTMLElement>('.page__track')!.style.transform).toBe('translateY(0px)');
+    page.destroy();
+    size.mockRestore();
+    vi.unstubAllGlobals();
   });
 });

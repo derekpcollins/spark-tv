@@ -69,5 +69,7 @@
   "ad.northwake.name": "Northwake",
   "ad.northwake.tagline": "Go where the morning starts.",
   "opt.adVisible": "Ad banner: show",
-  "mod.slot.ad": "Ad banner"
+  "mod.slot.ad": "Ad banner",
+  "boot.error": "Spark TV didn’t load. Check your connection and try again.",
+  "boot.retry": "Retry"
 }

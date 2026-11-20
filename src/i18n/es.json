@@ -37,5 +37,7 @@
   "row.weekendPicks": "Para el fin de semana",
   "ad.badge": "Anuncio",
   "ad.northwake.name": "Northwake",
-  "ad.northwake.tagline": "Ve donde empieza la mañana."
+  "ad.northwake.tagline": "Ve donde empieza la mañana.",
+  "boot.error": "Spark TV no se cargó. Revisa tu conexión e inténtalo de nuevo.",
+  "boot.retry": "Reintentar"
 }

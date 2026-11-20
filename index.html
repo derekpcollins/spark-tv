@@ -8,9 +8,95 @@
     <meta name="theme-color" content="#0B0907" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spark TV</title>
+    <!--
+      Boot styles, inline so the loading and error states work before (or without) the
+      stylesheet. Values mirror design/tokens.json (char-950, char-50, char-400, spark amber,
+      focus filament); they can't use the tokens because the tokens load with the app.
+    -->
+    <style>
+      .boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        background: #0b0907;
+        color: #f5ede0;
+        font:
+          24px/1.4 system-ui,
+          sans-serif;
+        text-align: center;
+      }
+      .boot__bar {
+        width: 160px;
+        height: 4px;
+        border-radius: 2px;
+        background: #2a2420;
+        overflow: hidden;
+      }
+      .boot__bar::after {
+        content: '';
+        display: block;
+        width: 40%;
+        height: 100%;
+        border-radius: 2px;
+        background: #f2a93b;
+        animation: boot-slide 1.2s ease-in-out infinite;
+      }
+      @keyframes boot-slide {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(250%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot__bar::after {
+          animation: none;
+          width: 100%;
+          opacity: 0.6;
+        }
+      }
+      .boot__message {
+        margin: 0;
+        max-width: 640px;
+        padding: 0 24px;
+      }
+      .boot__retry {
+        font: inherit;
+        color: #0b0907;
+        background: #f5ede0;
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 32px;
+        cursor: pointer;
+      }
+      .boot__retry:focus-visible,
+      .boot__retry:focus {
+        outline: 4px solid #ffd27a;
+        outline-offset: 4px;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="boot" aria-busy="true" aria-label="Loading"><div class="boot__bar"></div></div>
+    </div>
+    <script>
+      // Last resort: if the app script never starts (it failed to download or threw before
+      // booting), show a retry instead of a loading bar forever. The app sets sparkBooted.
+      setTimeout(function () {
+        if (window.sparkBooted) return;
+        var app = document.getElementById('app');
+        app.innerHTML =
+          '<div class="boot" role="alert"><p class="boot__message">Spark TV didn\u2019t load. / Spark TV no se carg\u00f3.</p>' +
+          '<button class="boot__retry" type="button" onclick="location.reload()">Retry / Reintentar</button></div>';
+        app.querySelector('button').focus();
+      }, 30000);
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
